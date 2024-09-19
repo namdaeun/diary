@@ -14,6 +14,8 @@ const Switch = ({ isLightMode, onChange, ...props }: SwitchProps) => {
         role="switch"
         checked={isLightMode}
         onChange={onChange}
+        aria-label="switch"
+        aria-checked="true"
         className={toggleHandleStyle()}
         {...props}
       />
