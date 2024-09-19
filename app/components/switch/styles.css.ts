@@ -4,8 +4,6 @@ import sunny from "../../../public/assets/sunny.svg";
 
 export const switchStyle = recipe({
   base: {
-    position: "relative",
-
     width: "4.8rem",
     height: "2.8rem",
 
@@ -35,8 +33,6 @@ export const toggleHandleStyle = recipe({
     width: "3rem",
     height: "3rem",
 
-    flexShrink: "0",
-
     margin: "auto 0",
 
     backgroundImage: `url(${sunny})`,
@@ -53,7 +49,6 @@ export const toggleHandleStyle = recipe({
 
     ":checked": {
       transform: "translateX(0rem)",
-      backgroundImage: `url(${sunny})`,
     },
   },
 });
