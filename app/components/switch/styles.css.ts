@@ -2,7 +2,7 @@ import { recipe } from "@vanilla-extract/recipes";
 import { colors } from "~/styles/colors";
 import sunny from "../../../public/assets/sunny.svg";
 
-export const switchStyle = recipe({
+export const backgroundStyle = recipe({
   base: {
     width: "4.8rem",
     height: "2.8rem",
@@ -28,7 +28,7 @@ export const switchStyle = recipe({
   },
 });
 
-export const toggleHandleStyle = recipe({
+export const switchStyle = recipe({
   base: {
     width: "3rem",
     height: "3rem",
