@@ -6,17 +6,14 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import styles from "~/styles/global.css";
-import "./styles/reset.css";
+import "~/styles/fonts/fonts.css";
+import "~/styles/global.css";
+import "~/styles/reset.css";
 
 export const links: LinksFunction = () => [
   {
     rel: "stylesheet",
-    href: "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css",
-  },
-  {
-    rel: "stylesheet",
-    href: styles,
+    href: "https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css",
   },
 ];
 
