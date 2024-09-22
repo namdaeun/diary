@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef } from "react";
-import { switchStyle, toggleHandleStyle } from "./styles.css";
+import { backgroundStyle, switchStyle } from "./styles.css";
 
 interface SwitchProps extends ComponentPropsWithRef<"input"> {
   isLightMode: boolean;
@@ -8,7 +8,7 @@ interface SwitchProps extends ComponentPropsWithRef<"input"> {
 
 const Switch = ({ isLightMode, onChange, ...props }: SwitchProps) => {
   return (
-    <div className={switchStyle({ mode: isLightMode ? "light" : "dark" })}>
+    <div className={backgroundStyle({ mode: isLightMode ? "light" : "dark" })}>
       <input
         type="checkbox"
         role="switch"
@@ -16,7 +16,7 @@ const Switch = ({ isLightMode, onChange, ...props }: SwitchProps) => {
         onChange={onChange}
         aria-label="switch"
         aria-checked="true"
-        className={toggleHandleStyle()}
+        className={switchStyle()}
         {...props}
       />
     </div>
