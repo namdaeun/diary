@@ -22,7 +22,7 @@ export const backgroundStyle = recipe({
         background: colors.gray_200,
       },
       dark: {
-        background: colors.primary_blue,
+        background: colors.blue_100,
       },
     },
   },
