@@ -9,6 +9,9 @@ export const colors = {
   gray_700: "#242535",
   gray_800: "#181A2A",
   gray_900: "#141624",
-  primary_blue: "#4B6BFB",
+
+  blue_100: "#4B6BFB",
+  blue_200: "#3A57E8",
+
   navy_bg: "#242535",
 };
