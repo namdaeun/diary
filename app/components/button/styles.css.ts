@@ -3,16 +3,22 @@ import { colors } from "~/styles/colors";
 
 export const buttonStyle = recipe({
   base: {
-    width: "100%",
-
     padding: "1.2rem 2rem",
 
+    justifyContent: "center",
+    alignItems: "center",
+
+    border: "none",
     borderRadius: "12px",
 
-    fontSize: "1.6rem",
+    fontSize: "16px",
     fontStyle: "normal",
     fontWeight: "500",
     lineHeight: "24px",
+
+    whiteSpace: "nowrap",
+
+    cursor: "pointer",
   },
 
   variants: {
@@ -30,6 +36,8 @@ export const buttonStyle = recipe({
       },
       text: {
         border: "none",
+
+        backgroundColor: colors.white,
 
         fontWeight: "400",
       },
