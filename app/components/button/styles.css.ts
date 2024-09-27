@@ -21,6 +21,12 @@ export const buttonStyle = recipe({
     cursor: "pointer",
 
     transition: "ease-in-out 0.2s",
+
+    ":disabled": {
+      opacity: "0.64",
+
+      pointerEvents: "none",
+    },
   },
 
   variants: {
@@ -31,12 +37,6 @@ export const buttonStyle = recipe({
 
         "&:hover": {
           backgroundColor: colors.blue_200,
-        },
-
-        "&:disabled": {
-          opacity: "0.64",
-
-          pointerEvents: "none",
         },
       },
       secondary: {
@@ -49,12 +49,6 @@ export const buttonStyle = recipe({
         "&:hover": {
           backgroundColor: colors.gray_200,
         },
-
-        "&:disabled": {
-          opacity: "0.64",
-
-          pointerEvents: "none",
-        },
       },
       text: {
         border: "none",
@@ -65,12 +59,6 @@ export const buttonStyle = recipe({
 
         "&:hover": {
           color: colors.blue_100,
-        },
-
-        "&:disabled": {
-          opacity: "0.64",
-
-          pointerEvents: "none",
         },
       },
     },
