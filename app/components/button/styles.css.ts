@@ -19,13 +19,25 @@ export const buttonStyle = recipe({
     whiteSpace: "nowrap",
 
     cursor: "pointer",
+
+    transition: "ease-in-out 0.2s",
   },
 
   variants: {
     type: {
       primary: {
-        backgroundColor: colors.primary_blue,
+        backgroundColor: colors.blue_100,
         color: colors.white,
+
+        "&:hover": {
+          backgroundColor: colors.blue_200,
+        },
+
+        "&:disabled": {
+          opacity: "0.64",
+
+          pointerEvents: "none",
+        },
       },
       secondary: {
         border: "1px solid rgba(105, 106, 117, 0.30)",
@@ -33,6 +45,16 @@ export const buttonStyle = recipe({
 
         backgroundColor: colors.white,
         color: colors.gray_500,
+
+        "&:hover": {
+          backgroundColor: colors.gray_200,
+        },
+
+        "&:disabled": {
+          opacity: "0.64",
+
+          pointerEvents: "none",
+        },
       },
       text: {
         border: "none",
@@ -40,6 +62,16 @@ export const buttonStyle = recipe({
         backgroundColor: colors.white,
 
         fontWeight: "400",
+
+        "&:hover": {
+          color: colors.blue_100,
+        },
+
+        "&:disabled": {
+          opacity: "0.64",
+
+          pointerEvents: "none",
+        },
       },
     },
   },
