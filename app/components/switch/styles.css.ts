@@ -4,9 +4,12 @@ import sunny from "../../../public/assets/sunny.svg";
 
 export const backgroundStyle = recipe({
   base: {
+    position: "relative",
+
     width: "4.8rem",
     height: "2.8rem",
 
+    flexShrink: "0",
     padding: "0.2rem",
 
     borderRadius: "10rem",
@@ -30,18 +33,23 @@ export const backgroundStyle = recipe({
 
 export const switchStyle = recipe({
   base: {
-    width: "3rem",
-    height: "3rem",
+    position: "absolute",
 
-    margin: "auto 0",
+    width: "2.4rem",
+    height: "2.4rem",
 
+    margin: "0",
+
+    top: "0.3rem",
+
+    backgroundColor: "transparent",
     backgroundImage: `url(${sunny})`,
     backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
 
     transition: "ease-in-out 0.2s",
 
-    transform: "translateX(1.8rem)",
+    transform: "translateX(2rem)",
 
     appearance: "none",
 

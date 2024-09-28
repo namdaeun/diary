@@ -2,17 +2,17 @@ import { ComponentPropsWithRef } from "react";
 import { backgroundStyle, switchStyle } from "./styles.css";
 
 interface SwitchProps extends ComponentPropsWithRef<"input"> {
-  isLightMode: boolean;
+  mode: "dark" | "light";
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Switch = ({ isLightMode, onChange, ...props }: SwitchProps) => {
+const Switch = ({ mode, onChange, ...props }: SwitchProps) => {
   return (
-    <div className={backgroundStyle({ mode: isLightMode ? "light" : "dark" })}>
+    <div className={backgroundStyle({ mode: mode })}>
       <input
         type="checkbox"
         role="switch"
-        checked={isLightMode}
+        checked={mode === "light"}
         onChange={onChange}
         aria-label="switch"
         aria-checked="true"
