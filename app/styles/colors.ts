@@ -12,6 +12,7 @@ export const colors = {
 
   blue_100: "#4B6BFB",
   blue_200: "#3A57E8",
+  blue_900: "#242535",
 
   navy_bg: "#242535",
 };
