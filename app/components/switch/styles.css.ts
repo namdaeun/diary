@@ -6,8 +6,8 @@ export const backgroundStyle = recipe({
   base: {
     position: "relative",
 
-    width: "4.8rem",
-    height: "2.8rem",
+    width: "4.4rem",
+    height: "2.4rem",
 
     flexShrink: "0",
     padding: "0.2rem",
@@ -35,8 +35,8 @@ export const switchStyle = recipe({
   base: {
     position: "absolute",
 
-    width: "2.4rem",
-    height: "2.4rem",
+    width: "2rem",
+    height: "2rem",
 
     margin: "0",
 
