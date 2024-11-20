@@ -14,5 +14,5 @@ export const colors = {
   blue_200: "#3A57E8",
   blue_900: "#242535",
 
-  navy_bg: "#242535",
+  navy_bg: "#22211F",
 };
