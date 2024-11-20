@@ -4,12 +4,18 @@ import darkLogo from "../../../public/assets/image/img_logo_dark.png";
 import lightLogo from "../../../public/assets/image/img_logo_light.png";
 import Switch from "../switch/Switch";
 import {
+  gapStyle,
   headerStyle,
   imageStyle,
   linkStyle,
   menuSectionStyle,
   menuStyle,
 } from "./styles.css";
+
+const logos = {
+  [Theme.light]: lightLogo,
+  [Theme.dark]: darkLogo,
+};
 
 const Header = () => {
   const [theme, setTheme] = useTheme();
@@ -18,15 +24,15 @@ const Header = () => {
     setTheme((prev) => (prev === Theme.light ? Theme.dark : Theme.light));
   };
 
+  const currentTheme = theme ?? Theme.dark;
+
   return (
     <header className={headerStyle}>
-      {theme === Theme.light ? (
-        <img src={lightLogo} className={imageStyle} alt="로고" />
-      ) : (
-        <img src={darkLogo} className={imageStyle} alt="로고" />
-      )}
+      <Link to="/">
+        <img src={logos[currentTheme]} className={imageStyle} alt="로고" />
+      </Link>
 
-      <>
+      <div className={gapStyle}>
         <ul className={menuSectionStyle}>
           <li className={menuStyle}>
             <Link to="/about" className={linkStyle}>
@@ -54,7 +60,7 @@ const Header = () => {
           mode={theme === Theme.light ? "light" : "dark"}
           onChange={toggleTheme}
         />
-      </>
+      </div>
     </header>
   );
 };
