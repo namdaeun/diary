@@ -23,7 +23,7 @@ export const lightTheme = createTheme(themeColor, {
 export const darkTheme = createTheme(themeColor, {
   color: {
     font: colors.white,
-    background: colors.blue_900,
+    background: colors.navy_bg,
   },
 });
 
@@ -31,7 +31,6 @@ export const vars = { themeColor };
 
 globalStyle("body, *", {
   width: "100%",
-  height: "100dvh",
 
   boxSizing: "border-box",
 
