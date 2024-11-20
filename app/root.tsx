@@ -27,7 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link
           rel="icon"
           type="image/svg+xml"
-          href="/public/assets/favicon.svg"
+          href="/public/assets/icon/ic_favicon.svg"
         />
         <Meta />
         <Links />
