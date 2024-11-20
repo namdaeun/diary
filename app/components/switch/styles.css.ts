@@ -1,6 +1,6 @@
 import { recipe } from "@vanilla-extract/recipes";
 import { colors } from "~/styles/colors";
-import sunny from "../../../public/assets/sunny.svg";
+import sunny from "../../../public/assets/ic_sunny.svg";
 
 export const backgroundStyle = recipe({
   base: {
