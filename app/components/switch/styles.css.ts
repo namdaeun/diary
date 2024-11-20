@@ -25,7 +25,7 @@ export const backgroundStyle = recipe({
         background: colors.navy_bg,
       },
       dark: {
-        background: colors.blue_200,
+        background: colors.blue_500,
       },
     },
   },

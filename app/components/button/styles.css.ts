@@ -32,7 +32,7 @@ export const buttonStyle = recipe({
   variants: {
     type: {
       primary: {
-        backgroundColor: colors.blue_100,
+        backgroundColor: colors.blue_900,
         color: colors.white,
 
         "&:hover": {
@@ -58,7 +58,7 @@ export const buttonStyle = recipe({
         fontWeight: "400",
 
         "&:hover": {
-          color: colors.blue_100,
+          color: colors.blue_900,
         },
       },
     },
