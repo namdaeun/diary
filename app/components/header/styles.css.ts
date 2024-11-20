@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { vars } from "~/styles/global.css";
 
 export const headerStyle = style({
   display: "flex",
@@ -69,7 +70,7 @@ export const linkStyle = style({
       left: "auto",
       width: "0",
 
-      borderBottom: "1.5px solid white",
+      borderBottom: `1.5px solid ${vars.themeColor.color.font}`,
       transition: "width 250ms ease-out",
     },
 
