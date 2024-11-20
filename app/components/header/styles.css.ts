@@ -13,8 +13,8 @@ export const headerStyle = style({
 });
 
 export const imageStyle = style({
-  width: "15rem",
-  height: "4rem",
+  width: "8.8rem",
+  height: "2.4rem",
 
   objectFit: "cover",
 
