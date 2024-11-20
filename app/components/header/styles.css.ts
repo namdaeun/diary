@@ -21,6 +21,15 @@ export const imageStyle = style({
   cursor: "pointer",
 });
 
+export const gapStyle = style({
+  display: "flex",
+
+  justifyContent: "center",
+  alignItems: "center",
+
+  gap: "10rem",
+});
+
 export const menuSectionStyle = style({
   display: "flex",
 
@@ -62,6 +71,7 @@ export const linkStyle = style({
       borderBottom: "1.5px solid white",
       transition: "width 250ms ease-out",
     },
+
     "&:hover::after": {
       width: "100%;",
     },
