@@ -15,8 +15,8 @@ export const headerStyle = style({
 });
 
 export const imageStyle = style({
-  width: "8.8rem",
-  height: "2.4rem",
+  width: "13rem",
+  height: "3.5rem",
 
   objectFit: "cover",
 
@@ -59,6 +59,7 @@ export const linkStyle = style({
   textDecoration: "none",
 
   fontWeight: 300,
+  fontSize: "1.5rem",
 
   selectors: {
     "&::after": {

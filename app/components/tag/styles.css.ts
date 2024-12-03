@@ -30,7 +30,7 @@ export const backgroundStyle = recipe({
 
 export const textStyle = recipe({
   base: {
-    fontSize: "14px",
+    fontSize: "1rem",
     fontWeight: 500,
 
     backgroundColor: "transparent",

@@ -13,12 +13,12 @@ enum Theme {
   light = "light",
 }
 
-type ThemeContextType = [Theme | null, Dispatch<SetStateAction<Theme | null>>];
+type ThemeContextType = [Theme, Dispatch<SetStateAction<Theme>>];
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeContext = createContext<ThemeContextType>([Theme.dark, () => {}]);
 
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<Theme | null>(Theme.dark);
+  const [theme, setTheme] = useState<Theme>(Theme.dark);
 
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
