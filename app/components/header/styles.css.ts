@@ -4,6 +4,9 @@ import { vars } from "~/styles/global.css";
 export const headerStyle = style({
   display: "flex",
   position: "fixed",
+  top: 0,
+  left: 0,
+  zIndex: 1000,
 
   width: "100%",
   height: "5rem",

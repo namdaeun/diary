@@ -10,6 +10,7 @@ import "~/styles/fonts/fonts.css";
 import "~/styles/global.css";
 import "~/styles/reset.css";
 import { ThemeProvider } from "./context/ThemeProvider";
+import Header from "~/components/header/Header";
 
 export const links: LinksFunction = () => [
   {
@@ -29,10 +30,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
           type="image/svg+xml"
           href="/public/assets/icon/ic_favicon.svg"
         />
+        <link
+          href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+          rel="stylesheet"
+        />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body>  
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -44,6 +49,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <ThemeProvider>
+      <Header />
       <Outlet />
     </ThemeProvider>
   );

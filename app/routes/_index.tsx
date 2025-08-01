@@ -1,5 +1,4 @@
 import type { MetaFunction } from "@remix-run/node";
-import Header from "~/components/header/Header";
 import { indexStyle } from "./index.css";
 
 export const meta: MetaFunction = () => {
@@ -9,7 +8,6 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className={indexStyle}>
-      <Header />
     </div>
   );
 }
