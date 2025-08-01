@@ -11,7 +11,7 @@ export const headerStyle = style({
   width: "100%",
   height: "5rem",
 
-  padding: "1.5rem 4rem 1.5rem 10rem",
+  padding: "3rem 10rem 1.5rem 10rem",
 
   justifyContent: "space-between",
   alignItems: "center",
@@ -26,19 +26,10 @@ export const imageStyle = style({
   cursor: "pointer",
 });
 
-export const gapStyle = style({
-  display: "flex",
-
-  justifyContent: "center",
-  alignItems: "center",
-
-  gap: "10rem",
-});
-
 export const menuSectionStyle = style({
   display: "flex",
 
-  maxWidth: "24.3rem",
+  maxWidth: "15rem",
   height: "1.7rem",
 
   gap: "2.8rem",
