@@ -4,12 +4,11 @@ import darkLogo from "../../../public/assets/image/img_logo_dark.png";
 import lightLogo from "../../../public/assets/image/img_logo_light.png";
 import Switch from "../switch/Switch";
 import {
-  gapStyle,
   headerStyle,
   imageStyle,
   linkStyle,
   menuSectionStyle,
-  menuStyle,
+  menuStyle
 } from "./styles.css";
 
 const logos = {
@@ -31,8 +30,6 @@ const Header = () => {
       <Link to="/">
         <img src={logos[currentTheme]} className={imageStyle} alt="로고" />
       </Link>
-
-      <div className={gapStyle}>
         <ul className={menuSectionStyle}>
           <li className={menuStyle}>
             <Link to="/about" className={linkStyle}>
@@ -44,23 +41,11 @@ const Header = () => {
               Blog
             </Link>
           </li>
-          <li className={menuStyle}>
-            <Link to="/project" className={linkStyle}>
-              Projects
-            </Link>
-          </li>
-          <li className={menuStyle}>
-            <Link to="/contact" className={linkStyle}>
-              Contact
-            </Link>
-          </li>
         </ul>
-
-        <Switch
+      <Switch
           mode={theme === Theme.light ? "light" : "dark"}
           onChange={toggleTheme}
         />
-      </div>
     </header>
   );
 };
