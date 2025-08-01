@@ -9,6 +9,7 @@ import { Pretendard } from "./fonts/fonts.css";
 const themeColor = createThemeContract({
   color: {
     font: null,
+    subTitle: null,
     background: null,
     article_bg: null,
     border: null,
@@ -18,6 +19,7 @@ const themeColor = createThemeContract({
 export const lightTheme = createTheme(themeColor, {
   color: {
     font: colors.gray_800,
+    subTitle: colors.gray_700,
     background: colors.white,
     article_bg: colors.white,
     border: colors.gray_200,
@@ -27,6 +29,7 @@ export const lightTheme = createTheme(themeColor, {
 export const darkTheme = createTheme(themeColor, {
   color: {
     font: colors.white,
+    subTitle: colors.gray_600,
     background: colors.navy_bg,
     article_bg: colors.gray_800,
     border: colors.blue_200,
@@ -48,4 +51,8 @@ globalStyle("body, *", {
   backgroundColor: `${vars.themeColor.color.background}`,
 
   fontFamily: Pretendard,
+});
+
+globalStyle("body", {
+  paddingTop: "5rem",
 });
