@@ -10,6 +10,7 @@ import '~/styles/fonts/fonts.css';
 import '~/styles/global.css';
 import '~/styles/reset.css';
 import type { ReactNode } from 'react';
+import Footer from '~/components/footer/Footer';
 import Header from '~/components/header/Header';
 import { ThemeProvider } from './context/ThemeProvider';
 
@@ -29,7 +30,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <link
           rel="icon"
           type="image/svg+xml"
-          href="/public/assets/icon/ic_favicon.svg"
+          href="/assets/icon/ic_favicon.svg"
         />
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
@@ -50,8 +51,15 @@ export function Layout({ children }: { children: ReactNode }) {
 export default function App() {
   return (
     <ThemeProvider>
-      <Header />
-      <Outlet />
+      <div
+        style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
+      >
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </ThemeProvider>
   );
 }
