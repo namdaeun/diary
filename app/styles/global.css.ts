@@ -2,9 +2,9 @@ import {
   createTheme,
   createThemeContract,
   globalStyle,
-} from "@vanilla-extract/css";
-import { colors } from "./colors";
-import { Pretendard } from "./fonts/fonts.css";
+} from '@vanilla-extract/css';
+import { colors } from './colors';
+import { Pretendard } from './fonts/fonts.css';
 
 const themeColor = createThemeContract({
   color: {
@@ -38,21 +38,23 @@ export const darkTheme = createTheme(themeColor, {
 
 export const vars = { themeColor };
 
-globalStyle("html", {
-  fontSize: "62.5%",
+globalStyle(`.${lightTheme}, .${darkTheme}`, {
+  backgroundColor: vars.themeColor.color.background,
+  minHeight: '100vh',
 });
 
-globalStyle("body, *", {
-  width: "100%",
+globalStyle('html', {
+  fontSize: '62.5%',
+});
 
-  boxSizing: "border-box",
-
+globalStyle('*', {
+  width: '100%',
+  boxSizing: 'border-box',
   color: `${vars.themeColor.color.font}`,
-  backgroundColor: `${vars.themeColor.color.background}`,
-
   fontFamily: Pretendard,
 });
 
-globalStyle("body", {
-  paddingTop: "5rem",
+globalStyle('body', {
+  paddingTop: '5rem',
+  scrollBehavior: 'smooth',
 });
