@@ -33,11 +33,19 @@ export const PROJECTS = [
       'React',
       'TypeScript',
       'Next.js',
-      'Tailwind',
+      'Tailwindcss',
       'Vanilla Extract',
       'Figma',
       'Git',
     ],
+    githubUrl: 'https://github.com/sopt-makers/sopt-makers',
+  },
+  {
+    id: 4,
+    name: 'Coaster',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
+    skills: ['React', 'TypeScript', 'Emotion CSS', 'ky', 'Figma', 'Git'],
     githubUrl: 'https://github.com/sopt-makers/sopt-makers',
   },
 ];
