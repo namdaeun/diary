@@ -2,13 +2,18 @@ import { style } from '@vanilla-extract/css';
 import { colors } from '~/styles/colors';
 import { vars } from '~/styles/global.css';
 
+export const pageWrapper = style({
+  display: 'flex',
+  flexDirection: 'column',
+});
+
 export const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   marginTop: '5rem',
-  padding: '9.6rem 11rem',
+  padding: '9.6rem 8rem',
   height: 'calc(100vh - 5rem)',
   gap: '4.8rem',
 });

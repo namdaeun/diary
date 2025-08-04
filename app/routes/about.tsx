@@ -1,4 +1,6 @@
-import Projects from '~/views/AboutPage/components/Projects/Projects';
+import ExperienceSection from '~/views/AboutPage/components/ExperienceSection/ExperienceSection';
+import ProjectSection from '~/views/AboutPage/components/ProjectSection/ProjectSection';
+import ReviewSection from '~/views/AboutPage/components/ReviewSection/ReviewSection';
 import * as S from './about.css';
 
 const LINKS = {
@@ -13,7 +15,7 @@ const About = () => {
   };
 
   return (
-    <>
+    <div className={S.pageWrapper}>
       <div className={S.wrapper}>
         <div className={S.titleWrapper}>
           <h1 className={S.title}>안녕하세요,</h1>
@@ -47,8 +49,10 @@ const About = () => {
           </button>
         </div>
       </div>
-      <Projects />
-    </>
+      <ProjectSection />
+      <ExperienceSection />
+      <ReviewSection />
+    </div>
   );
 };
 

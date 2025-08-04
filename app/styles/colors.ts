@@ -12,10 +12,13 @@ export const colors = {
 
   blue_100: 'rgba(75, 107, 251, 0.05)',
   blue_200: '#242535',
+  blue_400: '#1F2937',
   blue_500: '#3A57E8',
   blue_600: '#586174',
   blue_700: '#1E293B',
+  blue_800: '#111827',
   blue_900: '#4B6BFB',
 
   navy_bg: '#22211F',
+  black: '#030712',
 };
