@@ -1,18 +1,18 @@
-import { recipe } from "@vanilla-extract/recipes";
-import { colors } from "~/styles/colors";
+import { recipe } from '@vanilla-extract/recipes';
+import { colors } from '~/styles/colors';
 
 export const backgroundStyle = recipe({
   base: {
-    display: "flex",
+    display: 'flex',
 
-    padding: "0.4rem 1rem",
+    padding: '0.4rem 1rem',
 
-    width: "fit-content",
+    width: 'fit-content',
 
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
 
-    borderRadius: "0.6rem",
+    borderRadius: '0.6rem',
   },
   variants: {
     type: {
@@ -30,10 +30,10 @@ export const backgroundStyle = recipe({
 
 export const textStyle = recipe({
   base: {
-    fontSize: "1rem",
+    fontSize: '1rem',
     fontWeight: 500,
-
-    backgroundColor: "transparent",
+    whiteSpace: 'nowrap',
+    backgroundColor: 'transparent',
   },
   variants: {
     type: {

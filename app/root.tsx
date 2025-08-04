@@ -1,25 +1,26 @@
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction } from '@remix-run/node';
 import {
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
-import "~/styles/fonts/fonts.css";
-import "~/styles/global.css";
-import "~/styles/reset.css";
-import { ThemeProvider } from "./context/ThemeProvider";
-import Header from "~/components/header/Header";
+} from '@remix-run/react';
+import '~/styles/fonts/fonts.css';
+import '~/styles/global.css';
+import '~/styles/reset.css';
+import type { ReactNode } from 'react';
+import Header from '~/components/header/Header';
+import { ThemeProvider } from './context/ThemeProvider';
 
 export const links: LinksFunction = () => [
   {
-    rel: "stylesheet",
-    href: "https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css",
+    rel: 'stylesheet',
+    href: 'https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css',
   },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko">
       <head>
@@ -37,7 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>  
+      <body>
         {children}
         <ScrollRestoration />
         <Scripts />
