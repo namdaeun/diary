@@ -1,24 +1,24 @@
 import Tag from '~/components/tag/Tag';
 import { PROJECTS } from '~/constants/projects';
-import SingleProject from '~/views/AboutPage/components/SingleProject/SingleProject';
+import ProjectItem from '~/views/AboutPage/components/ProjectItem/ProjectItem';
 import * as s from './styles.css';
 
-const Projects = () => {
+const ProjectSection = () => {
   return (
-    <div className={s.wrapper}>
+    <section className={s.wrapper}>
       <div className={s.titleWrapper}>
         <Tag>Projects</Tag>
-        <div className={s.description}>머시기 머시기 프로젝트들입니다.</div>
+        <p className={s.description}>머시기 머시기 프로젝트들입니다.</p>
       </div>
       {PROJECTS.map((project) => (
-        <SingleProject
+        <ProjectItem
           key={project.id}
           project={project}
           contentPosition={project.id % 2 === 0 ? 'left' : 'right'}
         />
       ))}
-    </div>
+    </section>
   );
 };
 
-export default Projects;
+export default ProjectSection;

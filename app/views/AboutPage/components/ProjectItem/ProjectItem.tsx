@@ -2,12 +2,12 @@ import Tag from '~/components/tag/Tag';
 import type { Project } from '~/views/AboutPage/types';
 import * as s from './styles.css';
 
-interface SingleProjectProps {
+interface ProjectItemProps {
   project: Project;
   contentPosition?: 'left' | 'right';
 }
 
-const Content = ({ project, contentPosition }: SingleProjectProps) => {
+const Content = ({ project, contentPosition }: ProjectItemProps) => {
   const { name, description, skills, githubUrl } = project;
   const hasLeftContent = contentPosition === 'left';
 
@@ -40,10 +40,10 @@ const Content = ({ project, contentPosition }: SingleProjectProps) => {
   );
 };
 
-const SingleProject = ({
+const ProjectItem = ({
   project,
   contentPosition = 'right',
-}: SingleProjectProps) => {
+}: ProjectItemProps) => {
   const { name } = project;
   const hasRightContent = contentPosition === 'right';
 
@@ -72,4 +72,4 @@ const SingleProject = ({
   );
 };
 
-export default SingleProject;
+export default ProjectItem;

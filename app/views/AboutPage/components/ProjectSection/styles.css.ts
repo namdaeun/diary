@@ -7,7 +7,7 @@ export const wrapper = style({
   justifyContent: 'center',
   alignItems: 'center',
   gap: '4.8rem',
-  padding: '0rem 8rem 9.6rem 8rem',
+  padding: '0 14.4rem 9.6rem 14.4rem',
 });
 
 export const titleWrapper = style({
@@ -25,5 +25,4 @@ export const description = style({
   fontSize: '2rem',
   fontWeight: 400,
   color: colors.gray_600,
-  marginBottom: '3.2rem',
 });

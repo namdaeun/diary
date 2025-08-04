@@ -3,9 +3,11 @@ import { colors } from '~/styles/colors';
 
 export const wrapper = style({
   display: 'flex',
+  boxShadow: '0 25px 25px 0 rgba(0, 0, 0, 0.15)',
 });
 
 export const imageContainer = style({
+  width: '50%',
   padding: '4.8rem',
   backgroundColor: colors.blue_600,
 });
@@ -20,6 +22,7 @@ export const rightSide = style({
 
 export const contentContainer = style({
   display: 'flex',
+  width: '50%',
   flexDirection: 'column',
   padding: '4.8rem',
   gap: '2.4rem',
@@ -30,6 +33,7 @@ export const image = style({
   width: '48rem',
   height: '48rem',
   objectFit: 'cover',
+  borderRadius: '1.2rem',
 });
 
 export const title = style({
@@ -51,6 +55,7 @@ export const description = style({
 export const tagList = style({
   display: 'flex',
   gap: '0.8rem',
+  flexWrap: 'wrap',
 });
 
 export const githubIcon = style({
