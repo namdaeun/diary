@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { breakpoints } from '~/styles/breakpoints';
 import { colors } from '~/styles/colors';
 import { vars } from '~/styles/global.css';
 
@@ -16,6 +17,19 @@ export const wrapper = style({
   padding: '9.6rem 8rem',
   height: 'calc(100vh - 5rem)',
   gap: '4.8rem',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      padding: '4rem 2rem',
+      gap: '3.2rem',
+      height: 'auto',
+      minHeight: 'calc(100vh - 5rem)',
+    },
+    [breakpoints.MOBILE_MAX]: {
+      padding: '3rem 1.6rem',
+      gap: '2.4rem',
+    },
+  },
 });
 
 // export const cursor = style({
@@ -40,11 +54,26 @@ export const titleWrapper = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '0.8rem',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      gap: '0.4rem',
+    },
+  },
 });
 
 export const title = style({
   fontSize: '6rem',
   fontWeight: '700',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      fontSize: '4rem',
+    },
+    [breakpoints.MOBILE_MAX]: {
+      fontSize: '3.2rem',
+    },
+  },
 });
 
 export const subTitle = style({
@@ -52,6 +81,15 @@ export const subTitle = style({
   fontWeight: 'bold',
   lineHeight: '1.5',
   wordBreak: 'keep-all',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      fontSize: '2.8rem',
+    },
+    [breakpoints.MOBILE_MAX]: {
+      fontSize: '2.4rem',
+    },
+  },
 });
 
 export const locationWrapper = style({
@@ -59,18 +97,37 @@ export const locationWrapper = style({
   gap: '0.8rem',
   justifyContent: 'flex-start',
   alignItems: 'center',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      justifyContent: 'center',
+    },
+  },
 });
 
 export const icon = style({
   fontSize: '2.4rem',
   flexShrink: 0,
   width: '2.4rem',
+
+  '@media': {
+    [breakpoints.MOBILE_MAX]: {
+      fontSize: '2rem',
+      width: '2rem',
+    },
+  },
 });
 
 export const location = style({
   fontSize: '1.6rem',
   fontWeight: '400',
   color: vars.themeColor.color.subTitle,
+
+  '@media': {
+    [breakpoints.MOBILE_MAX]: {
+      fontSize: '1.4rem',
+    },
+  },
 });
 
 export const contactWrapper = style({
@@ -91,6 +148,13 @@ export const buttonIcon = style({
   fontSize: '3.2rem',
   width: '2.4rem',
   transition: 'color 0.3s ease',
+
+  '@media': {
+    [breakpoints.MOBILE_MAX]: {
+      fontSize: '2.8rem',
+      width: '2rem',
+    },
+  },
 
   selectors: {
     [`${button}:hover &`]: {

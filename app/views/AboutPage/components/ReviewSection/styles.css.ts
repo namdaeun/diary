@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { breakpoints } from '~/styles/breakpoints';
 import { colors } from '~/styles/colors';
 
 export const wrapper = style({
@@ -7,6 +8,17 @@ export const wrapper = style({
   alignItems: 'center',
   gap: '4.8rem',
   padding: '4.8rem 8rem',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      padding: '3.2rem 4rem',
+      gap: '3.2rem',
+    },
+    [breakpoints.MOBILE_MAX]: {
+      padding: '2.4rem 2rem',
+      gap: '2.4rem',
+    },
+  },
 });
 
 export const reviewList = style({
@@ -15,6 +27,18 @@ export const reviewList = style({
   alignItems: 'center',
   justifyContent: 'center',
   gap: '2.4rem',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      flexDirection: 'column',
+      gap: '2rem',
+      width: '100%',
+      alignItems: 'center',
+    },
+    [breakpoints.MOBILE_MAX]: {
+      gap: '1.6rem',
+    },
+  },
 });
 
 export const descriptionLayout = style({
@@ -23,6 +47,15 @@ export const descriptionLayout = style({
   alignItems: 'center',
   justifyContent: 'center',
   gap: '1.6rem',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      gap: '1.2rem',
+    },
+    [breakpoints.MOBILE_MAX]: {
+      gap: '0.8rem',
+    },
+  },
 });
 
 export const description = style({
@@ -32,4 +65,15 @@ export const description = style({
   color: colors.gray_600,
   lineHeight: '2.4rem',
   wordBreak: 'keep-all',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      fontSize: '1.4rem',
+      lineHeight: '2rem',
+    },
+    [breakpoints.MOBILE_MAX]: {
+      fontSize: '1.3rem',
+      lineHeight: '1.8rem',
+    },
+  },
 });
