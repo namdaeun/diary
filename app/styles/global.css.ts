@@ -57,4 +57,5 @@ globalStyle('*', {
 globalStyle('body', {
   paddingTop: '5rem',
   scrollBehavior: 'smooth',
+  scrollSnapType: 'y proximity',
 });

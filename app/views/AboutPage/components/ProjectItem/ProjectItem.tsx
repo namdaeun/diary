@@ -1,3 +1,5 @@
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import Tag from '~/components/tag/Tag';
 import type { Project } from '~/views/AboutPage/types';
 import * as s from './styles.css';
@@ -46,9 +48,23 @@ const ProjectItem = ({
 }: ProjectItemProps) => {
   const { name } = project;
   const hasRightContent = contentPosition === 'right';
+  const ref = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  const x = useTransform(
+    scrollYProgress,
+    [0, 0.3, 1],
+    [hasRightContent ? 300 : -300, 0, 0],
+  );
+
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 1]);
 
   return (
-    <section className={s.wrapper}>
+    <motion.section ref={ref} className={s.wrapper} style={{ x, opacity }}>
       {!hasRightContent && (
         <Content project={project} contentPosition={contentPosition} />
       )}
@@ -68,7 +84,7 @@ const ProjectItem = ({
       {hasRightContent && (
         <Content project={project} contentPosition={contentPosition} />
       )}
-    </section>
+    </motion.section>
   );
 };
 

@@ -18,7 +18,7 @@ export const wrapper = style({
 export const imageContainer = style({
   width: '50%',
   padding: '4.8rem',
-  backgroundColor: colors.blue_600,
+  backgroundColor: colors.gray_500,
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -35,7 +35,7 @@ export const leftSide = style({
   borderRadius: '1.2rem 0 0 1.2rem',
 
   '@media': {
-    'screen and (min-width: 769px)': {
+    [breakpoints.TABLET_MAX]: {
       borderRadius: '1.2rem 1.2rem 0 0',
     },
   },
@@ -45,7 +45,7 @@ export const rightSide = style({
   borderRadius: '0 1.2rem 1.2rem 0',
 
   '@media': {
-    'screen and (min-width: 769px)': {
+    [breakpoints.TABLET_MAX]: {
       borderRadius: '0 0 1.2rem 1.2rem',
     },
   },
@@ -57,7 +57,7 @@ export const contentContainer = style({
   flexDirection: 'column',
   padding: '4.8rem',
   gap: '2.4rem',
-  backgroundColor: colors.blue_700,
+  backgroundColor: colors.black,
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -96,7 +96,6 @@ export const title = style({
   fontSize: '2rem',
   fontWeight: 600,
   color: colors.white,
-  backgroundColor: colors.blue_700,
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -113,7 +112,6 @@ export const description = style({
   fontSize: '1.6rem',
   fontWeight: 400,
   color: colors.gray_600,
-  backgroundColor: colors.blue_700,
   wordBreak: 'keep-all',
   lineHeight: '1.5',
 

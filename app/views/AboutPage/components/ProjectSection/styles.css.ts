@@ -8,15 +8,17 @@ export const wrapper = style({
   justifyContent: 'center',
   alignItems: 'center',
   gap: '4.8rem',
-  padding: '0 14.4rem 9.6rem 14.4rem',
+  padding: '9.6rem 14.4rem',
+  minHeight: '100vh',
+  scrollSnapAlign: 'start',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      padding: '0 4rem 6rem 4rem',
+      padding: '6rem 4rem',
       gap: '3.2rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      padding: '0 2rem 4rem 2rem',
+      padding: '4rem 2rem',
       gap: '2.4rem',
     },
   },

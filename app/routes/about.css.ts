@@ -17,6 +17,7 @@ export const wrapper = style({
   padding: '9.6rem 8rem',
   height: 'calc(100vh - 5rem)',
   gap: '4.8rem',
+  scrollSnapAlign: 'start',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {

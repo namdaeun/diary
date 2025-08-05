@@ -8,6 +8,8 @@ export const wrapper = style({
   gap: '4.8rem',
   padding: '9.6rem 20.2rem',
   backgroundColor: colors.blue_400,
+  minHeight: '100vh',
+  scrollSnapAlign: 'start',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
