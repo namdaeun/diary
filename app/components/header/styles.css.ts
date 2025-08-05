@@ -59,7 +59,7 @@ export const linkStyle = style({
     },
 
     '&:hover::after': {
-      width: 'calc(100% - 2rem)', // 전체 너비에서 좌우 padding 제외
+      width: 'calc(100% - 2rem)',
     },
   },
 });

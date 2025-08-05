@@ -33,24 +33,6 @@ export const wrapper = style({
   },
 });
 
-// export const cursor = style({
-//   position: 'absolute',
-//   width: '12rem',
-//   height: '12rem',
-//   borderRadius: '50%',
-//   background: `
-//   radial-gradient(
-//     circle,
-//     rgba(59, 130, 246, 0.50) 0%,
-//     rgba(59, 130, 246, 0.35) 20%,
-//     rgba(59, 130, 246, 0.15) 45%,
-//     rgba(59, 130, 246, 0.00) 70%
-//   )
-// `,
-//   pointerEvents: 'none',
-//   transform: 'translate(-50%, -50%)',
-// });
-
 export const titleWrapper = style({
   display: 'flex',
   flexDirection: 'column',
