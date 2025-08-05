@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react';
 import { Theme, useTheme } from '~/context/ThemeProvider';
+import lightLogo from '../../../public/assets/image/img_logo.png';
 import darkLogo from '../../../public/assets/image/img_logo_dark.png';
-import lightLogo from '../../../public/assets/image/img_logo_light.png';
 import * as s from './styles.css';
 
 const logos = {
