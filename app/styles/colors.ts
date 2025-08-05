@@ -1,10 +1,10 @@
 export const colors = {
-  white: '#F9FAFB',
+  white: '#F3F3F3',
   gray_100: '#F4F4F5',
   gray_200: '#E8E8EA',
   gray_300: '#BABABF',
   gray_400: '#A1A1AA',
-  gray_500: '#696A75',
+  gray_500: '#606060',
   gray_600: '#D1D5DB',
   gray_700: '#374151',
   gray_800: '#181A2A',
@@ -17,8 +17,8 @@ export const colors = {
   blue_600: '#586174',
   blue_700: '#1E293B',
   blue_800: '#111827',
-  blue_900: '#4B6BFB',
+  blue_900: '#2429AF',
 
   navy_bg: '#22211F',
-  black: '#030712',
+  black: '#181717',
 };
