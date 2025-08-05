@@ -1,9 +1,9 @@
-import { ComponentPropsWithRef } from "react";
-import { backgroundStyle, switchStyle } from "./styles.css";
+import type { ChangeEvent, ComponentPropsWithRef } from 'react';
+import { backgroundStyle, switchStyle } from './styles.css';
 
-interface SwitchProps extends ComponentPropsWithRef<"input"> {
-  mode: "dark" | "light";
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+interface SwitchProps extends ComponentPropsWithRef<'input'> {
+  mode: 'dark' | 'light';
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Switch = ({ mode, onChange, ...props }: SwitchProps) => {
@@ -12,7 +12,7 @@ const Switch = ({ mode, onChange, ...props }: SwitchProps) => {
       <input
         type="checkbox"
         role="switch"
-        checked={mode === "light"}
+        checked={mode === 'light'}
         onChange={onChange}
         aria-label="switch"
         aria-checked="true"
