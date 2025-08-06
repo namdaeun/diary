@@ -6,8 +6,7 @@ import { vars } from '~/styles/global.css';
 export const pageWrapper = style({
   display: 'flex',
   flexDirection: 'column',
-  overflowX: 'hidden',
-  overflowY: 'auto',
+  overflow: 'hidden',
 });
 
 export const wrapper = style({
@@ -17,9 +16,10 @@ export const wrapper = style({
   justifyContent: 'center',
   marginTop: '5rem',
   padding: '9.6rem 8rem',
-  height: 'calc(100vh - 5rem)',
+  height: 'calc(100vh - 6.65rem)',
   gap: '4.8rem',
   scrollSnapAlign: 'start',
+  // overflowY: 'hidden',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
