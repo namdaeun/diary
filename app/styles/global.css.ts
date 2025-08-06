@@ -10,6 +10,7 @@ const themeColor = createThemeContract({
   color: {
     font: null,
     subTitle: null,
+    description: null,
     background: null,
     article_bg: null,
     border: null,
@@ -18,8 +19,9 @@ const themeColor = createThemeContract({
 
 export const lightTheme = createTheme(themeColor, {
   color: {
-    font: colors.gray_800,
+    font: colors.black,
     subTitle: colors.gray_700,
+    description: colors.gray_800,
     background: colors.white,
     article_bg: colors.white,
     border: colors.gray_200,
@@ -30,6 +32,7 @@ export const darkTheme = createTheme(themeColor, {
   color: {
     font: colors.white,
     subTitle: colors.gray_600,
+    description: colors.gray_600,
     background: colors.navy_bg,
     article_bg: colors.gray_800,
     border: colors.blue_200,
@@ -57,5 +60,4 @@ globalStyle('*', {
 globalStyle('body', {
   paddingTop: '5rem',
   scrollBehavior: 'smooth',
-  scrollSnapType: 'y proximity',
 });

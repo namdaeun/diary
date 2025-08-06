@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css';
 import { breakpoints } from '~/styles/breakpoints';
 import { colors } from '~/styles/colors';
+import { vars } from '~/styles/global.css';
 
 export const wrapper = style({
   display: 'flex',
@@ -17,8 +18,12 @@ export const wrapper = style({
 
 export const imageContainer = style({
   width: '50%',
-  padding: '4.8rem',
-  backgroundColor: colors.gray_500,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  overflow: 'hidden',
+  padding: '2.4rem',
+  backgroundColor: vars.themeColor.color.article_bg,
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -57,7 +62,7 @@ export const contentContainer = style({
   flexDirection: 'column',
   padding: '4.8rem',
   gap: '2.4rem',
-  backgroundColor: colors.black,
+  backgroundColor: vars.themeColor.color.background,
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -73,8 +78,8 @@ export const contentContainer = style({
 });
 
 export const image = style({
-  width: '48rem',
-  height: '48rem',
+  width: '100%',
+  height: '100%',
   objectFit: 'cover',
   borderRadius: '1.2rem',
 
@@ -95,7 +100,7 @@ export const image = style({
 export const title = style({
   fontSize: '2rem',
   fontWeight: 600,
-  color: colors.white,
+  color: vars.themeColor.color.font,
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -111,7 +116,7 @@ export const title = style({
 export const description = style({
   fontSize: '1.6rem',
   fontWeight: 400,
-  color: colors.gray_600,
+  color: vars.themeColor.color.description,
   wordBreak: 'keep-all',
   lineHeight: '1.5',
 
