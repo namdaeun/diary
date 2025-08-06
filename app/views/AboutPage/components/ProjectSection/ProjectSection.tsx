@@ -16,7 +16,9 @@ const ProjectSection = () => {
     >
       <motion.div className={s.titleWrapper} variants={titleVariants}>
         <Tag>Projects</Tag>
-        <p className={s.description}>머시기 머시기 프로젝트들입니다.</p>
+        <p className={s.description}>
+          제가 작업한 프로젝트 중 일부를 소개할게요.
+        </p>
       </motion.div>
       {PROJECTS.map((project) => (
         <ProjectItem

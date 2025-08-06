@@ -16,9 +16,7 @@ const ExperienceSection = () => {
     >
       <motion.div className={s.titleWrapper} variants={titleVariants}>
         <Tag>Experience</Tag>
-        <p className={s.description}>
-          Here is a quick summary of my most recent experiences:
-        </p>
+        <p className={s.description}>최근 경험들을 간단히 정리했어요.</p>
       </motion.div>
       <motion.div className={s.experienceList}>
         {EXPERIENCES.map((experience) => (

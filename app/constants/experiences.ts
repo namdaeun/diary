@@ -45,8 +45,8 @@ export const EXPERIENCES = [
     company: 'makers 36기',
     position: 'Admin Team Frontend Developer',
     description: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'SOPT의 공홈과, 내부 어드민 시스템, 리크루팅 지원서 유지 및 보수',
+      '2주 단위의 애자일 스프린트를 통한 프로젝트 진행',
     ],
     startDate: '03.2025',
     endDate: '06.2025',

@@ -12,6 +12,7 @@ const LINKS = {
   GITHUB: 'https://github.com/namdaeun',
   LINKEDIN: 'https://www.linkedin.com/in/skaekdms/',
   EMAIL: 'mailto:nde40345@gmail.com',
+  BLOG: 'https://velog.io/@namdaeun/posts',
 };
 
 const About = () => {
@@ -51,6 +52,13 @@ const About = () => {
             type="button"
           >
             <i className={`ri-mail-line ${S.buttonIcon}`} />
+          </button>
+          <button
+            className={S.button}
+            onClick={() => handleClick(LINKS.BLOG)}
+            type="button"
+          >
+            <i className={`ri-blogger-line ${S.buttonIcon}`} />
           </button>
         </div>
       </div>

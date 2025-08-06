@@ -29,7 +29,7 @@ const Footer = () => {
           <ul className={s.linkList}>
             <li className={s.linkItem}>
               <a
-                href="https://github.com/dareun-nam"
+                href="https://github.com/namdaeun"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={s.socialLink}
@@ -38,17 +38,7 @@ const Footer = () => {
               </a>
             </li>
             <li className={s.linkItem}>
-              <a
-                href="https://velog.io/@dareun_nam/posts"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={s.socialLink}
-              >
-                <i className={`ri-blogger-fill ${s.socialLinkIcon}`} />
-              </a>
-            </li>
-            <li className={s.linkItem}>
-              <a href="mailto:your.email@example.com" className={s.socialLink}>
+              <a href="mailto:nde40345@gmail.com" className={s.socialLink}>
                 <i className={`ri-mail-fill ${s.socialLinkIcon}`} />
               </a>
             </li>

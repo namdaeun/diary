@@ -6,7 +6,7 @@ export const PROJECTS = [
   {
     id: 1,
     name: 'Tiki',
-    description: '',
+    description: 'Web FE 개발 담당',
     skills: [
       'React',
       'TypeScript',
@@ -23,8 +23,7 @@ export const PROJECTS = [
   {
     id: 2,
     name: 'Mile',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
+    description: 'Web FE 개발 담당',
     skills: ['React', 'TypeScript', 'Styled-components', 'Figma', 'Git'],
     imageUrl: mileImage,
     githubUrl: 'https://github.com/Mile-Writings/Mile-Client',
@@ -32,8 +31,7 @@ export const PROJECTS = [
   {
     id: 3,
     name: 'Coaster',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
+    description: 'Web FE 개발 담당',
     skills: ['React', 'TypeScript', 'Emotion CSS', 'ky', 'Figma', 'Git'],
     imageUrl: coasterImage,
     githubUrl: 'https://github.com/Coastee/COASTER-Client',
