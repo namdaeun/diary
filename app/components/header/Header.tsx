@@ -3,13 +3,7 @@ import { type Theme, useTheme } from 'remix-themes';
 import lightLogo from '../../../public/assets/image/img_logo.png';
 import darkLogo from '../../../public/assets/image/img_logo_dark.png';
 import Switch from '../switch/Switch';
-import {
-  headerStyle,
-  imageStyle,
-  linkStyle,
-  menuSectionStyle,
-  menuStyle,
-} from './styles.css';
+import { headerStyle, imageStyle } from './styles.css';
 
 const Header = () => {
   const [theme, setTheme] = useTheme();
@@ -39,13 +33,13 @@ const Header = () => {
           alt="다크 모드 로고"
         />
       </Link>
-      <ul className={menuSectionStyle}>
+      {/* <ul className={menuSectionStyle}>
         <li className={menuStyle}>
           <Link to="/blog" className={linkStyle}>
             Blog
           </Link>
         </li>
-      </ul>
+      </ul> */}
       <Switch
         mode={theme === 'light' ? 'light' : 'dark'}
         onChange={handleToggle}
