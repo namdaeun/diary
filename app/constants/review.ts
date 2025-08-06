@@ -1,23 +1,37 @@
 export const REVIEWS = [
   {
     id: 1,
-    name: '짱구',
-    info: 'CEMWARE 직장 동료',
+    name: '김가온',
+    info: 'Tiki 디자이너',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
+      '기술적인 제약 사항이나 구현 가능성에 대해 쉽게 설명해주어 디자이너로서 방향성을 잡기 수월했어용 !! 그리고 커뮤니케이션을 신속하게 해주어 디자인을 빨리 반영할 수 있었어요 !',
   },
   {
     id: 2,
-    name: '철수',
-    info: 'CEMWARE 직장 동료',
+    name: '임찬기',
+    info: 'makers 어드민팀 서버 개발자',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
+      '이슈 발생 시 문제 상황을 명확히 공유하고, API 관련 문제에 대해서는 상세한 스펙과 오류 내용을 체계적으로 정리해주어 백엔드 개발자로서 다은님과의 협업이 매우 원활하게 느껴졌습니다. 또한 트러블 슈팅 속도가 빨라 사용자에게 미치는 영향을 최소화하며 안정적으로 서비스 운영을 할 수 있었습니다.',
   },
   {
     id: 3,
-    name: '맹구',
-    info: 'CEMWARE 직장 동료',
+    name: '백승범',
+    info: 'CEMWARE 웹 프론트엔드 개발자',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
+      '남다은님은 또 함께 일하고 싶은 개발자입니다. 긍정적이며 사람을 편하게 대해줍니다. 그리고 자신의 생각을 잘 표현할 줄 알며 기술적 고민도 마다하지 않고 적극적으로 함께 생각하며 해결하려 노력합니다.',
+  },
+  {
+    id: 4,
+    name: '김규홍',
+    info: 'Tiki 웹 프론트엔드 개발자',
+    description:
+      '다은이는 항상 맡은 테스크에 대해서 책임감 있게 기한내에 모두 완료해내고요. 도입하고 싶은 기술이 있을때 선택의 근거를 자세하게 팀원들에게 설명해 팀원들의 기술에 대해 이해할 수 있게 해줘요. 코드리뷰를 할때는 스타일, 컨벤션 하나하나까지 꼼꼼하게 확인해줘서 팀원들이 놓친 부분들을 잘 캐치할 수 있게 해줘요.',
+  },
+  {
+    id: 5,
+    name: '정보운',
+    info: 'Tiki 웹 프론트엔드 개발자',
+    description:
+      '언니는… 아주 귀여웠습니다.. 우선 처음부터 내가 플젝은 처음인걸 알고 힘들수잇다고 다독여줫어요.. 사람들이 힘들어 속도가 나지않을때는 본인이 직접 나서서 여러운 테스크들도 가져가서 응차응차해내고 힘들텐데도 우리한테 힘든내색없이 잘 해내는 책임감이 엄청난 다은언니였습니다. 하는 대로 금방금방 팀원들과 상황공유를 잘하고 다른 팀원(나)의 못하는 실력을 이해하고 본인이 더 도와줄건없는지 항상 보살펴주는 이타심과 리더쉽을 가지고잇습니다!',
   },
 ];

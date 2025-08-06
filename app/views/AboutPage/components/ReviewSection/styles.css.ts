@@ -26,10 +26,10 @@ export const wrapper = style({
 
 export const reviewList = style({
   display: 'flex',
-  flexDirection: 'row',
+  flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  gap: '2.4rem',
+  gap: '1.2rem',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {

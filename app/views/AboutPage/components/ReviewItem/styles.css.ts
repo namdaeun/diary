@@ -1,18 +1,15 @@
 import { style } from '@vanilla-extract/css';
 import { breakpoints } from '~/styles/breakpoints';
 import { colors } from '~/styles/colors';
+import { vars } from '~/styles/global.css';
 
 export const wrapper = style({
   display: 'flex',
-  width: '37rem',
-  flexDirection: 'column',
+  width: '100%',
   alignItems: 'center',
-  justifyContent: 'center',
   gap: '2.4rem',
   padding: '4.8rem',
   borderRadius: '1.2rem',
-  backgroundColor: colors.blue_700,
-  boxShadow: '0 25px 25px 0 rgba(0, 0, 0, 0.15)',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -49,10 +46,9 @@ export const icon = style({
 export const description = style({
   fontSize: '1.6rem',
   fontWeight: 400,
-  color: colors.gray_600,
+  color: vars.themeColor.color.description,
   lineHeight: '2.4rem',
   wordBreak: 'keep-all',
-  textAlign: 'center',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -68,8 +64,9 @@ export const description = style({
 
 export const infoLayout = style({
   display: 'flex',
+  width: '30%',
   flexDirection: 'column',
-  textAlign: 'center',
+  textAlign: 'right',
   gap: '1rem',
   marginBottom: '4.8rem',
 
@@ -88,7 +85,7 @@ export const infoLayout = style({
 export const name = style({
   fontSize: '2rem',
   fontWeight: 600,
-  color: colors.white,
+  color: vars.themeColor.color.font,
   lineHeight: '2.8rem',
 
   '@media': {
@@ -106,7 +103,7 @@ export const name = style({
 export const info = style({
   fontSize: '1.4rem',
   fontWeight: 400,
-  color: colors.gray_600,
+  color: vars.themeColor.color.font,
   lineHeight: '2rem',
 
   '@media': {

@@ -5,6 +5,16 @@ import { titleVariants } from '~/styles/motion';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import * as s from './styles.css';
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 const ReviewSection = () => {
   return (
     <section className={s.wrapper}>
@@ -16,15 +26,19 @@ const ReviewSection = () => {
         viewport={{ once: true, amount: 0.8 }}
       >
         <Tag>Peer Review</Tag>
-        <p className={s.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
+        <p className={s.description}>팀원들은 저를 이렇게 평가했어요.</p>
       </motion.div>
-      <div className={s.reviewList}>
+      <motion.div
+        className={s.reviewList}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {REVIEWS.map((review, index) => (
           <ReviewItem key={review.id} review={review} index={index} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
