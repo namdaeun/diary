@@ -24,7 +24,7 @@ export const lightTheme = createTheme(themeColor, {
     description: colors.gray_800,
     background: colors.white,
     article_bg: colors.white,
-    border: colors.gray_200,
+    border: colors.gray_800,
   },
 });
 
@@ -35,7 +35,7 @@ export const darkTheme = createTheme(themeColor, {
     description: colors.gray_600,
     background: colors.navy_bg,
     article_bg: colors.gray_800,
-    border: colors.blue_200,
+    border: colors.gray_600,
   },
 });
 

@@ -30,6 +30,7 @@ export const reviewList = style({
   alignItems: 'center',
   justifyContent: 'center',
   gap: '1.2rem',
+  width: '100%',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {

@@ -9,17 +9,14 @@ export const wrapper = style({
   alignItems: 'center',
   gap: '2.4rem',
   padding: '4.8rem',
-  borderRadius: '1.2rem',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
       width: '100%',
-      maxWidth: '30rem',
       padding: '3.2rem',
       gap: '1.6rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      maxWidth: '28rem',
       padding: '2.4rem',
       gap: '1.2rem',
     },
@@ -68,16 +65,13 @@ export const infoLayout = style({
   flexDirection: 'column',
   textAlign: 'right',
   gap: '1rem',
-  marginBottom: '4.8rem',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
       gap: '0.8rem',
-      marginBottom: '3.2rem',
     },
     [breakpoints.MOBILE_MAX]: {
       gap: '0.6rem',
-      marginBottom: '2.4rem',
     },
   },
 });

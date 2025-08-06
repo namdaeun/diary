@@ -8,6 +8,7 @@ export const wrapper = style({
   boxShadow: '0 25px 25px 0 rgba(0, 0, 0, 0.15)',
   borderRadius: '1.2rem',
   overflow: 'hidden',
+  cursor: 'pointer',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -92,7 +93,9 @@ export const image = style({
       margin: '0 auto',
     },
     [breakpoints.MOBILE_MAX]: {
-      maxWidth: '24rem',
+      width: '100%',
+      height: 'auto',
+      margin: 0,
     },
   },
 });

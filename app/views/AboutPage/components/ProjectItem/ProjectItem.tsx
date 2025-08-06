@@ -46,7 +46,7 @@ const ProjectItem = ({
   project,
   contentPosition = 'right',
 }: ProjectItemProps) => {
-  const { name, imageUrl } = project;
+  const { name, imageUrl, githubUrl } = project;
   const hasRightContent = contentPosition === 'right';
   const ref = useRef<HTMLElement>(null);
 
@@ -64,7 +64,14 @@ const ProjectItem = ({
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 1]);
 
   return (
-    <motion.section ref={ref} className={s.wrapper} style={{ x, opacity }}>
+    <motion.section
+      ref={ref}
+      className={s.wrapper}
+      style={{ x, opacity }}
+      onClick={() => {
+        window.open(githubUrl, '_blank');
+      }}
+    >
       {!hasRightContent && (
         <Content project={project} contentPosition={contentPosition} />
       )}

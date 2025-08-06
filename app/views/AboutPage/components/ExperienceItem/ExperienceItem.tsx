@@ -24,7 +24,8 @@ const itemVariants: Variants = {
 };
 
 const ExperienceItem = ({ experience }: ExperienceItemProps) => {
-  const { company, position, description, startDate, endDate } = experience;
+  const { logoUrl, company, position, description, startDate, endDate } =
+    experience;
 
   return (
     <motion.article
@@ -36,11 +37,7 @@ const ExperienceItem = ({ experience }: ExperienceItemProps) => {
         transition: { duration: 0.2 },
       }}
     >
-      <img
-        src={`/assets/images/${company}.png`}
-        alt={company}
-        className={s.logo}
-      />
+      <img src={logoUrl} alt={company} className={s.logo} />
       <div className={s.contentLayout}>
         <h1 className={s.position}>{position}</h1>
         <ul className={s.descriptionList}>

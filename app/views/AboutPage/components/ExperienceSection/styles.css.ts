@@ -1,13 +1,13 @@
 import { style } from '@vanilla-extract/css';
 import { breakpoints } from '~/styles/breakpoints';
-import { colors } from '~/styles/colors';
+import { vars } from '~/styles/global.css';
 
 export const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '4.8rem',
   padding: '9.6rem 20.2rem',
-  backgroundColor: colors.blue_400,
+  backgroundColor: vars.themeColor.color.article_bg,
   minHeight: '100vh',
   scrollSnapAlign: 'start',
 
@@ -41,7 +41,7 @@ export const description = style({
   textAlign: 'center',
   fontSize: '2rem',
   fontWeight: 400,
-  color: colors.gray_600,
+  color: vars.themeColor.color.description,
 
   '@media': {
     [breakpoints.TABLET_MAX]: {

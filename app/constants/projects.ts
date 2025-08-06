@@ -18,7 +18,7 @@ export const PROJECTS = [
       'Git',
     ],
     imageUrl: tikiImage,
-    githubUrl: 'https://github.com/tiki-dev/tiki',
+    githubUrl: 'https://github.com/Team-Tiki/tiki-client',
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ export const PROJECTS = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
     skills: ['React', 'TypeScript', 'Styled-components', 'Figma', 'Git'],
     imageUrl: mileImage,
-    githubUrl: 'https://github.com/mile-dev/mile',
+    githubUrl: 'https://github.com/Mile-Writings/Mile-Client',
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ export const PROJECTS = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
     skills: ['React', 'TypeScript', 'Emotion CSS', 'ky', 'Figma', 'Git'],
-    imageUrl: coasterImage, // 임시로 같은 이미지 사용
-    githubUrl: 'https://github.com/sopt-makers/sopt-makers',
+    imageUrl: coasterImage,
+    githubUrl: 'https://github.com/Coastee/COASTER-Client',
   },
 ];
