@@ -6,6 +6,7 @@ import { vars } from '~/styles/global.css';
 export const pageWrapper = style({
   display: 'flex',
   flexDirection: 'column',
+  overflowX: 'hidden',
 });
 
 export const wrapper = style({

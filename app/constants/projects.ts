@@ -1,6 +1,3 @@
-// 다른 프로젝트 이미지들도 여기에 import 합니다.
-// import mileImage from '/public/assets/image/img_mile.png';
-// import soptMakersImage from '/public/assets/image/img_sopt_makers.png';
 import coasterImage from '/public/assets/image/img_coaster.png';
 import mileImage from '/public/assets/image/img_mile.png';
 import tikiImage from '/public/assets/image/img_tiki.png';
