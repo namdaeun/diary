@@ -1,17 +1,16 @@
 import { Link } from '@remix-run/react';
-import { Theme, useTheme } from '~/context/ThemeProvider';
+import { useTheme } from 'remix-themes';
 import lightLogo from '../../../public/assets/image/img_logo.png';
 import darkLogo from '../../../public/assets/image/img_logo_dark.png';
 import * as s from './styles.css';
 
-const logos = {
-  [Theme.light]: lightLogo,
-  [Theme.dark]: darkLogo,
-};
-
 const Footer = () => {
+  // `remix-themes`의 훅을 사용합니다.
+  // `theme`은 클라이언트에서 'light' 또는 'dark'로 결정됩니다.
   const [theme] = useTheme();
-  const currentTheme = theme ?? Theme.dark;
+
+  // 초기 렌더링 시 theme이 아직 결정되지 않은 경우(null)를 대비하여 기본값을 설정합니다.
+  const displayTheme = theme ?? 'light';
 
   return (
     <footer className={s.footer}>
@@ -19,7 +18,16 @@ const Footer = () => {
         <div className={s.leftSection}>
           <div className={s.logoSection}>
             <Link to="/about">
-              <img src={logos[currentTheme]} className={s.logo} alt="로고" />
+              <img
+                src={lightLogo}
+                className={`${s.logo} light-logo`}
+                alt="라이트 모드 로고"
+              />
+              <img
+                src={darkLogo}
+                className={`${s.logo} dark-logo`}
+                alt="다크 모드 로고"
+              />
             </Link>
             <p className={s.description}>개발일지 끄적끄적</p>
           </div>
@@ -29,7 +37,7 @@ const Footer = () => {
           <ul className={s.linkList}>
             <li className={s.linkItem}>
               <a
-                href="https://github.com"
+                href="https://github.com/dareun-nam"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={s.socialLink}
@@ -39,12 +47,12 @@ const Footer = () => {
             </li>
             <li className={s.linkItem}>
               <a
-                href="https://linkedin.com"
+                href="https://velog.io/@dareun_nam/posts"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={s.socialLink}
               >
-                <i className={`ri-linkedin-fill ${s.socialLinkIcon}`} />
+                <i className={`ri-blogger-fill ${s.socialLinkIcon}`} />
               </a>
             </li>
             <li className={s.linkItem}>

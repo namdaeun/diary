@@ -1,11 +1,19 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 import { colors } from '~/styles/colors';
-import { vars } from '~/styles/global.css';
+import { darkTheme, lightTheme, vars } from '~/styles/global.css';
 
 export const footer = style({
   width: '100%',
   backgroundColor: vars.themeColor.color.background,
   marginTop: 'auto',
+});
+
+globalStyle(`${lightTheme} .dark-logo`, {
+  display: 'none',
+});
+
+globalStyle(`${darkTheme} .light-logo`, {
+  display: 'none',
 });
 
 export const container = style({

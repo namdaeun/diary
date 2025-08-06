@@ -7,7 +7,7 @@ export const wrapper = style({
   flexDirection: 'column',
   alignItems: 'center',
   gap: '4.8rem',
-  padding: '9.6rem 8rem',
+  padding: '9.6rem 8rem 18rem 8rem',
   minHeight: '100vh',
   scrollSnapAlign: 'start',
   justifyContent: 'center',

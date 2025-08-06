@@ -1,65 +1,96 @@
-import type { LinksFunction } from '@remix-run/node';
+import type { LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
+import { json } from '@remix-run/node';
 import {
   Links,
+  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from '@remix-run/react';
+import {
+  PreventFlashOnWrongTheme,
+  type Theme,
+  ThemeProvider,
+  useTheme,
+} from 'remix-themes';
+import { themeSessionResolver } from '~/utils/theme.server';
 import '~/styles/fonts/fonts.css';
 import '~/styles/global.css';
 import '~/styles/reset.css';
-import type { ReactNode } from 'react';
+import clsx from 'clsx';
 import Footer from '~/components/footer/Footer';
 import Header from '~/components/header/Header';
-import { ThemeProvider } from './context/ThemeProvider';
+import { darkTheme, lightTheme } from '~/styles/global.css';
 
 export const links: LinksFunction = () => [
   {
     rel: 'stylesheet',
     href: 'https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css',
   },
+  { rel: 'icon', href: '/assets/icon/ic_favicon.svg', type: 'image/svg+xml' },
+  {
+    href: 'https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css',
+    rel: 'stylesheet',
+  },
 ];
 
-export function Layout({ children }: { children: ReactNode }) {
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+  const { getTheme } = await themeSessionResolver(request);
+  return json({
+    theme: getTheme(), // `null`을 허용하여 시스템 테마를 따르도록 함
+  });
+};
+
+function App() {
+  const { theme: ssrTheme } = useLoaderData<typeof loader>();
+  const [theme] = useTheme();
+
   return (
-    <html lang="ko">
+    <html
+      lang="ko"
+      className={clsx(theme, theme === 'light' ? lightTheme : darkTheme)}
+    >
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href="/assets/icon/ic_favicon.svg"
-        />
-        <link
-          href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-          rel="stylesheet"
-        />
         <Meta />
+        {/* ssrTheme이 null일 수 있으므로 Boolean으로 변환 */}
+        <PreventFlashOnWrongTheme ssrTheme={Boolean(ssrTheme)} />
         <Links />
       </head>
       <body>
-        {children}
+        <div
+          style={{
+            minHeight: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <Header />
+          <main style={{ flex: '1' }}>
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
         <ScrollRestoration />
         <Scripts />
+        <LiveReload />
       </body>
     </html>
   );
 }
 
-export default function App() {
+export default function AppWithProviders() {
+  const { theme } = useLoaderData<typeof loader>();
+
   return (
-    <ThemeProvider>
-      <div
-        style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
-      >
-        <Header />
-        <main>
-          <Outlet />
-        </main>
-        <Footer />
-      </div>
+    <ThemeProvider
+      specifiedTheme={theme as Theme | null}
+      themeAction="/actions/set-theme"
+    >
+      <App />
     </ThemeProvider>
   );
 }

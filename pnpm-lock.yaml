@@ -17,6 +17,12 @@ importers:
       '@remix-run/serve':
         specifier: ^2.12.0
         version: 2.12.0(typescript@5.6.2)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      cookie:
+        specifier: ^1.0.2
+        version: 1.0.2
       framer-motion:
         specifier: ^12.23.12
         version: 12.23.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -32,6 +38,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      remix-themes:
+        specifier: ^2.0.4
+        version: 2.0.4(react-router@6.26.2(react@18.3.1))
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.1
@@ -39,6 +48,9 @@ importers:
       '@remix-run/dev':
         specifier: ^2.12.0
         version: 2.12.0(@remix-run/react@2.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@remix-run/serve@2.12.0(typescript@5.6.2))(@types/node@22.5.5)(typescript@5.6.2)(vite@5.4.5(@types/node@22.5.5))
+      '@types/cookie':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@types/js-cookie':
         specifier: ^3.0.6
         version: 3.0.6
@@ -846,6 +858,10 @@ packages:
   '@types/cookie@0.6.0':
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
+  '@types/cookie@1.0.0':
+    resolution: {integrity: sha512-mGFXbkDQJ6kAXByHS7QAggRXgols0mAdP4MuXgloGY1tXokvzaFFM4SMqWvf7AH0oafI7zlFJwoGWzmhDqTZ9w==}
+    deprecated: This is a stub types definition. cookie provides its own type definitions, so you do not need this installed.
+
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
@@ -1110,6 +1126,10 @@ packages:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
 
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
+
   color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
 
@@ -1158,6 +1178,10 @@ packages:
   cookie@0.6.0:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
+
+  cookie@1.0.2:
+    resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
+    engines: {node: '>=18'}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -2355,6 +2379,11 @@ packages:
 
   remark-rehype@10.1.0:
     resolution: {integrity: sha512-EFmR5zppdBp0WQeDVZ/b66CWJipB2q2VLNFMabzDSGR66Z2fQii83G5gTBbgGEnEEA0QRussvrFHxk1HWGJskw==}
+
+  remix-themes@2.0.4:
+    resolution: {integrity: sha512-S1vIx86xdsMv+ceaWGWtlVZBMhU4tmZeBOBzOiZnhbHnGBbd5YeyIlZ5EL3BSEhZq35oEcINeTrMrVju9GPYEA==}
+    peerDependencies:
+      react-router: '>=7.0.0'
 
   require-like@0.1.2:
     resolution: {integrity: sha512-oyrU88skkMtDdauHDuKVrgR+zuItqr6/c//FXzvmxRGMexSDc6hNvJInGW3LL46n+8b50RykrvwSUIIQH2LQ5A==}
@@ -3580,6 +3609,10 @@ snapshots:
 
   '@types/cookie@0.6.0': {}
 
+  '@types/cookie@1.0.0':
+    dependencies:
+      cookie: 1.0.2
+
   '@types/debug@4.1.12':
     dependencies:
       '@types/ms': 0.7.34
@@ -3922,6 +3955,8 @@ snapshots:
 
   clone@1.0.4: {}
 
+  clsx@2.1.1: {}
+
   color-convert@1.9.3:
     dependencies:
       color-name: 1.1.3
@@ -3967,6 +4002,8 @@ snapshots:
   cookie-signature@1.2.1: {}
 
   cookie@0.6.0: {}
+
+  cookie@1.0.2: {}
 
   core-util-is@1.0.3: {}
 
@@ -5362,6 +5399,10 @@ snapshots:
       '@types/mdast': 3.0.15
       mdast-util-to-hast: 12.3.0
       unified: 10.1.2
+
+  remix-themes@2.0.4(react-router@6.26.2(react@18.3.1)):
+    dependencies:
+      react-router: 6.26.2(react@18.3.1)
 
   require-like@0.1.2: {}
 

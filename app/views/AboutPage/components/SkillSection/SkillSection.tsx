@@ -11,11 +11,11 @@ const SkillSection = () => {
         {SKILLS.map((skill) => {
           return (
             <li className={s.skillItem} key={skill.id}>
-              <img
-                src={skill.img}
+              {/* <img
+                // src={skill.img}
                 alt={skill.name}
                 className={s.skillItemImg}
-              />
+              /> */}
               <div className={s.skillItemName}>{skill.name}</div>
             </li>
           );

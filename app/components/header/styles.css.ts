@@ -1,5 +1,5 @@
-import { style } from '@vanilla-extract/css';
-import { vars } from '~/styles/global.css';
+import { globalStyle, style } from '@vanilla-extract/css';
+import { darkTheme, lightTheme, vars } from '~/styles/global.css';
 
 export const headerStyle = style({
   display: 'flex',
@@ -12,6 +12,16 @@ export const headerStyle = style({
   justifyContent: 'space-between',
   alignItems: 'center',
   backgroundColor: vars.themeColor.color.background,
+});
+
+export const logoImage = style({});
+
+globalStyle(`${lightTheme} .dark-logo`, {
+  display: 'none',
+});
+
+globalStyle(`${darkTheme} .light-logo`, {
+  display: 'none',
 });
 
 export const imageStyle = style({

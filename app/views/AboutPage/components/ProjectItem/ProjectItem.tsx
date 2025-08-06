@@ -75,11 +75,11 @@ const ProjectItem = ({
             : `${s.rightSide} ${s.imageContainer}`
         }
       >
-        <img
+        {/* <img
           src={`/assets/images/${name}.png`}
           alt={name}
           className={s.image}
-        />
+        /> */}
       </div>
       {hasRightContent && (
         <Content project={project} contentPosition={contentPosition} />
