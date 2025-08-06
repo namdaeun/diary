@@ -7,6 +7,7 @@ export const pageWrapper = style({
   display: 'flex',
   flexDirection: 'column',
   overflowX: 'hidden',
+  overflowY: 'auto',
 });
 
 export const wrapper = style({
