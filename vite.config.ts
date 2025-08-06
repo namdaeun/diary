@@ -5,6 +5,11 @@ import svgr from 'vite-plugin-svgr';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
+  server: {
+    hmr: {
+      port: 8002, // HMR 포트를 명시적으로 지정
+    },
+  },
   plugins: [
     svgr(),
     remix({
