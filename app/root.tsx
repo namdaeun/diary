@@ -44,20 +44,19 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 };
 
 function App() {
-  const { theme: ssrTheme } = useLoaderData<typeof loader>();
   const [theme] = useTheme();
 
   return (
     <html
       lang="ko"
-      className={clsx(theme, theme === 'light' ? lightTheme : darkTheme)}
+      className={clsx((theme ?? 'light') === 'light' ? lightTheme : darkTheme)}
+      suppressHydrationWarning
     >
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
-        {/* ssrTheme이 null일 수 있으므로 Boolean으로 변환 */}
-        <PreventFlashOnWrongTheme ssrTheme={Boolean(ssrTheme)} />
+        <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
         <Links />
       </head>
       <body>
