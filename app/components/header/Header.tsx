@@ -41,11 +41,6 @@ const Header = () => {
       </Link>
       <ul className={menuSectionStyle}>
         <li className={menuStyle}>
-          <Link to="/about" className={linkStyle}>
-            About
-          </Link>
-        </li>
-        <li className={menuStyle}>
           <Link to="/blog" className={linkStyle}>
             Blog
           </Link>

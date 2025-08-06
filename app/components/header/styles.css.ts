@@ -33,7 +33,7 @@ export const imageStyle = style({
 
 export const menuSectionStyle = style({
   display: 'flex',
-  maxWidth: '15rem',
+  maxWidth: '5rem',
   height: '1.7rem',
   margin: '0 3rem',
   gap: '1.5rem',
