@@ -39,7 +39,7 @@ export const links: LinksFunction = () => [
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { getTheme } = await themeSessionResolver(request);
   return json({
-    theme: getTheme(), // `null`을 허용하여 시스템 테마를 따르도록 함
+    theme: getTheme(),
   });
 };
 
