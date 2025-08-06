@@ -18,7 +18,7 @@ const ReviewItem = ({ review, index = 0 }: ReviewItemProps) => {
   });
 
   const startPoint = index * 0.15;
-  const endPoint = startPoint + 0.3;
+  const endPoint = startPoint + 0.2;
 
   const y = useTransform(scrollYProgress, [startPoint, endPoint], [300, 0]);
 
