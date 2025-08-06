@@ -46,7 +46,7 @@ const ProjectItem = ({
   project,
   contentPosition = 'right',
 }: ProjectItemProps) => {
-  const { name } = project;
+  const { name, imageUrl } = project;
   const hasRightContent = contentPosition === 'right';
   const ref = useRef<HTMLElement>(null);
 
@@ -75,11 +75,7 @@ const ProjectItem = ({
             : `${s.rightSide} ${s.imageContainer}`
         }
       >
-        {/* <img
-          src={`/assets/images/${name}.png`}
-          alt={name}
-          className={s.image}
-        /> */}
+        <img src={imageUrl} alt={name} className={s.image} />
       </div>
       {hasRightContent && (
         <Content project={project} contentPosition={contentPosition} />

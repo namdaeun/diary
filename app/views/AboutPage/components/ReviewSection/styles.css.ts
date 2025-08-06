@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { breakpoints } from '~/styles/breakpoints';
-import { colors } from '~/styles/colors';
+import { vars } from '~/styles/global.css';
 
 export const wrapper = style({
   display: 'flex',
@@ -63,9 +63,9 @@ export const descriptionLayout = style({
 
 export const description = style({
   textAlign: 'center',
-  fontSize: '1.6rem',
+  fontSize: '2rem',
   fontWeight: 400,
-  color: colors.gray_600,
+  color: vars.themeColor.color.description,
   lineHeight: '2.4rem',
   wordBreak: 'keep-all',
 
