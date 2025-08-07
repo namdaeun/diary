@@ -44,7 +44,7 @@ export const REVIEWS = [
   {
     id: 7,
     name: '최영철',
-    info: 'Tiki 웹 프론트엔드 개발자',
+    info: 'makers 어드민팀 서버 개발자',
     description:
       '다은님은 진짜 야무지고 책임감 있는 FE 개발자였어요 ㅎㅎ.\n항상 빠르게 응답해주고, 이슈도 척척 해결해서 너무 든든했어요!',
   },
