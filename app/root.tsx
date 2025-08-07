@@ -68,7 +68,7 @@ function App() {
           }}
         >
           <Header />
-          <main style={{ flex: '1' }}>
+          <main>
             <Outlet />
           </main>
           <Footer />
