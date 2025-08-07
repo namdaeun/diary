@@ -20,9 +20,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      cookie:
-        specifier: ^1.0.2
-        version: 1.0.2
       framer-motion:
         specifier: ^12.23.12
         version: 12.23.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -48,12 +45,6 @@ importers:
       '@remix-run/dev':
         specifier: ^2.12.0
         version: 2.12.0(@remix-run/react@2.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@remix-run/serve@2.12.0(typescript@5.6.2))(@types/node@22.5.5)(typescript@5.6.2)(vite@5.4.5(@types/node@22.5.5))
-      '@types/cookie':
-        specifier: ^1.0.0
-        version: 1.0.0
-      '@types/js-cookie':
-        specifier: ^3.0.6
-        version: 3.0.6
       '@types/react':
         specifier: ^18.2.20
         version: 18.3.5
@@ -858,10 +849,6 @@ packages:
   '@types/cookie@0.6.0':
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
-  '@types/cookie@1.0.0':
-    resolution: {integrity: sha512-mGFXbkDQJ6kAXByHS7QAggRXgols0mAdP4MuXgloGY1tXokvzaFFM4SMqWvf7AH0oafI7zlFJwoGWzmhDqTZ9w==}
-    deprecated: This is a stub types definition. cookie provides its own type definitions, so you do not need this installed.
-
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
@@ -873,9 +860,6 @@ packages:
 
   '@types/hast@2.3.10':
     resolution: {integrity: sha512-McWspRw8xx8J9HurkVBfYj0xKoE25tOFlHGdx4MJ5xORQrMGZNqJhVQWaIbm6Oyla5kYOXtDiopzKRJzEOkwJw==}
-
-  '@types/js-cookie@3.0.6':
-    resolution: {integrity: sha512-wkw9yd1kEXOPnvEeEV1Go1MmxtBJL0RR79aOTAApecWFVu7w0NNXNqhcWgvw2YgZDYadliXkl14pa3WXw5jlCQ==}
 
   '@types/mdast@3.0.15':
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
@@ -1178,10 +1162,6 @@ packages:
   cookie@0.6.0:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
-
-  cookie@1.0.2:
-    resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
-    engines: {node: '>=18'}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -3609,10 +3589,6 @@ snapshots:
 
   '@types/cookie@0.6.0': {}
 
-  '@types/cookie@1.0.0':
-    dependencies:
-      cookie: 1.0.2
-
   '@types/debug@4.1.12':
     dependencies:
       '@types/ms': 0.7.34
@@ -3626,8 +3602,6 @@ snapshots:
   '@types/hast@2.3.10':
     dependencies:
       '@types/unist': 2.0.11
-
-  '@types/js-cookie@3.0.6': {}
 
   '@types/mdast@3.0.15':
     dependencies:
@@ -4002,8 +3976,6 @@ snapshots:
   cookie-signature@1.2.1: {}
 
   cookie@0.6.0: {}
-
-  cookie@1.0.2: {}
 
   core-util-is@1.0.3: {}
 
