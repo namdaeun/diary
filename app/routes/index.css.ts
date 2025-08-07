@@ -19,7 +19,6 @@ export const wrapper = style({
   height: 'calc(100vh - 6.65rem)',
   gap: '4.8rem',
   scrollSnapAlign: 'start',
-  // overflowY: 'hidden',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {

@@ -17,7 +17,7 @@ const containerVariants = {
 
 const ReviewSection = () => {
   return (
-    <section className={s.wrapper}>
+    <section className={s.wrapper} id="review">
       <motion.div
         className={s.descriptionLayout}
         variants={titleVariants}
