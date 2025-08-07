@@ -49,7 +49,7 @@ function App() {
   return (
     <html
       lang="ko"
-      className={clsx((theme ?? 'light') === 'light' ? lightTheme : darkTheme)}
+      className={clsx(theme === 'light' ? lightTheme : darkTheme)}
       suppressHydrationWarning
     >
       <head>
