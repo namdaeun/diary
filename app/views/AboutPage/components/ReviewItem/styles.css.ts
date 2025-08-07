@@ -46,6 +46,7 @@ export const description = style({
   color: vars.themeColor.color.description,
   lineHeight: '2.4rem',
   wordBreak: 'keep-all',
+  whiteSpace: 'pre-line',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
