@@ -19,23 +19,23 @@ const themeColor = createThemeContract({
 
 export const lightTheme = createTheme(themeColor, {
   color: {
-    font: colors.black,
-    subTitle: colors.gray_700,
-    description: colors.gray_800,
+    font: colors.gray_900,
+    subTitle: colors.gray_600,
+    description: colors.gray_500,
     background: colors.white,
-    article_bg: colors.white,
-    border: colors.gray_800,
+    article_bg: colors.gray_50,
+    border: colors.gray_200,
   },
 });
 
 export const darkTheme = createTheme(themeColor, {
   color: {
-    font: colors.white,
-    subTitle: colors.gray_600,
-    description: colors.gray_600,
+    font: colors.dark_text_primary,
+    subTitle: colors.dark_text_secondary,
+    description: colors.dark_text_tertiary,
     background: colors.navy_bg,
-    article_bg: colors.gray_800,
-    border: colors.gray_600,
+    article_bg: colors.dark_surface,
+    border: colors.dark_border,
   },
 });
 
@@ -60,4 +60,8 @@ globalStyle('*', {
 globalStyle('body', {
   paddingTop: '5rem',
   scrollBehavior: 'smooth',
+  lineHeight: '1.6',
+  letterSpacing: '-0.01em',
+  WebkitFontSmoothing: 'antialiased',
+  MozOsxFontSmoothing: 'grayscale',
 });

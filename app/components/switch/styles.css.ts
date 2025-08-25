@@ -1,31 +1,32 @@
-import { recipe } from "@vanilla-extract/recipes";
-import { colors } from "~/styles/colors";
-import sunny from "../../../public/assets/icon/ic_sunny.svg";
+import { recipe } from '@vanilla-extract/recipes';
+import { colors } from '~/styles/colors';
+import sunny from '../../../public/assets/icon/ic_sunny.svg';
 
 export const backgroundStyle = recipe({
   base: {
-    position: "relative",
-
-    width: "5rem",
-    height: "3rem",
-
-    flexShrink: "0",
-    padding: "0.2rem",
-
-    borderRadius: "10rem",
-
+    position: 'relative',
+    width: '5.2rem',
+    height: '3.2rem',
+    flexShrink: '0',
+    padding: '0.3rem',
+    borderRadius: '10rem',
     background: colors.gray_200,
-
-    transition: "ease-in-out 0.2s",
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    cursor: 'pointer',
+    boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.1)',
   },
 
   variants: {
     mode: {
       light: {
-        background: colors.navy_bg,
+        background: `linear-gradient(135deg, ${colors.navy_bg} 0%, #2c2b29 100%)`,
+        boxShadow:
+          'inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(34, 33, 31, 0.3)',
       },
       dark: {
-        background: colors.blue_500,
+        background: `linear-gradient(135deg, ${colors.primary_dark_bright} 0%, ${colors.primary_dark_hover} 100%)`,
+        boxShadow:
+          'inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 12px rgba(74, 158, 255, 0.4)',
       },
     },
   },
@@ -33,30 +34,27 @@ export const backgroundStyle = recipe({
 
 export const switchStyle = recipe({
   base: {
-    position: "absolute",
-
-    width: "2.8rem",
-    height: "2.8rem",
-
-    margin: "0",
-
-    top: "0.2rem",
-
-    backgroundColor: "transparent",
+    position: 'absolute',
+    width: '2.6rem',
+    height: '2.6rem',
+    margin: '0',
+    top: '0.3rem',
+    backgroundColor: colors.white,
     backgroundImage: `url(${sunny})`,
-    backgroundSize: "contain",
-    backgroundRepeat: "no-repeat",
+    backgroundSize: '3rem',
+    backgroundPosition: 'center calc(50% + 1px)',
+    backgroundRepeat: 'no-repeat',
+    borderRadius: '50%',
+    border: 'none',
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1)',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    transform: 'translateX(1.9rem)',
+    appearance: 'none',
+    cursor: 'pointer',
 
-    transition: "ease-in-out 0.2s",
-
-    transform: "translateX(1.8rem)",
-
-    appearance: "none",
-
-    cursor: "pointer",
-
-    ":checked": {
-      transform: "translateX(0rem)",
+    ':checked': {
+      transform: 'translateX(0rem)',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15)',
     },
   },
 });

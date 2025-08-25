@@ -5,20 +5,41 @@ import { vars } from '~/styles/global.css';
 export const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '4.8rem',
-  padding: '9.6rem 20.2rem',
+  gap: '6rem',
+  padding: '12rem 0',
   backgroundColor: vars.themeColor.color.article_bg,
   minHeight: '100vh',
   scrollSnapAlign: 'start',
+  width: '100%',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      padding: '6rem 4rem',
-      gap: '3.2rem',
+      padding: '8rem 0',
+      gap: '4rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      padding: '4rem 2rem',
-      gap: '2.4rem',
+      padding: '6rem 0',
+      gap: '3rem',
+    },
+  },
+});
+
+export const container = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '6rem',
+  maxWidth: '140rem',
+  margin: '0 auto',
+  padding: '0 6rem',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      padding: '0 4rem',
+      gap: '4rem',
+    },
+    [breakpoints.MOBILE_MAX]: {
+      padding: '0 2rem',
+      gap: '3rem',
     },
   },
 });
@@ -39,9 +60,12 @@ export const titleWrapper = style({
 
 export const description = style({
   textAlign: 'center',
-  fontSize: '2rem',
+  fontSize: '1.8rem',
   fontWeight: 400,
+  lineHeight: '1.6',
+  letterSpacing: '-0.01em',
   color: vars.themeColor.color.description,
+  marginTop: '0.8rem',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -56,14 +80,14 @@ export const description = style({
 export const experienceList = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '4.8rem',
+  gap: '2.8rem',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      gap: '3.2rem',
+      gap: '2.4rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      gap: '2.4rem',
+      gap: '2rem',
     },
   },
 });

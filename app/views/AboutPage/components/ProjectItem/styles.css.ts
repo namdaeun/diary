@@ -1,18 +1,36 @@
 import { style } from '@vanilla-extract/css';
 import { breakpoints } from '~/styles/breakpoints';
 import { colors } from '~/styles/colors';
-import { vars } from '~/styles/global.css';
+import { darkTheme, vars } from '~/styles/global.css';
 
 export const wrapper = style({
   display: 'flex',
-  boxShadow: '0 25px 25px 0 rgba(0, 0, 0, 0.15)',
-  borderRadius: '1.2rem',
+  borderRadius: '1.6rem',
   overflow: 'hidden',
   cursor: 'pointer',
+  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)',
+  border: `1px solid ${vars.themeColor.color.border}`,
+
+  ':hover': {
+    transform: 'translateY(-0.4rem)',
+    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08)',
+  },
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
       flexDirection: 'column',
+    },
+  },
+
+  selectors: {
+    [`${darkTheme} &`]: {
+      backgroundColor: colors.dark_card,
+      border: `1px solid ${colors.dark_border}`,
+      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2)',
+    },
+    [`${darkTheme} &:hover`]: {
+      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3)',
     },
   },
 });
@@ -38,21 +56,21 @@ export const imageContainer = style({
 });
 
 export const leftSide = style({
-  borderRadius: '1.2rem 0 0 1.2rem',
+  borderRadius: '1.6rem 0 0 1.6rem',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      borderRadius: '1.2rem 1.2rem 0 0',
+      borderRadius: '1.6rem 1.6rem 0 0',
     },
   },
 });
 
 export const rightSide = style({
-  borderRadius: '0 1.2rem 1.2rem 0',
+  borderRadius: '0 1.6rem 1.6rem 0',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      borderRadius: '0 0 1.2rem 1.2rem',
+      borderRadius: '0 0 1.6rem 1.6rem',
     },
   },
 });
@@ -83,6 +101,11 @@ export const image = style({
   height: '100%',
   objectFit: 'cover',
   borderRadius: '1.2rem',
+  transition: 'transform 0.3s ease',
+
+  ':hover': {
+    transform: 'scale(1.02)',
+  },
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -101,17 +124,20 @@ export const image = style({
 });
 
 export const title = style({
-  fontSize: '2rem',
-  fontWeight: 600,
+  fontSize: '2.2rem',
+  fontWeight: 700,
   color: vars.themeColor.color.font,
+  lineHeight: '1.3',
+  letterSpacing: '-0.01em',
+  marginBottom: '0.4rem',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      fontSize: '1.8rem',
+      fontSize: '2rem',
       textAlign: 'center',
     },
     [breakpoints.MOBILE_MAX]: {
-      fontSize: '1.6rem',
+      fontSize: '1.8rem',
     },
   },
 });

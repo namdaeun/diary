@@ -7,19 +7,21 @@ export const wrapper = style({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  gap: '4.8rem',
-  padding: '9.6rem 14.4rem',
+  gap: '6rem',
+  padding: '12rem 6rem',
   minHeight: '100vh',
   scrollSnapAlign: 'start',
+  maxWidth: '140rem',
+  margin: '0 auto',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      padding: '6rem 4rem',
-      gap: '3.2rem',
+      padding: '8rem 4rem',
+      gap: '4rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      padding: '4rem 2rem',
-      gap: '2.4rem',
+      padding: '6rem 2rem',
+      gap: '3rem',
     },
   },
 });
@@ -42,10 +44,13 @@ export const description = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  fontSize: '2rem',
+  fontSize: '1.8rem',
   fontWeight: 400,
+  lineHeight: '1.6',
+  letterSpacing: '-0.01em',
   color: vars.themeColor.color.description,
   textAlign: 'center',
+  marginTop: '0.8rem',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {

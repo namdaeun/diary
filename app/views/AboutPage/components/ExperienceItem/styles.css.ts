@@ -1,28 +1,47 @@
 import { style } from '@vanilla-extract/css';
 import { breakpoints } from '~/styles/breakpoints';
-import { vars } from '~/styles/global.css';
+import { colors } from '~/styles/colors';
+import { darkTheme, vars } from '~/styles/global.css';
 
 export const wrapper = style({
   display: 'flex',
   width: '100%',
-  gap: '2.4rem',
-  padding: '3.2rem',
+  gap: '3rem',
+  padding: '3.6rem',
   alignItems: 'center',
-  borderRadius: '1.2rem',
+  borderRadius: '1.6rem',
   backgroundColor: vars.themeColor.color.background,
-  boxShadow: '0 25px 25px 0 rgba(0, 0, 0, 0.15)',
+  border: `1px solid ${vars.themeColor.color.border}`,
+  transition: 'all 0.3s ease',
+  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)',
+
+  ':hover': {
+    transform: 'translateY(-0.2rem)',
+    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06)',
+  },
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
       flexDirection: 'column',
-      gap: '1.6rem',
-      padding: '2.4rem',
+      gap: '2rem',
+      padding: '2.8rem',
       alignItems: 'center',
       textAlign: 'center',
     },
     [breakpoints.MOBILE_MAX]: {
-      padding: '1.6rem',
-      gap: '1.2rem',
+      padding: '2rem',
+      gap: '1.6rem',
+    },
+  },
+
+  selectors: {
+    [`${darkTheme} &`]: {
+      backgroundColor: colors.dark_card,
+      border: `1px solid ${colors.dark_border}`,
+      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15)',
+    },
+    [`${darkTheme} &:hover`]: {
+      boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2)',
     },
   },
 });
@@ -68,17 +87,19 @@ export const contentLayout = style({
 });
 
 export const position = style({
-  fontSize: '2rem',
-  fontWeight: 600,
+  fontSize: '2.2rem',
+  fontWeight: 700,
   color: vars.themeColor.color.font,
+  lineHeight: '1.3',
+  letterSpacing: '-0.01em',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      fontSize: '1.8rem',
+      fontSize: '2rem',
       textAlign: 'center',
     },
     [breakpoints.MOBILE_MAX]: {
-      fontSize: '1.6rem',
+      fontSize: '1.8rem',
     },
   },
 });

@@ -1,96 +1,151 @@
 import { style } from '@vanilla-extract/css';
 import { breakpoints } from '~/styles/breakpoints';
 import { colors } from '~/styles/colors';
-import { vars } from '~/styles/global.css';
+import { darkTheme, vars } from '~/styles/global.css';
 
 export const wrapper = style({
   display: 'flex',
+  flexDirection: 'column',
   width: '100%',
-  alignItems: 'center',
-  gap: '2.4rem',
-  padding: '4.8rem',
+  height: '100%',
+  alignItems: 'flex-start',
+  gap: '2rem',
+  padding: '2.8rem',
+  borderRadius: '1.6rem',
+  backgroundColor: vars.themeColor.color.background,
+  border: `1px solid ${vars.themeColor.color.border}`,
+  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02)',
+  position: 'relative',
+  overflow: 'hidden',
+
+  '::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '4px',
+    background: `linear-gradient(90deg, ${colors.primary}, ${colors.primary_dark_bright})`,
+    opacity: 0,
+    transition: 'opacity 0.3s ease',
+  },
+
+  ':hover': {
+    transform: 'translateY(-0.2rem)',
+    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.06)',
+  },
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      width: '100%',
-      padding: '3.2rem',
-      gap: '1.6rem',
+      padding: '2.4rem',
+      gap: '1.8rem',
+      ':hover': {
+        transform: 'none',
+        boxShadow:
+          '0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)',
+      },
     },
     [breakpoints.MOBILE_MAX]: {
-      padding: '2.4rem',
-      gap: '1.2rem',
+      padding: '2rem',
+      gap: '1.6rem',
+      ':hover': {
+        transform: 'none',
+        boxShadow:
+          '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02)',
+      },
+    },
+  },
+
+  selectors: {
+    [`${darkTheme} &`]: {
+      backgroundColor: colors.dark_card,
+      border: `1px solid ${colors.dark_border}`,
+      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15)',
+    },
+    [`${darkTheme} &:hover`]: {
+      boxShadow: '0 12px 32px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2)',
     },
   },
 });
 
 export const icon = style({
-  width: '6.4rem',
-  fontSize: '6.4rem',
-  color: colors.gray_600,
+  width: '4.8rem',
+  fontSize: '4.8rem',
+  color: colors.primary,
+  transition: 'all 0.3s ease',
+  alignSelf: 'flex-start',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      width: '5.2rem',
-      fontSize: '5.2rem',
+      width: '4.4rem',
+      fontSize: '4.4rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      width: '4.8rem',
-      fontSize: '4.8rem',
+      width: '4rem',
+      fontSize: '4rem',
+    },
+  },
+
+  selectors: {
+    [`${darkTheme} &`]: {
+      color: colors.primary_dark_bright,
     },
   },
 });
 
 export const description = style({
-  fontSize: '1.6rem',
+  fontSize: '1.5rem',
   fontWeight: 400,
   color: vars.themeColor.color.description,
-  lineHeight: '2.4rem',
+  lineHeight: '1.6',
   wordBreak: 'keep-all',
   whiteSpace: 'pre-line',
+  flex: 1,
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
       fontSize: '1.4rem',
-      lineHeight: '2rem',
+      lineHeight: '1.5',
     },
     [breakpoints.MOBILE_MAX]: {
       fontSize: '1.3rem',
-      lineHeight: '1.8rem',
+      lineHeight: '1.5',
     },
   },
 });
 
 export const infoLayout = style({
   display: 'flex',
-  width: '30%',
+  width: '100%',
   flexDirection: 'column',
-  textAlign: 'right',
-  gap: '1rem',
+  textAlign: 'left',
+  gap: '0.8rem',
+  marginTop: 'auto',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      gap: '0.8rem',
+      gap: '0.6rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      gap: '0.6rem',
+      gap: '0.4rem',
     },
   },
 });
 
 export const name = style({
   fontSize: '2rem',
-  fontWeight: 600,
+  fontWeight: 700,
   color: vars.themeColor.color.font,
-  lineHeight: '2.8rem',
+  lineHeight: '1.3',
+  letterSpacing: '-0.01em',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
       fontSize: '1.8rem',
-      lineHeight: '2.4rem',
     },
     [breakpoints.MOBILE_MAX]: {
       fontSize: '1.6rem',
-      lineHeight: '2.2rem',
     },
   },
 });
