@@ -10,7 +10,7 @@ export const backgroundStyle = recipe({
     flexShrink: '0',
     padding: '0.3rem',
     borderRadius: '10rem',
-    background: colors.gray_200,
+    background: colors.neutral_200,
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     cursor: 'pointer',
     boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.1)',
@@ -19,12 +19,12 @@ export const backgroundStyle = recipe({
   variants: {
     mode: {
       light: {
-        background: `linear-gradient(135deg, ${colors.navy_bg} 0%, #2c2b29 100%)`,
+        background: `linear-gradient(135deg, ${colors.neutral_900} 0%, #2c2b29 100%)`,
         boxShadow:
           'inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(34, 33, 31, 0.3)',
       },
       dark: {
-        background: `linear-gradient(135deg, ${colors.primary_dark_bright} 0%, ${colors.primary_dark_hover} 100%)`,
+        background: `linear-gradient(135deg, ${colors.neutral_600} 0%, ${colors.neutral_500} 100%)`,
         boxShadow:
           'inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 12px rgba(74, 158, 255, 0.4)',
       },
@@ -39,7 +39,7 @@ export const switchStyle = recipe({
     height: '2.6rem',
     margin: '0',
     top: '0.3rem',
-    backgroundColor: colors.white,
+    backgroundColor: colors.neutral_white,
     backgroundImage: `url(${sunny})`,
     backgroundSize: '3rem',
     backgroundPosition: 'center calc(50% + 1px)',
