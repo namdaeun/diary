@@ -1,4 +1,4 @@
-import Tag from '~/components/tag/Tag';
+import Tag from '~/components/tags/Tag';
 import { SKILLS } from '~/constants/skills';
 import * as s from './styles.css';
 

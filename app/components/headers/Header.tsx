@@ -2,7 +2,7 @@ import { Link } from '@remix-run/react';
 import { type Theme, useTheme } from 'remix-themes';
 import lightLogo from '../../../public/assets/image/img_logo.png';
 import darkLogo from '../../../public/assets/image/img_logo_dark.png';
-import Switch from '../switch/Switch';
+import Switch from '../switches/Switch';
 import { headerStyle, imageStyle } from './styles.css';
 
 const Header = () => {

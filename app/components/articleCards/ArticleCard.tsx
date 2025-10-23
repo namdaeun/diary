@@ -1,4 +1,4 @@
-import Tag from '../tag/Tag';
+import Tag from '../tags/Tag';
 import { articleStyle, dateStyle, titleStyle } from './styles.css';
 
 interface ArticleCardProp {

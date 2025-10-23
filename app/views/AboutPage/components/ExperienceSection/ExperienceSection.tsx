@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Tag from '~/components/tag/Tag';
+import Tag from '~/components/tags/Tag';
 import { EXPERIENCES } from '~/constants/experiences';
 import { listVariants, sectionVariants, titleVariants } from '~/styles/motion';
 import ExperienceItem from '~/views/AboutPage/components/ExperienceItem/ExperienceItem';

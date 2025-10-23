@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Tag from '~/components/tag/Tag';
+import Tag from '~/components/tags/Tag';
 import { REVIEWS } from '~/constants/review';
 import { titleVariants } from '~/styles/motion';
 import ReviewItem from '../ReviewItem/ReviewItem';

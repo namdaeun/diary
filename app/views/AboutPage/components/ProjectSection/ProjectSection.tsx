@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Tag from '~/components/tag/Tag';
+import Tag from '~/components/tags/Tag';
 import { PROJECTS } from '~/constants/projects';
 import { sectionVariants, titleVariants } from '~/styles/motion';
 import ProjectItem from '~/views/AboutPage/components/ProjectItem/ProjectItem';
