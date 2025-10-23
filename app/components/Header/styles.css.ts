@@ -9,7 +9,7 @@ export const headerStyle = style({
   left: 0,
   zIndex: 1000,
   width: '100%',
-  padding: '3.2rem 4rem',
+  padding: '2.4rem 4rem',
   justifyContent: 'space-between',
   alignItems: 'center',
   backgroundColor: vars.themeColor.color.background,
