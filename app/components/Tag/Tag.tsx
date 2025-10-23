@@ -2,13 +2,13 @@ import type { ComponentPropsWithRef } from 'react';
 import { backgroundStyle, textStyle } from './styles.css';
 
 interface TagProps extends ComponentPropsWithRef<'div'> {
-  variant?: 'primary' | 'secondary';
+  size?: 'sm' | 'lg';
 }
 
-const Tag = ({ variant = 'primary', children }: TagProps) => {
+const Tag = ({ size = 'lg', children }: TagProps) => {
   return (
-    <div className={backgroundStyle({ type: variant })}>
-      <span className={textStyle({ type: variant })}>{children}</span>
+    <div className={backgroundStyle({ size })}>
+      <span className={textStyle({ size })}>{children}</span>
     </div>
   );
 };

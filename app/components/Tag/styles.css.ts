@@ -1,44 +1,23 @@
 import { recipe } from '@vanilla-extract/recipes';
 import { colors } from '~/styles/colors';
-import { darkTheme } from '~/styles/global.css';
 
 export const backgroundStyle = recipe({
   base: {
     display: 'flex',
-    padding: '0.8rem 1.6rem',
     width: 'fit-content',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: '2rem',
+    borderRadius: '0.8rem',
+    backgroundColor: colors.blue_alpha,
     transition: 'all 0.2s ease',
   },
   variants: {
-    type: {
-      primary: {
-        color: colors.neutral_white,
-        backgroundColor: colors.neutral_500,
-        boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
-
-        selectors: {
-          [`${darkTheme} &`]: {
-            backgroundColor: colors.neutral_600,
-            boxShadow: '0 2px 12px rgba(74, 158, 255, 0.5)',
-            color: colors.neutral_white,
-          },
-        },
+    size: {
+      sm: {
+        padding: '0.6rem 1rem',
       },
-      secondary: {
-        color: colors.neutral_500,
-        backgroundColor: colors.neutral_100,
-        border: `1px solid ${colors.neutral_200}`,
-
-        selectors: {
-          [`${darkTheme} &`]: {
-            color: colors.neutral_600,
-            backgroundColor: colors.neutral_800,
-            border: `1px solid ${colors.neutral_700}`,
-          },
-        },
+      lg: {
+        padding: '0.8rem 1.2rem',
       },
     },
   },
@@ -46,25 +25,18 @@ export const backgroundStyle = recipe({
 
 export const textStyle = recipe({
   base: {
-    fontSize: '1.4rem',
-    fontWeight: 600,
+    color: colors.blue,
+    fontWeight: 400,
+    lineHeight: '120%',
     whiteSpace: 'nowrap',
-    backgroundColor: 'transparent',
-    letterSpacing: '-0.01em',
   },
   variants: {
-    type: {
-      primary: {
-        color: colors.neutral_white,
+    size: {
+      sm: {
+        fontSize: '1.6rem',
       },
-      secondary: {
-        color: colors.neutral_500,
-
-        selectors: {
-          [`${darkTheme} &`]: {
-            color: colors.neutral_600,
-          },
-        },
+      lg: {
+        fontSize: '2rem',
       },
     },
   },

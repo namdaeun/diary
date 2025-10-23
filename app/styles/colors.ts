@@ -12,4 +12,5 @@ export const colors = {
   neutral_black: '#111827',
 
   blue: '#4299F8',
+  blue_alpha: 'rgba(66, 153, 248, 0.10)',
 };
