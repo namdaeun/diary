@@ -19,23 +19,23 @@ const themeColor = createThemeContract({
 
 export const lightTheme = createTheme(themeColor, {
   color: {
-    font: colors.gray_900,
-    subTitle: colors.gray_600,
-    description: colors.gray_500,
-    background: colors.white,
-    article_bg: colors.gray_50,
-    border: colors.gray_200,
+    font: colors.neutral_900,
+    subTitle: colors.neutral_600,
+    description: colors.neutral_500,
+    background: colors.neutral_white,
+    article_bg: colors.neutral_100,
+    border: colors.neutral_200,
   },
 });
 
 export const darkTheme = createTheme(themeColor, {
   color: {
-    font: colors.dark_text_primary,
-    subTitle: colors.dark_text_secondary,
-    description: colors.dark_text_tertiary,
-    background: colors.navy_bg,
-    article_bg: colors.dark_surface,
-    border: colors.dark_border,
+    font: colors.neutral_white,
+    subTitle: colors.neutral_300,
+    description: colors.neutral_400,
+    background: colors.neutral_900,
+    article_bg: colors.neutral_800,
+    border: colors.neutral_700,
   },
 });
 

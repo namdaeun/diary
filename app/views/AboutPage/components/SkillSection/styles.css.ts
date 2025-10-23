@@ -16,7 +16,7 @@ export const titleWrapper = style({
 export const description = style({
   fontSize: '1.6rem',
   fontWeight: 400,
-  color: colors.gray_600,
+  color: colors.neutral_600,
 });
 
 export const skillList = style({

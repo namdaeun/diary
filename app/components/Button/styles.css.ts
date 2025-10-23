@@ -32,33 +32,33 @@ export const buttonStyle = recipe({
   variants: {
     type: {
       primary: {
-        backgroundColor: colors.blue_900,
-        color: colors.white,
+        backgroundColor: colors.neutral_900,
+        color: colors.neutral_white,
 
         "&:hover": {
-          backgroundColor: colors.blue_200,
+          backgroundColor: colors.neutral_200,
         },
       },
       secondary: {
         border: "1px solid rgba(105, 106, 117, 0.30)",
         borderRadius: "6px",
 
-        backgroundColor: colors.white,
-        color: colors.gray_500,
+        backgroundColor: colors.neutral_white,
+        color: colors.neutral_500,
 
         "&:hover": {
-          backgroundColor: colors.gray_200,
+          backgroundColor: colors.neutral_200,
         },
       },
       text: {
         border: "none",
 
-        backgroundColor: colors.white,
+        backgroundColor: colors.neutral_white,
 
         fontWeight: "400",
 
         "&:hover": {
-          color: colors.blue_900,
+          color: colors.neutral_900,
         },
       },
     },

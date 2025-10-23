@@ -36,7 +36,11 @@ export const headerStyle = style({
   },
 });
 
-export const logoImage = style({});
+export const logoStyle = style({
+  fontSize: '2rem',
+  fontWeight: 400,
+  textDecoration: 'none',
+});
 
 globalStyle(`${lightTheme} .dark-logo`, {
   display: 'none',

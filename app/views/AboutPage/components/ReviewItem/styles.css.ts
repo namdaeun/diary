@@ -26,7 +26,7 @@ export const wrapper = style({
     left: 0,
     width: '100%',
     height: '4px',
-    background: `linear-gradient(90deg, ${colors.primary}, ${colors.primary_dark_bright})`,
+    background: `linear-gradient(90deg, ${colors.neutral_500}, ${colors.neutral_600})`,
     opacity: 0,
     transition: 'opacity 0.3s ease',
   },
@@ -59,8 +59,8 @@ export const wrapper = style({
 
   selectors: {
     [`${darkTheme} &`]: {
-      backgroundColor: colors.dark_card,
-      border: `1px solid ${colors.dark_border}`,
+      backgroundColor: colors.neutral_800,
+      border: `1px solid ${colors.neutral_700}`,
       boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15)',
     },
     [`${darkTheme} &:hover`]: {
@@ -72,7 +72,7 @@ export const wrapper = style({
 export const icon = style({
   width: '4.8rem',
   fontSize: '4.8rem',
-  color: colors.primary,
+  color: colors.neutral_500,
   transition: 'all 0.3s ease',
   alignSelf: 'flex-start',
 
@@ -89,7 +89,7 @@ export const icon = style({
 
   selectors: {
     [`${darkTheme} &`]: {
-      color: colors.primary_dark_bright,
+      color: colors.neutral_600,
     },
   },
 });

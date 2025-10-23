@@ -161,11 +161,11 @@ export const button = style({
 
   selectors: {
     [`${darkTheme} &`]: {
-      backgroundColor: colors.dark_card,
+      backgroundColor: colors.neutral_800,
       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
     },
     [`${darkTheme} &:hover`]: {
-      backgroundColor: colors.dark_border,
+      backgroundColor: colors.neutral_700,
       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
     },
   },
@@ -188,10 +188,10 @@ export const buttonIcon = style({
 
   selectors: {
     [`${button}:hover &`]: {
-      color: colors.primary,
+      color: colors.neutral_500,
     },
     [`${darkTheme} ${button}:hover &`]: {
-      color: colors.primary_dark_hover,
+      color: colors.neutral_500,
     },
   },
 });

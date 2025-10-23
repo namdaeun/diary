@@ -25,8 +25,8 @@ export const wrapper = style({
 
   selectors: {
     [`${darkTheme} &`]: {
-      backgroundColor: colors.dark_card,
-      border: `1px solid ${colors.dark_border}`,
+      backgroundColor: colors.neutral_800,
+      border: `1px solid ${colors.neutral_700}`,
       boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2)',
     },
     [`${darkTheme} &:hover`]: {
@@ -179,7 +179,7 @@ export const tagList = style({
 export const githubIcon = style({
   fontSize: '2.4rem',
   width: '2.4rem',
-  color: colors.white,
+  color: colors.neutral_white,
   padding: '0.6rem',
   cursor: 'pointer',
 
