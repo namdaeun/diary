@@ -9,7 +9,7 @@ export const wrapper = style({
   justifyContent: 'center',
   marginTop: '5rem',
   padding: '10rem 6rem',
-  height: 'calc(100vh - 6.65rem)',
+  height: 'calc(100vh - 5rem)',
   gap: '5rem',
   scrollSnapAlign: 'start',
   maxWidth: '120rem',
@@ -51,10 +51,10 @@ export const title = style({
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      fontSize: '4.4rem',
+      fontSize: '4.8rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      fontSize: '3.6rem',
+      fontSize: '3.2rem',
     },
   },
 });
@@ -68,10 +68,10 @@ export const subTitle = style({
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      fontSize: '2.6rem',
+      fontSize: '4.8rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      fontSize: '2.2rem',
+      fontSize: '3.2rem',
     },
   },
 });
@@ -82,6 +82,15 @@ export const name = style({
   fontWeight: '500',
   lineHeight: '160%',
   wordBreak: 'keep-all',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      fontSize: '4.8rem',
+    },
+    [breakpoints.MOBILE_MAX]: {
+      fontSize: '3.2rem',
+    },
+  },
 });
 
 export const description = style({
