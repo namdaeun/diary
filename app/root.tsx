@@ -20,8 +20,8 @@ import '~/styles/fonts/fonts.css';
 import '~/styles/global.css';
 import '~/styles/reset.css';
 import clsx from 'clsx';
-import Footer from '~/components/footer/Footer';
-import Header from '~/components/header/Header';
+import Footer from '~/components/Footer/Footer';
+import Header from '~/components/Header/Header';
 import { darkTheme, lightTheme } from '~/styles/global.css';
 
 export const links: LinksFunction = () => [

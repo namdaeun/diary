@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import Tag from '~/components/tags/Tag';
+import Tag from '~/components/Tag/Tag';
 import type { Project } from '~/views/AboutPage/types';
 import * as s from './styles.css';
 
