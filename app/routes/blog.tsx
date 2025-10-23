@@ -1,6 +1,6 @@
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import ArticleCard from '~/components/articleCard/ArticleCard';
+import ArticleCard from '~/components/ArticleCard/ArticleCard';
 import { ARTICLES, type Article } from '~/constants/articles';
 import * as S from './blog.css';
 
