@@ -1,5 +1,6 @@
 import type { MetaFunction } from '@remix-run/node';
 import ExperienceSection from '~/views/AboutPage/components/ExperienceSection/ExperienceSection';
+import IntroSection from '~/views/AboutPage/components/IntroSection/IntroSection';
 import ProjectSection from '~/views/AboutPage/components/ProjectSection/ProjectSection';
 import ReviewSection from '~/views/AboutPage/components/ReviewSection/ReviewSection';
 import * as S from './index.css';
@@ -8,60 +9,10 @@ export const meta: MetaFunction = () => {
   return [{ title: 'diary' }, { name: 'description', content: '다이어리' }];
 };
 
-const LINKS = {
-  GITHUB: 'https://github.com/namdaeun',
-  LINKEDIN: 'https://www.linkedin.com/in/skaekdms/',
-  EMAIL: 'mailto:nde40345@gmail.com',
-  BLOG: 'https://velog.io/@namdaeun/posts',
-};
-
 const About = () => {
-  const handleClick = (link: string) => {
-    window.open(link, '_blank');
-  };
-
   return (
     <div className={S.pageWrapper}>
-      <div className={S.wrapper}>
-        <div className={S.titleWrapper}>
-          <h1 className={S.title}>안녕하세요,</h1>
-          <h2 className={S.subTitle}>프론트엔드 개발자 남다은입니다.</h2>
-        </div>
-        <div className={S.locationWrapper}>
-          <i className={`ri-map-pin-line ${S.icon}`} />
-          <p className={S.location}>서울, 대한민국</p>
-        </div>
-        <div className={S.contactWrapper}>
-          <button
-            className={S.button}
-            onClick={() => handleClick(LINKS.GITHUB)}
-            type="button"
-          >
-            <i className={`ri-github-line ${S.buttonIcon}`} />
-          </button>
-          <button
-            className={S.button}
-            onClick={() => handleClick(LINKS.LINKEDIN)}
-            type="button"
-          >
-            <i className={`ri-linkedin-box-line ${S.buttonIcon}`} />
-          </button>
-          <button
-            className={S.button}
-            onClick={() => handleClick(LINKS.EMAIL)}
-            type="button"
-          >
-            <i className={`ri-mail-line ${S.buttonIcon}`} />
-          </button>
-          <button
-            className={S.button}
-            onClick={() => handleClick(LINKS.BLOG)}
-            type="button"
-          >
-            <i className={`ri-blogger-line ${S.buttonIcon}`} />
-          </button>
-        </div>
-      </div>
+      <IntroSection />
       <ProjectSection />
       <ExperienceSection />
       <ReviewSection />
