@@ -10,4 +10,6 @@ export const colors = {
   neutral_800: '#2A2A2A',
   neutral_900: '#151514',
   neutral_black: '#111827',
+
+  blue: '#4299F8',
 };

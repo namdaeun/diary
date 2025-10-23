@@ -1,9 +1,7 @@
 import { Link } from '@remix-run/react';
 import { type Theme, useTheme } from 'remix-themes';
-import lightLogo from '../../../public/assets/image/img_logo.png';
-import darkLogo from '../../../public/assets/image/img_logo_dark.png';
 import Switch from '../Switch/Switch';
-import { headerStyle, imageStyle } from './styles.css';
+import * as s from './styles.css';
 
 const Header = () => {
   const [theme, setTheme] = useTheme();
@@ -15,23 +13,13 @@ const Header = () => {
     };
 
     const nextTheme = nextState[theme as keyof typeof nextState] ?? 'light';
-
     setTheme(nextTheme as Theme);
   };
 
   return (
-    <header className={headerStyle}>
-      <Link to="/">
-        <img
-          src={lightLogo}
-          className={`${imageStyle} light-logo`}
-          alt="라이트 모드 로고"
-        />
-        <img
-          src={darkLogo}
-          className={`${imageStyle} dark-logo`}
-          alt="다크 모드 로고"
-        />
+    <header className={s.headerStyle}>
+      <Link to="/" className={s.logoStyle}>
+        <h1 className={s.logoStyle}>Daeun Nam</h1>
       </Link>
       {/* <ul className={menuSectionStyle}>
         <li className={menuStyle}>

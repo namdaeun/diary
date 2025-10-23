@@ -1,5 +1,7 @@
 import type { ChangeEvent, ComponentPropsWithRef } from 'react';
-import { backgroundStyle, switchStyle } from './styles.css';
+import icDark from '../../../public/assets/icon/ic_dark.svg';
+import icLight from '../../../public/assets/icon/ic_light.svg';
+import { backgroundStyle, iconStyle, switchStyle } from './styles.css';
 
 interface SwitchProps extends ComponentPropsWithRef<'input'> {
   mode: 'dark' | 'light';
@@ -16,8 +18,13 @@ const Switch = ({ mode, onChange, ...props }: SwitchProps) => {
         onChange={onChange}
         aria-label="switch"
         aria-checked="true"
-        className={switchStyle()}
+        className={switchStyle}
         {...props}
+      />
+      <img
+        src={mode === 'light' ? icLight : icDark}
+        alt={`${mode} mode icon`}
+        className={iconStyle({ mode: mode })}
       />
     </div>
   );

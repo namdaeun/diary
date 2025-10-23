@@ -1,60 +1,69 @@
+import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 import { colors } from '~/styles/colors';
-import sunny from '../../../public/assets/icon/ic_sunny.svg';
 
 export const backgroundStyle = recipe({
   base: {
     position: 'relative',
-    width: '5.2rem',
-    height: '3.2rem',
-    flexShrink: '0',
-    padding: '0.3rem',
-    borderRadius: '10rem',
-    background: colors.neutral_200,
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    minWidth: '6.4rem',
+    maxWidth: '6.4rem',
+    height: '3.6rem',
+    padding: '0.4rem',
+    borderRadius: '9.9rem',
+    transition: 'all 0.2s ease',
     cursor: 'pointer',
-    boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.1)',
   },
 
   variants: {
     mode: {
       light: {
-        background: `linear-gradient(135deg, ${colors.neutral_900} 0%, #2c2b29 100%)`,
-        boxShadow:
-          'inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(34, 33, 31, 0.3)',
+        backgroundColor: colors.blue,
       },
       dark: {
-        background: `linear-gradient(135deg, ${colors.neutral_600} 0%, ${colors.neutral_500} 100%)`,
-        boxShadow:
-          'inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 12px rgba(74, 158, 255, 0.4)',
+        backgroundColor: colors.neutral_700,
       },
     },
   },
 });
 
-export const switchStyle = recipe({
+export const switchStyle = style({
+  position: 'absolute',
+  top: '0.1rem',
+  left: '0.6rem',
+  width: '2.8rem',
+  height: '2.8rem',
+  padding: '0.7rem',
+  borderRadius: '50%',
+  border: 'none',
+  transition: 'all 0.2s ease',
+  transform: 'translateX(-0.4rem)',
+  backgroundColor: colors.neutral_white,
+  appearance: 'none',
+  cursor: 'pointer',
+
+  ':checked': {
+    transform: 'translateX(2rem)',
+  },
+});
+
+export const iconStyle = recipe({
   base: {
     position: 'absolute',
-    width: '2.6rem',
-    height: '2.6rem',
-    margin: '0',
-    top: '0.3rem',
-    backgroundColor: colors.neutral_white,
-    backgroundImage: `url(${sunny})`,
-    backgroundSize: '3rem',
-    backgroundPosition: 'center calc(50% + 1px)',
-    backgroundRepeat: 'no-repeat',
-    borderRadius: '50%',
-    border: 'none',
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1)',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    transform: 'translateX(1.9rem)',
-    appearance: 'none',
-    cursor: 'pointer',
-
-    ':checked': {
-      transform: 'translateX(0rem)',
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15)',
+    width: '1.4rem',
+    height: '1.4rem',
+    top: '1.1rem',
+    left: '1.6rem',
+    pointerEvents: 'none',
+    transition: 'all 0.2s ease',
+  },
+  variants: {
+    mode: {
+      light: {
+        transform: 'translateX(2.1rem)',
+      },
+      dark: {
+        transform: 'translateX(-0.3rem)',
+      },
     },
   },
 });

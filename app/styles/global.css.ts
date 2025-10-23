@@ -14,6 +14,13 @@ const themeColor = createThemeContract({
     background: null,
     article_bg: null,
     border: null,
+
+    neutral_1: null,
+    neutral_2: null,
+    neutral_3: null,
+    neutral_4: null,
+    neutral_5: null,
+    neutral_6: null,
   },
 });
 
@@ -25,6 +32,13 @@ export const lightTheme = createTheme(themeColor, {
     background: colors.neutral_white,
     article_bg: colors.neutral_100,
     border: colors.neutral_200,
+
+    neutral_1: colors.neutral_black,
+    neutral_2: colors.neutral_600,
+    neutral_3: colors.neutral_500,
+    neutral_4: colors.neutral_200,
+    neutral_5: colors.neutral_100,
+    neutral_6: colors.neutral_white,
   },
 });
 
@@ -36,6 +50,13 @@ export const darkTheme = createTheme(themeColor, {
     background: colors.neutral_900,
     article_bg: colors.neutral_800,
     border: colors.neutral_700,
+
+    neutral_1: colors.neutral_white,
+    neutral_2: colors.neutral_300,
+    neutral_3: colors.neutral_400,
+    neutral_4: colors.neutral_700,
+    neutral_5: colors.neutral_800,
+    neutral_6: colors.neutral_900,
   },
 });
 
