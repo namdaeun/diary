@@ -6,22 +6,18 @@ import * as s from './styles.css';
 
 interface ProjectItemProps {
   project: Project;
-  contentPosition?: 'left' | 'right';
 }
 
-const Content = ({ project, contentPosition }: ProjectItemProps) => {
-  const { name, description, skills, githubUrl } = project;
-  const hasLeftContent = contentPosition === 'left';
+const Content = ({ project }: ProjectItemProps) => {
+  const { name, period, description, skills, githubUrl } = project;
 
   return (
-    <div
-      className={
-        hasLeftContent
-          ? `${s.leftSide} ${s.contentContainer}`
-          : `${s.rightSide} ${s.contentContainer}`
-      }
-    >
-      <h1 className={s.title}>{name}</h1>
+    <div className={`${s.contentContainer}`}>
+      <div className={s.titleBox}>
+        <h1 className={s.title}>{name}</h1>
+        <p className={s.period}>{period}</p>
+      </div>
+
       <span className={s.description}>{description}</span>
       <div className={s.tagList}>
         {skills.map((skill) => (
@@ -42,12 +38,8 @@ const Content = ({ project, contentPosition }: ProjectItemProps) => {
   );
 };
 
-const ProjectItem = ({
-  project,
-  contentPosition = 'right',
-}: ProjectItemProps) => {
+const ProjectItem = ({ project }: ProjectItemProps) => {
   const { name, imageUrl, githubUrl } = project;
-  const hasRightContent = contentPosition === 'right';
   const ref = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -55,11 +47,7 @@ const ProjectItem = ({
     offset: ['start end', 'end start'],
   });
 
-  const x = useTransform(
-    scrollYProgress,
-    [0, 0.3, 1],
-    [hasRightContent ? 300 : -300, 0, 0]
-  );
+  const x = useTransform(scrollYProgress, [0, 0.3, 1], [300, 0, 0]);
 
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 1]);
 
@@ -72,21 +60,10 @@ const ProjectItem = ({
         window.open(githubUrl, '_blank');
       }}
     >
-      {!hasRightContent && (
-        <Content project={project} contentPosition={contentPosition} />
-      )}
-      <div
-        className={
-          hasRightContent
-            ? `${s.leftSide} ${s.imageContainer}`
-            : `${s.rightSide} ${s.imageContainer}`
-        }
-      >
+      <div className={`${s.imageContainer}`}>
         <img src={imageUrl} alt={name} className={s.image} />
       </div>
-      {hasRightContent && (
-        <Content project={project} contentPosition={contentPosition} />
-      )}
+      <Content project={project} />
     </motion.section>
   );
 };

@@ -15,28 +15,28 @@ export const backgroundStyle = recipe({
   variants: {
     type: {
       primary: {
-        color: colors.white,
-        backgroundColor: colors.primary,
+        color: colors.neutral_white,
+        backgroundColor: colors.neutral_500,
         boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
 
         selectors: {
           [`${darkTheme} &`]: {
-            backgroundColor: colors.primary_dark_bright,
+            backgroundColor: colors.neutral_600,
             boxShadow: '0 2px 12px rgba(74, 158, 255, 0.5)',
-            color: colors.dark_text_primary,
+            color: colors.neutral_white,
           },
         },
       },
       secondary: {
-        color: colors.primary,
-        backgroundColor: colors.blue_50,
-        border: `1px solid ${colors.blue_200}`,
+        color: colors.neutral_500,
+        backgroundColor: colors.neutral_100,
+        border: `1px solid ${colors.neutral_200}`,
 
         selectors: {
           [`${darkTheme} &`]: {
-            color: colors.primary_dark_bright,
-            backgroundColor: colors.dark_card,
-            border: `1px solid ${colors.dark_border}`,
+            color: colors.neutral_600,
+            backgroundColor: colors.neutral_800,
+            border: `1px solid ${colors.neutral_700}`,
           },
         },
       },
@@ -55,14 +55,14 @@ export const textStyle = recipe({
   variants: {
     type: {
       primary: {
-        color: colors.white,
+        color: colors.neutral_white,
       },
       secondary: {
-        color: colors.primary,
+        color: colors.neutral_500,
 
         selectors: {
           [`${darkTheme} &`]: {
-            color: colors.primary_dark_bright,
+            color: colors.neutral_600,
           },
         },
       },

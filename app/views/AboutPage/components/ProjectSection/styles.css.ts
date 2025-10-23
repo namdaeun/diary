@@ -61,3 +61,20 @@ export const description = style({
     },
   },
 });
+
+export const projectsContainer = style({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(2, 1fr)',
+  gap: '4rem',
+  width: '100%',
+
+  '@media': {
+    [breakpoints.TABLET_MAX]: {
+      gap: '3rem',
+    },
+    [breakpoints.MOBILE_MAX]: {
+      gridTemplateColumns: '1fr',
+      gap: '2rem',
+    },
+  },
+});

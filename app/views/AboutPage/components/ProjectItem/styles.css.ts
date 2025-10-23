@@ -5,23 +5,11 @@ import { darkTheme, vars } from '~/styles/global.css';
 
 export const wrapper = style({
   display: 'flex',
+  flexDirection: 'column',
+  gap: '4rem',
   borderRadius: '1.6rem',
   overflow: 'hidden',
   cursor: 'pointer',
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)',
-  border: `1px solid ${vars.themeColor.color.border}`,
-
-  ':hover': {
-    transform: 'translateY(-0.4rem)',
-    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08)',
-  },
-
-  '@media': {
-    [breakpoints.TABLET_MAX]: {
-      flexDirection: 'column',
-    },
-  },
 
   selectors: {
     [`${darkTheme} &`]: {
@@ -36,50 +24,22 @@ export const wrapper = style({
 });
 
 export const imageContainer = style({
-  width: '50%',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   overflow: 'hidden',
-  padding: '2.4rem',
-  backgroundColor: vars.themeColor.color.article_bg,
-
-  '@media': {
-    [breakpoints.TABLET_MAX]: {
-      width: '100%',
-      padding: '2.4rem',
-    },
-    [breakpoints.MOBILE_MAX]: {
-      padding: '1.6rem',
-    },
-  },
+  borderRadius: '2rem',
 });
 
-export const leftSide = style({
-  borderRadius: '1.6rem 0 0 1.6rem',
-
-  '@media': {
-    [breakpoints.TABLET_MAX]: {
-      borderRadius: '1.6rem 1.6rem 0 0',
-    },
-  },
-});
-
-export const rightSide = style({
-  borderRadius: '0 1.6rem 1.6rem 0',
-
-  '@media': {
-    [breakpoints.TABLET_MAX]: {
-      borderRadius: '0 0 1.6rem 1.6rem',
-    },
-  },
+export const titleBox = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '1.2rem',
 });
 
 export const contentContainer = style({
   display: 'flex',
-  width: '50%',
   flexDirection: 'column',
-  padding: '4.8rem',
   gap: '2.4rem',
   backgroundColor: vars.themeColor.color.background,
 
@@ -98,9 +58,9 @@ export const contentContainer = style({
 
 export const image = style({
   width: '100%',
-  height: '100%',
+  height: '35rem',
   objectFit: 'cover',
-  borderRadius: '1.2rem',
+  borderRadius: '2rem',
   transition: 'transform 0.3s ease',
 
   ':hover': {
@@ -124,12 +84,11 @@ export const image = style({
 });
 
 export const title = style({
-  fontSize: '2.2rem',
-  fontWeight: 700,
-  color: vars.themeColor.color.font,
-  lineHeight: '1.3',
-  letterSpacing: '-0.01em',
-  marginBottom: '0.4rem',
+  width: 'fit-content',
+  fontSize: '3.2rem',
+  fontWeight: 500,
+  color: vars.themeColor.color.neutral_1,
+  lineHeight: '120%',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -142,38 +101,25 @@ export const title = style({
   },
 });
 
-export const description = style({
-  fontSize: '1.6rem',
-  fontWeight: 400,
-  color: vars.themeColor.color.description,
-  wordBreak: 'keep-all',
-  lineHeight: '1.5',
+export const period = style({
+  color: vars.themeColor.color.neutral_2,
+  fontSize: '2.4rem',
+  fontWeight: 500,
+  lineHeight: '120%',
+});
 
-  '@media': {
-    [breakpoints.TABLET_MAX]: {
-      fontSize: '1.4rem',
-      textAlign: 'center',
-    },
-    [breakpoints.MOBILE_MAX]: {
-      fontSize: '1.3rem',
-    },
-  },
+export const description = style({
+  color: vars.themeColor.color.neutral_3,
+  fontSize: '2rem',
+  fontWeight: 400,
+  wordBreak: 'keep-all',
+  lineHeight: '140%',
 });
 
 export const tagList = style({
   display: 'flex',
-  gap: '0.8rem',
+  gap: '1.2rem',
   flexWrap: 'wrap',
-
-  '@media': {
-    [breakpoints.TABLET_MAX]: {
-      justifyContent: 'center',
-      gap: '0.6rem',
-    },
-    [breakpoints.MOBILE_MAX]: {
-      gap: '0.4rem',
-    },
-  },
 });
 
 export const githubIcon = style({

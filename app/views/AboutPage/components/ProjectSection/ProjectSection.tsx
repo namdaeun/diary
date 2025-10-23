@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import Tag from '~/components/Tag/Tag';
 import { PROJECTS } from '~/constants/projects';
-import { sectionVariants, titleVariants } from '~/styles/motion';
+import { sectionVariants } from '~/styles/motion';
 import ProjectItem from '~/views/AboutPage/components/ProjectItem/ProjectItem';
 import * as s from './styles.css';
 
@@ -14,19 +13,11 @@ const ProjectSection = () => {
       viewport={{ once: true, amount: 0.3 }}
       variants={sectionVariants}
     >
-      <motion.div className={s.titleWrapper} variants={titleVariants}>
-        <Tag>Projects</Tag>
-        <p className={s.description}>
-          제가 작업한 프로젝트 중 일부를 소개할게요.
-        </p>
-      </motion.div>
-      {PROJECTS.map((project) => (
-        <ProjectItem
-          key={project.id}
-          project={project}
-          contentPosition={project.id % 2 === 0 ? 'left' : 'right'}
-        />
-      ))}
+      <div className={s.projectsContainer}>
+        {PROJECTS.map((project) => (
+          <ProjectItem key={project.id} project={project} />
+        ))}
+      </div>
     </motion.section>
   );
 };

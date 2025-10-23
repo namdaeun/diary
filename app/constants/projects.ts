@@ -6,6 +6,7 @@ export const PROJECTS = [
   {
     id: 1,
     name: 'Tiki',
+    period: '2024.07 - 2025.03',
     description: 'Web FE 개발 담당',
     skills: [
       'React',
@@ -23,6 +24,7 @@ export const PROJECTS = [
   {
     id: 2,
     name: 'Mile',
+    period: '2024.01 - 2024.07',
     description: 'Web FE 개발 담당',
     skills: ['React', 'TypeScript', 'Styled-components', 'Figma', 'Git'],
     imageUrl: mileImage,
@@ -31,6 +33,7 @@ export const PROJECTS = [
   {
     id: 3,
     name: 'Coaster',
+    period: '2024.12 - 2025.03',
     description: 'Web FE 개발 담당',
     skills: ['React', 'TypeScript', 'Emotion CSS', 'ky', 'Figma', 'Git'],
     imageUrl: coasterImage,
