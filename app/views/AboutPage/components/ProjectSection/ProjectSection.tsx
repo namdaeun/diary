@@ -10,7 +10,6 @@ const ProjectSection = () => {
       className={s.wrapper}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
       variants={sectionVariants}
     >
       <div className={s.projectsContainer}>

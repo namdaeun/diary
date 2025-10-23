@@ -1,7 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { breakpoints } from '~/styles/breakpoints';
-import { colors } from '~/styles/colors';
-import { darkTheme, vars } from '~/styles/global.css';
+import { vars } from '~/styles/global.css';
 
 export const wrapper = style({
   display: 'flex',
@@ -10,17 +9,6 @@ export const wrapper = style({
   borderRadius: '1.6rem',
   overflow: 'hidden',
   cursor: 'pointer',
-
-  selectors: {
-    [`${darkTheme} &`]: {
-      backgroundColor: colors.neutral_800,
-      border: `1px solid ${colors.neutral_700}`,
-      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2)',
-    },
-    [`${darkTheme} &:hover`]: {
-      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3)',
-    },
-  },
 });
 
 export const imageContainer = style({
@@ -41,7 +29,6 @@ export const contentContainer = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '2.4rem',
-  backgroundColor: vars.themeColor.color.background,
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -125,19 +112,7 @@ export const tagList = style({
 export const githubIcon = style({
   fontSize: '2.4rem',
   width: '2.4rem',
-  color: colors.neutral_white,
-  padding: '0.6rem',
+  color: vars.themeColor.color.neutral_1,
   cursor: 'pointer',
-
-  '@media': {
-    [breakpoints.TABLET_MAX]: {
-      fontSize: '2rem',
-      width: '2rem',
-      alignSelf: 'center',
-    },
-    [breakpoints.MOBILE_MAX]: {
-      fontSize: '1.8rem',
-      width: '1.8rem',
-    },
-  },
+  textDecoration: 'none',
 });

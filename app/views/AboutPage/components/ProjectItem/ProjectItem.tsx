@@ -16,24 +16,24 @@ const Content = ({ project }: ProjectItemProps) => {
       <div className={s.titleBox}>
         <h1 className={s.title}>{name}</h1>
         <p className={s.period}>{period}</p>
+        <a
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={s.githubIcon}
+        >
+          <i className={`ri-github-fill ${s.githubIcon}`} />
+        </a>
       </div>
 
       <span className={s.description}>{description}</span>
       <div className={s.tagList}>
         {skills.map((skill) => (
-          <Tag key={skill} variant="secondary">
+          <Tag key={skill} size="sm">
             {skill}
           </Tag>
         ))}
       </div>
-      <a
-        href={githubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ textDecoration: 'none' }}
-      >
-        <i className={`ri-github-fill ${s.githubIcon}`} />
-      </a>
     </div>
   );
 };
