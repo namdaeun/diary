@@ -65,6 +65,7 @@ function App() {
             minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column',
+            paddingBottom: '200px',
           }}
         >
           <Header />

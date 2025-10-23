@@ -1,55 +1,30 @@
-import { globalStyle, style } from '@vanilla-extract/css';
-import { colors } from '~/styles/colors';
-import { darkTheme, lightTheme, vars } from '~/styles/global.css';
+import { style } from '@vanilla-extract/css';
+import { vars } from '~/styles/global.css';
 
 export const footer = style({
+  position: 'fixed',
+  display: 'flex',
   width: '100%',
-  backgroundColor: vars.themeColor.color.background,
-  marginTop: 'auto',
+  height: '5.9rem',
+  padding: '1rem 4rem',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  background: 'rgba(0, 0, 0, 0.10)',
+  backdropFilter: 'blur(2px)',
+  bottom: 0,
+  left: 0,
+  right: 0,
+  zIndex: 10,
+  transform: 'translateY(0)',
+  transition: 'transform 0.3s ease-in-out',
 });
 
-globalStyle(`${lightTheme} .dark-logo`, {
-  display: 'none',
+export const visible = style({
+  transform: 'translateY(0)',
 });
 
-globalStyle(`${darkTheme} .light-logo`, {
-  display: 'none',
-});
-
-export const container = style({
-  display: 'flex',
-  flexDirection: 'column',
-  padding: '4rem 10rem 2rem',
-
-  '@media': {
-    'screen and (max-width: 768px)': {
-      padding: '3rem 2rem 2rem',
-    },
-  },
-});
-
-export const leftSection = style({
-  marginBottom: '3rem',
-});
-
-export const logoSection = style({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem',
-});
-
-export const logo = style({
-  width: '10rem',
-  height: '2.8rem',
-  objectFit: 'cover',
-  cursor: 'pointer',
-});
-
-export const description = style({
-  fontSize: '1.4rem',
-  color: vars.themeColor.color.subTitle,
-  lineHeight: 1.6,
-  maxWidth: '30rem',
+export const hidden = style({
+  transform: 'translateY(100%)',
 });
 
 export const linkSection = style({
@@ -58,61 +33,31 @@ export const linkSection = style({
   gap: '1.5rem',
 });
 
-export const socialSection = style({
-  display: 'flex',
-  gap: '1.5rem',
-});
-
 export const linkList = style({
   display: 'flex',
-  gap: '1rem',
+  gap: '3.2rem',
+  alignItems: 'center',
   listStyleType: 'none',
-  justifyContent: 'end',
-  padding: 0,
-  margin: 0,
 });
 
 export const linkItem = style({
+  display: 'flex',
   width: 'fit-content',
-  fontSize: '1.4rem',
+  alignItems: 'center',
 });
 
 export const link = style({
-  color: vars.themeColor.color.subTitle,
+  fontSize: '1.6rem',
+  fontWeight: 400,
+  lineHeight: '120%',
   textDecoration: 'none',
-  transition: 'color 0.2s ease',
-
-  ':hover': {
-    color: vars.themeColor.color.font,
-  },
 });
 
-export const socialLink = style({
-  display: 'flex',
-  alignItems: 'center',
-  color: vars.themeColor.color.subTitle,
-  textDecoration: 'none',
-  transition: 'color 0.2s ease',
-});
-
-export const socialLinkIcon = style({
-  fontSize: '2.5rem',
-  transition: 'color 0.2s ease',
-
-  selectors: {
-    [`${socialLink}:hover &`]: {
-      color: colors.neutral_500,
-    },
-  },
-});
-
-export const bottomSection = style({
-  padding: '2rem 10rem',
-  textAlign: 'right',
-});
-
-export const copyright = style({
-  fontSize: '1.2rem',
-  color: vars.themeColor.color.subTitle,
-  margin: 0,
+export const period = style({
+  width: 'fit-content',
+  color: vars.themeColor.color.neutral_2,
+  fontSize: '1.6rem',
+  fontWeight: 400,
+  lineHeight: '120%',
+  whiteSpace: 'nowrap',
 });
