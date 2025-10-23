@@ -101,7 +101,7 @@ export const socialLinkIcon = style({
 
   selectors: {
     [`${socialLink}:hover &`]: {
-      color: colors.blue_500,
+      color: colors.neutral_500,
     },
   },
 });
