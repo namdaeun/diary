@@ -28,19 +28,22 @@ export const wrapper = style({
 
 export const reviewList = style({
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(30rem, 1fr))',
+  gridTemplateColumns: 'repeat(4, 1fr)',
   gap: '2rem',
   width: '100%',
   alignItems: 'stretch',
   justifyContent: 'center',
 
   '@media': {
+    'screen and (max-width: 1200px)': {
+      gridTemplateColumns: 'repeat(3, 1fr)',
+    },
     [breakpoints.TABLET_MAX]: {
-      gridTemplateColumns: 'repeat(auto-fit, minmax(26rem, 1fr))',
+      gridTemplateColumns: 'repeat(2, 1fr)',
       gap: '1.8rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      gridTemplateColumns: '1fr',
+      gridTemplateColumns: 'repeat(1, 1fr)',
       gap: '1.6rem',
     },
   },

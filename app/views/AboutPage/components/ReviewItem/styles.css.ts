@@ -7,8 +7,11 @@ export const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
   width: '100%',
-  height: '100%',
+  minWidth: '35.4rem',
+  maxWidth: '44.5rem',
+  height: '60rem',
   alignItems: 'flex-start',
+  justifyContent: 'center',
   gap: '2rem',
   padding: '6rem 3.2rem 4.8rem 3.2rem',
   borderRadius: '1.6rem',
@@ -37,22 +40,10 @@ export const wrapper = style({
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      padding: '2.4rem',
-      gap: '1.8rem',
-      ':hover': {
-        transform: 'none',
-        boxShadow:
-          '0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)',
-      },
+      maxWidth: '35.4rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      padding: '2rem',
-      gap: '1.6rem',
-      ':hover': {
-        transform: 'none',
-        boxShadow:
-          '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02)',
-      },
+      maxWidth: '35.4rem',
     },
   },
 });
@@ -67,11 +58,9 @@ export const icon = style({
   '@media': {
     [breakpoints.TABLET_MAX]: {
       width: '4.4rem',
-      fontSize: '4.4rem',
     },
     [breakpoints.MOBILE_MAX]: {
       width: '4rem',
-      fontSize: '4rem',
     },
   },
 
@@ -83,24 +72,12 @@ export const icon = style({
 });
 
 export const description = style({
-  fontSize: '1.5rem',
+  fontSize: '2rem',
   fontWeight: 400,
   color: vars.themeColor.color.neutral_1,
-  lineHeight: '1.6',
+  lineHeight: '140%',
   wordBreak: 'keep-all',
   whiteSpace: 'pre-line',
-  flex: 1,
-
-  '@media': {
-    [breakpoints.TABLET_MAX]: {
-      fontSize: '1.4rem',
-      lineHeight: '1.5',
-    },
-    [breakpoints.MOBILE_MAX]: {
-      fontSize: '1.3rem',
-      lineHeight: '1.5',
-    },
-  },
 });
 
 export const infoLayout = style({
@@ -122,11 +99,10 @@ export const infoLayout = style({
 });
 
 export const name = style({
-  fontSize: '2rem',
-  fontWeight: 700,
-  color: vars.themeColor.color.font,
-  lineHeight: '1.3',
-  letterSpacing: '-0.01em',
+  fontSize: '2.6rem',
+  fontWeight: 500,
+  lineHeight: '120%',
+  color: vars.themeColor.color.neutral_1,
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
@@ -139,10 +115,10 @@ export const name = style({
 });
 
 export const info = style({
-  fontSize: '1.4rem',
-  fontWeight: 400,
-  color: vars.themeColor.color.font,
-  lineHeight: '2rem',
+  fontSize: '2rem',
+  fontWeight: 500,
+  lineHeight: '120%',
+  color: vars.themeColor.color.neutral_2,
 
   '@media': {
     [breakpoints.MOBILE_MAX]: {

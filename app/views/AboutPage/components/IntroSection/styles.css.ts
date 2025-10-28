@@ -9,7 +9,7 @@ export const wrapper = style({
   justifyContent: 'center',
   marginTop: '5rem',
   padding: '10rem 6rem',
-  height: 'calc(100vh - 20rem)',
+  height: 'calc(100vh - 15rem)',
   gap: '5rem',
   scrollSnapAlign: 'start',
   maxWidth: '120rem',
