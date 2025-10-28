@@ -13,7 +13,7 @@ export const wrapper = style({
   padding: '6rem 3.2rem 4.8rem 3.2rem',
   borderRadius: '1.6rem',
   backgroundColor: vars.themeColor.color.neutral_5,
-  border: `1px solid ${vars.themeColor.color.border}`,
+  border: `1px solid ${vars.themeColor.color.neutral_4}`,
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   position: 'relative',
   overflow: 'hidden',
@@ -53,17 +53,6 @@ export const wrapper = style({
         boxShadow:
           '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02)',
       },
-    },
-  },
-
-  selectors: {
-    [`${darkTheme} &`]: {
-      backgroundColor: colors.neutral_800,
-      border: `1px solid ${colors.neutral_700}`,
-      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15)',
-    },
-    [`${darkTheme} &:hover`]: {
-      boxShadow: '0 12px 32px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2)',
     },
   },
 });
