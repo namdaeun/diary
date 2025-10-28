@@ -10,10 +10,23 @@ export const container = style({
 export const title = style({
   fontSize: '2.5rem',
   fontWeight: 'bold',
+  marginBottom: '1.6rem',
 });
 
-export const articleGrid = style({
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+export const articleListContainer = style({
+  display: 'flex',
+  width: '100%',
+  alignItems: 'center',
+  justifyContent: 'center',
+});
+
+export const articleList = style({
+  display: 'flex',
+  width: '100%',
+  flexWrap: 'wrap',
   gap: '2rem',
+});
+
+export const articleItem = style({
+  width: 'fit-content',
 });

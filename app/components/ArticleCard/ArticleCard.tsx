@@ -1,5 +1,5 @@
 import Tag from '../Tag/Tag';
-import { articleStyle, dateStyle, titleStyle } from './styles.css';
+import * as s from './styles.css';
 
 interface ArticleCardProp {
   title: string;
@@ -9,11 +9,17 @@ interface ArticleCardProp {
 
 const ArticleCard = ({ title, date, tagName }: ArticleCardProp) => {
   return (
-    <article className={articleStyle}>
-      {/* <img src={thumbnail} className={imgStyle} alt="아티클 썸네일" /> */}
-      <Tag variant="secondary">{tagName}</Tag>
-      <h1 className={titleStyle}>{title}</h1>
-      <span className={dateStyle}>{date.getDate()}</span>
+    <article className={s.articleStyle}>
+      <img
+        src="/images/thumbnail.png"
+        className={s.imgStyle}
+        alt="아티클 썸네일"
+      />
+      <div className={s.contentStyle}>
+        <h1 className={s.titleStyle}>{title}</h1>
+        <Tag size="sm">{tagName}</Tag>
+      </div>
+      <span className={s.dateStyle}>{date.getDate()}</span>
     </article>
   );
 };

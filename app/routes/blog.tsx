@@ -14,15 +14,19 @@ export default function Blog() {
   return (
     <div className={S.container}>
       <h1 className={S.title}>Blog</h1>
-      <div className={S.articleGrid}>
-        {articles.map((article) => (
-          <ArticleCard
-            key={article.id}
-            title={article.title}
-            date={new Date(article.date)}
-            tagName={article.tagName}
-          />
-        ))}
+      <div className={S.articleListContainer}>
+        <ul className={S.articleList}>
+          {articles.map((article) => (
+            <li key={article.id} className={S.articleItem}>
+              <ArticleCard
+                key={article.id}
+                title={article.title}
+                date={new Date(article.date)}
+                tagName={article.tagName}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

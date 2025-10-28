@@ -1,50 +1,47 @@
-import { style } from "@vanilla-extract/css";
-import { vars } from "~/styles/global.css";
+import { style } from '@vanilla-extract/css';
+import { vars } from '~/styles/global.css';
 
 export const articleStyle = style({
-  display: "flex",
+  display: 'flex',
+  flexDirection: 'column',
+  width: '44.5rem',
+  height: '44.2rem',
+  padding: '2rem',
+  justifyContent: 'space-between',
+  gap: '2.4rem',
+  border: `1px solid ${vars.themeColor.color.neutral_4}`,
+  borderRadius: '2rem',
+  backgroundColor: `${vars.themeColor.color.neutral_5}`,
+  cursor: 'pointer',
 
-  flexDirection: "column",
-
-  width: "27.3rem",
-  height: "34rem",
-
-  padding: "1.1rem",
-
-  gap: "1.2rem",
-
-  border: `1px solid ${vars.themeColor.color.border}`,
-  borderRadius: "0.8rem",
-
-  backgroundColor: `${vars.themeColor.color.article_bg}`,
-
-  cursor: "pointer",
+  ':hover': {
+    borderColor: `${vars.themeColor.color.neutral_4}`,
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  },
 });
 
 export const imgStyle = style({
-  width: "25rem",
-  height: "16.7rem",
+  width: '25rem',
+  height: '16.7rem',
+  objectFit: 'cover',
+});
 
-  objectFit: "cover",
+export const contentStyle = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1.6rem',
 });
 
 export const titleStyle = style({
-  maxWidth: "23.8rem",
-
-  fontSize: "1.6rem",
-  fontWeight: 600,
-
-  wordBreak: "keep-all",
-
-  justifyContent: "center",
-
-  backgroundColor: "transparent",
+  fontSize: '2.4rem',
+  fontWeight: 500,
+  lineHeight: '120%',
+  wordBreak: 'keep-all',
 });
 
 export const dateStyle = style({
-  display: "flex",
-  justifyContent: "end",
-  marginTop: "auto",
-
-  backgroundColor: "transparent",
+  color: `${vars.themeColor.color.neutral_2}`,
+  fontSize: '2rem',
+  fontWeight: 400,
+  lineHeight: '140%',
 });

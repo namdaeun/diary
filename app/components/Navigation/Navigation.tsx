@@ -12,7 +12,7 @@ const Navigation = ({ activeSection, style }: NavigationProps) => {
   const getNavigationItem = () => {
     switch (activeSection) {
       case 'about':
-        return { label: 'About', path: '#about' };
+        return { label: 'About', path: '/' };
       case 'project':
         return { label: 'Project', path: '#project' };
       case 'experience':
