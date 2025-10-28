@@ -10,12 +10,11 @@ export const wrapper = style({
   height: '100%',
   alignItems: 'flex-start',
   gap: '2rem',
-  padding: '2.8rem',
+  padding: '6rem 3.2rem 4.8rem 3.2rem',
   borderRadius: '1.6rem',
-  backgroundColor: vars.themeColor.color.background,
+  backgroundColor: vars.themeColor.color.neutral_5,
   border: `1px solid ${vars.themeColor.color.border}`,
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02)',
   position: 'relative',
   overflow: 'hidden',
 
@@ -33,7 +32,7 @@ export const wrapper = style({
 
   ':hover': {
     transform: 'translateY(-0.2rem)',
-    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.06)',
+    backgroundColor: vars.themeColor.color.neutral_4,
   },
 
   '@media': {
@@ -97,7 +96,7 @@ export const icon = style({
 export const description = style({
   fontSize: '1.5rem',
   fontWeight: 400,
-  color: vars.themeColor.color.description,
+  color: vars.themeColor.color.neutral_1,
   lineHeight: '1.6',
   wordBreak: 'keep-all',
   whiteSpace: 'pre-line',
