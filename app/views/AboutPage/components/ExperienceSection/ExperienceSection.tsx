@@ -8,6 +8,7 @@ const ExperienceSection = () => {
   return (
     <motion.section
       className={s.wrapper}
+      id="experience"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}

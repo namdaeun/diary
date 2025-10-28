@@ -2,7 +2,7 @@ import * as s from './styles.css';
 
 const IntroSection = () => {
   return (
-    <section className={s.wrapper}>
+    <section className={s.wrapper} id="about">
       <div className={s.titleWrapper}>
         <h1 className={s.title}>안녕하세요</h1>
         <h1 className={s.subTitle}>

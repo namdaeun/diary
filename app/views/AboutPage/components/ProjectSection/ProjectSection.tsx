@@ -8,6 +8,7 @@ const ProjectSection = () => {
   return (
     <motion.section
       className={s.wrapper}
+      id="project"
       initial="hidden"
       whileInView="visible"
       variants={sectionVariants}

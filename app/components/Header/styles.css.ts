@@ -32,45 +32,12 @@ export const logoStyle = style({
   color: vars.themeColor.color.neutral_2,
 });
 
-export const menuSectionStyle = style({
+export const navigationContainer = style({
+  position: 'fixed',
   display: 'flex',
-  maxWidth: '5rem',
-  height: '1.7rem',
-  margin: '0 3rem',
-  gap: '1.5rem',
-});
-
-export const menuStyle = style({
-  display: 'flex',
-  width: 'fit-content',
+  gap: '1rem',
   alignItems: 'center',
-  listStyleType: 'none',
-  cursor: 'pointer',
-});
-
-export const linkStyle = style({
-  position: 'relative',
-  alignItems: 'center',
-  width: 'fit-content',
-  padding: '1rem',
-  textDecoration: 'none',
-  fontWeight: 300,
-  fontSize: '1.5rem',
-
-  selectors: {
-    '&::after': {
-      display: 'block',
-      position: 'absolute',
-      content: '',
-      left: '1rem',
-      right: '1rem',
-      width: '0',
-      borderBottom: `1.5px solid ${vars.themeColor.color.font}`,
-      transition: 'width 250ms ease-out',
-    },
-
-    '&:hover::after': {
-      width: 'calc(100% - 2rem)',
-    },
-  },
+  justifyContent: 'center',
+  left: '50%',
+  transform: 'translateX(-50%)',
 });
