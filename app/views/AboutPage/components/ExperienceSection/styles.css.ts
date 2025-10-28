@@ -7,7 +7,6 @@ export const wrapper = style({
   flexDirection: 'column',
   gap: '6rem',
   padding: '12rem 0',
-  backgroundColor: vars.themeColor.color.article_bg,
   minHeight: '100vh',
   scrollSnapAlign: 'start',
   width: '100%',
@@ -80,6 +79,8 @@ export const description = style({
 export const experienceList = style({
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
   gap: '2.8rem',
 
   '@media': {

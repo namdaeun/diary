@@ -9,7 +9,7 @@ export const wrapper = style({
   justifyContent: 'center',
   marginTop: '5rem',
   padding: '10rem 6rem',
-  height: 'calc(100vh - 5rem)',
+  height: 'calc(100vh - 20rem)',
   gap: '5rem',
   scrollSnapAlign: 'start',
   maxWidth: '120rem',
@@ -20,7 +20,7 @@ export const wrapper = style({
       padding: '8rem 4rem',
       gap: '3.5rem',
       height: 'auto',
-      minHeight: 'calc(100vh - 5rem)',
+      minHeight: 'calc(100vh - 20rem)',
     },
     [breakpoints.MOBILE_MAX]: {
       padding: '6rem 2rem',

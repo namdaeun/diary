@@ -10,8 +10,8 @@ export const EXPERIENCES = [
     company: 'CEMWARE',
     position: 'Frontend Developer',
     description: ['콘텐츠 팀 소속', '사내 API 기반 디지털 콘텐츠 개발'],
-    startDate: '03.2025',
-    endDate: '06.2025',
+    startDate: '2025.03',
+    endDate: '2025.06',
   },
   {
     id: 2,
@@ -24,8 +24,8 @@ export const EXPERIENCES = [
       'React 스터디장을 맡아 3개월 간 스터디 진행',
       '4가지 파트(기획, 디자인, 서버, 웹)로 이뤄진 협업 경험',
     ],
-    startDate: '03.2024',
-    endDate: '07.2024',
+    startDate: '2024.03',
+    endDate: '2024.07',
   },
   {
     id: 3,
@@ -36,8 +36,8 @@ export const EXPERIENCES = [
       '34기 APPJAM 우수상 수상',
       '4가지 파트(기획, 디자인, 서버, 웹)로 이뤄진 협업 경험',
     ],
-    startDate: '09.2023',
-    endDate: '01.2024',
+    startDate: '2023.09',
+    endDate: '2024.01',
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ export const EXPERIENCES = [
       'SOPT의 공홈과, 내부 어드민 시스템, 리크루팅 지원서 유지 및 보수',
       '2주 단위의 애자일 스프린트를 통한 프로젝트 진행',
     ],
-    startDate: '03.2025',
-    endDate: '06.2025',
+    startDate: '2025.03',
+    endDate: '2025.06',
   },
 ];

@@ -20,7 +20,12 @@ const ExperienceItem = ({ experience }: ExperienceItemProps) => {
     >
       <img src={logoUrl} alt={company} className={s.logo} />
       <div className={s.contentLayout}>
-        <h1 className={s.position}>{position}</h1>
+        <div className={s.titleLayout}>
+          <h1 className={s.position}>{position}</h1>
+          <p className={s.date}>
+            {startDate} - {endDate}
+          </p>
+        </div>
         <ul className={s.descriptionList}>
           {description.map((item) => (
             <li key={item} className={s.description}>
@@ -29,9 +34,6 @@ const ExperienceItem = ({ experience }: ExperienceItemProps) => {
           ))}
         </ul>
       </div>
-      <p className={s.date}>
-        {startDate} - {endDate}
-      </p>
     </motion.article>
   );
 };

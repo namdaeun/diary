@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import Tag from '~/components/Tag/Tag';
 import { EXPERIENCES } from '~/constants/experiences';
-import { listVariants, sectionVariants, titleVariants } from '~/styles/motion';
+import { listVariants, sectionVariants } from '~/styles/motion';
 import ExperienceItem from '~/views/AboutPage/components/ExperienceItem/ExperienceItem';
 import * as s from './styles.css';
 
@@ -15,10 +14,6 @@ const ExperienceSection = () => {
       variants={sectionVariants}
     >
       <div className={s.container}>
-        <motion.div className={s.titleWrapper} variants={titleVariants}>
-          <Tag>Experience</Tag>
-          <p className={s.description}>최근 경험들을 간단히 정리했어요.</p>
-        </motion.div>
         <motion.div className={s.experienceList} variants={listVariants}>
           {EXPERIENCES.map((experience) => (
             <ExperienceItem key={experience.id} experience={experience} />
