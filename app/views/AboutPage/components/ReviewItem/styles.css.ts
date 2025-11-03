@@ -82,7 +82,7 @@ export const infoLayout = style({
 });
 
 export const name = style({
-  fontSize: '2.6rem',
+  fontSize: '2.3rem',
   fontWeight: 500,
   lineHeight: '120%',
   color: vars.themeColor.color.neutral_1,
@@ -98,9 +98,10 @@ export const name = style({
 });
 
 export const info = style({
-  fontSize: '2rem',
+  fontSize: '1.8rem',
   fontWeight: 500,
   lineHeight: '120%',
+  wordBreak: 'keep-all',
   color: vars.themeColor.color.neutral_2,
 
   '@media': {

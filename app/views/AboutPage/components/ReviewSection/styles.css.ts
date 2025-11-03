@@ -6,11 +6,11 @@ export const wrapper = style({
   flexDirection: 'column',
   alignItems: 'center',
   gap: '6rem',
-  padding: '12rem 6rem 18rem 6rem',
+  padding: '12rem 6rem 10rem 6rem',
   minHeight: '100vh',
   scrollSnapAlign: 'start',
   justifyContent: 'center',
-  maxWidth: '140rem',
+  // maxWidth: '140rem',
   margin: '0 auto',
 
   '@media': {
