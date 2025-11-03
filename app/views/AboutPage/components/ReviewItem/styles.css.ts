@@ -6,10 +6,8 @@ import { darkTheme, vars } from '~/styles/global.css';
 export const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
-  width: '100%',
-  minWidth: '35.4rem',
-  maxWidth: '44.5rem',
-  height: '60rem',
+  width: '30rem',
+  height: '53rem',
   alignItems: 'flex-start',
   justifyContent: 'center',
   gap: '2rem',
@@ -18,32 +16,17 @@ export const wrapper = style({
   backgroundColor: vars.themeColor.color.neutral_5,
   border: `1px solid ${vars.themeColor.color.neutral_4}`,
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-  position: 'relative',
-  overflow: 'hidden',
-
-  '::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '4px',
-    background: `linear-gradient(90deg, ${colors.neutral_500}, ${colors.neutral_600})`,
-    opacity: 0,
-    transition: 'opacity 0.3s ease',
-  },
 
   ':hover': {
-    transform: 'translateY(-0.2rem)',
     backgroundColor: vars.themeColor.color.neutral_4,
   },
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      maxWidth: '35.4rem',
+      width: '30rem',
     },
     [breakpoints.MOBILE_MAX]: {
-      maxWidth: '35.4rem',
+      width: '30rem',
     },
   },
 });
@@ -72,7 +55,7 @@ export const icon = style({
 });
 
 export const description = style({
-  fontSize: '2rem',
+  fontSize: '1.8rem',
   fontWeight: 400,
   color: vars.themeColor.color.neutral_1,
   lineHeight: '140%',

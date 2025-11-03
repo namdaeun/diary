@@ -1,6 +1,5 @@
 import { style } from '@vanilla-extract/css';
 import { breakpoints } from '~/styles/breakpoints';
-import { vars } from '~/styles/global.css';
 
 export const wrapper = style({
   display: 'flex',
@@ -26,62 +25,22 @@ export const wrapper = style({
   },
 });
 
-export const reviewList = style({
-  display: 'grid',
-  gridTemplateColumns: 'repeat(4, 1fr)',
-  gap: '2rem',
-  width: '100%',
-  alignItems: 'stretch',
-  justifyContent: 'center',
-
-  '@media': {
-    'screen and (max-width: 1200px)': {
-      gridTemplateColumns: 'repeat(3, 1fr)',
-    },
-    [breakpoints.TABLET_MAX]: {
-      gridTemplateColumns: 'repeat(2, 1fr)',
-      gap: '1.8rem',
-    },
-    [breakpoints.MOBILE_MAX]: {
-      gridTemplateColumns: 'repeat(1, 1fr)',
-      gap: '1.6rem',
-    },
-  },
-});
-
-export const descriptionLayout = style({
+export const reviewListLayout = style({
   display: 'flex',
-  flexDirection: 'column',
+  width: '100%',
+  flexWrap: 'wrap',
+  justifyContent: 'flex-start',
   alignItems: 'center',
-  justifyContent: 'center',
-  gap: '1.6rem',
+  gap: '2rem',
+  maxWidth: 'fit-content',
+  margin: '0 auto',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      gap: '1.2rem',
+      justifyContent: 'center',
     },
     [breakpoints.MOBILE_MAX]: {
-      gap: '0.8rem',
-    },
-  },
-});
-
-export const description = style({
-  textAlign: 'center',
-  fontSize: '1.8rem',
-  fontWeight: 400,
-  color: vars.themeColor.color.description,
-  lineHeight: '1.6',
-  letterSpacing: '-0.01em',
-  wordBreak: 'keep-all',
-  marginTop: '0.8rem',
-
-  '@media': {
-    [breakpoints.TABLET_MAX]: {
-      fontSize: '1.6rem',
-    },
-    [breakpoints.MOBILE_MAX]: {
-      fontSize: '1.4rem',
+      justifyContent: 'center',
     },
   },
 });

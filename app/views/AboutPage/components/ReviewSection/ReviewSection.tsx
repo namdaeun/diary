@@ -17,11 +17,11 @@ const ReviewSection = () => {
   return (
     <section className={s.wrapper} id="review">
       <motion.div
-        className={s.reviewList}
+        className={s.reviewListLayout}
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true }}
       >
         {REVIEWS.map((review) => (
           <ReviewItem key={review.id} review={review} />

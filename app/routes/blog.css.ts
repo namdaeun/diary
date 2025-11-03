@@ -23,6 +23,7 @@ export const articleListContainer = style({
 export const articleList = style({
   display: 'flex',
   width: '100%',
+  margin: '0 auto',
   flexWrap: 'wrap',
   gap: '2rem',
 });
