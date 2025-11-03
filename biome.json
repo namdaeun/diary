@@ -7,7 +7,15 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["*.json", "node_modules/**", "public/**"]
+    "ignore": [
+      "*.json",
+      "node_modules/**",
+      "public/**",
+      "apps/*/build/**",
+      "apps/*/public/build/**",
+      "apps/server/app/styles/**",
+      "**/*.ignore.*"
+    ]
   },
   "formatter": {
     "enabled": true,

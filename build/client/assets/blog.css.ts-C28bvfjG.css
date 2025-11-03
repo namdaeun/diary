@@ -1,0 +1,27 @@
+.o049mm0 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 10rem;
+}
+.o049mm1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+.o049mm2 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.o049mm3 {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.o049mm4 {
+  width: fit-content;
+}

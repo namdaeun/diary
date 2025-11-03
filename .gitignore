@@ -1,5 +1,33 @@
 node_modules
 
-/.cache
-/build
+# Client build
+/apps/client/.cache
+/apps/client/build
+
+# Server build  
+/apps/server/.cache
+/apps/server/build
+/apps/server/public/build
+
+# Environment files
 .env
+.env.local
+.env.production
+
+# Database
+/apps/server/prisma/dev.db
+/apps/server/prisma/dev.db-journal
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
