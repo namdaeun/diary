@@ -45,7 +45,7 @@ export const contentContainer = style({
 
 export const image = style({
   width: '100%',
-  height: '35rem',
+  height: '40rem',
   objectFit: 'cover',
   borderRadius: '2rem',
   transition: 'transform 0.3s ease',
@@ -57,14 +57,12 @@ export const image = style({
   '@media': {
     [breakpoints.TABLET_MAX]: {
       width: '100%',
-      height: 'auto',
-      aspectRatio: '1',
-      maxWidth: '32rem',
+      height: '35rem',
       margin: '0 auto',
     },
     [breakpoints.MOBILE_MAX]: {
       width: '100%',
-      height: 'auto',
+      height: '35rem',
       margin: 0,
     },
   },

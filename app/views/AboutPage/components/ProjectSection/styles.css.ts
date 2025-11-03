@@ -70,11 +70,14 @@ export const projectsContainer = style({
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      gap: '3rem',
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
     },
     [breakpoints.MOBILE_MAX]: {
-      gridTemplateColumns: '1fr',
-      gap: '2rem',
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
     },
   },
 });
