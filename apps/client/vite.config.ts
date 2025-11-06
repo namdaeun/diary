@@ -6,13 +6,13 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   server: {
-    hmr: {
-      port: 8002,
-    },
+    port: 5173,
+    host: '0.0.0.0',
   },
   plugins: [
     svgr(),
     remix({
+      appDirectory: '.',
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,

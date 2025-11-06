@@ -1,6 +1,6 @@
-import coasterImage from '/public/assets/image/img_coaster.png';
-import mileImage from '/public/assets/image/img_mile.png';
-import tikiImage from '/public/assets/image/img_tiki.png';
+import coasterImage from '/assets/image/img_coaster.png';
+import mileImage from '/assets/image/img_mile.png';
+import tikiImage from '/assets/image/img_tiki.png';
 
 export const PROJECTS = [
   {

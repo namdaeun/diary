@@ -1,0 +1,27 @@
+{
+  "name": "api-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx api/index.ts",
+    "build": "tsc",
+    "start": "node dist/api/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/cors": "^2.8.12",
+    "@types/node": "^17.0.23",
+    "esbuild": "^0.19.0",
+    "esbuild-register": "^3.3.2",
+    "tsx": "^4.0.0",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

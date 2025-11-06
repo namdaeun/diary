@@ -1,8 +1,7 @@
-import type { SVGProps } from 'react';
-import type React from 'react';
+import type { ReactElement, SVGProps } from 'react';
 
 declare module '*.svg' {
-  const content: React.FC<SVGProps<SVGAElement>>;
+  const content: ReactElement<SVGProps<SVGAElement>>;
 
   export default content;
 }

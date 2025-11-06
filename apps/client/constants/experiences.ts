@@ -1,7 +1,7 @@
-import cemwareImage from '/public/assets/image/img_cemware.png';
-import dosoptImage from '/public/assets/image/img_dosopt.png';
-import makersImage from '/public/assets/image/img_makers.png';
-import nowsoptImage from '/public/assets/image/img_nowsopt.png';
+import cemwareImage from '/assets/image/img_cemware.png';
+import dosoptImage from '/assets/image/img_dosopt.png';
+import makersImage from '/assets/image/img_makers.png';
+import nowsoptImage from '/assets/image/img_nowsopt.png';
 
 export const EXPERIENCES = [
   {

@@ -50,6 +50,7 @@
       "suspicious": {
         "noArrayIndexKey": "error",
         "noEmptyBlockStatements": "off",
+        "noConsole": "off",
         "noConsoleLog": "off",
         "useAwait": "off",
         "noCommentText": "off",
@@ -58,7 +59,9 @@
       },
       "correctness": {
         "useExhaustiveDependencies": "off",
-        "useImportExtensions": "off"
+        "useImportExtensions": "off",
+        "noUndeclaredDependencies": "off",
+        "noNodejsModules": "off"
       },
       "performance": {
         "noAccumulatingSpread": "off",

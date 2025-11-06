@@ -1,6 +1,6 @@
 import type { ChangeEvent, ComponentPropsWithRef } from 'react';
-import icDark from '../../../public/assets/icon/ic_dark.svg';
-import icLight from '../../../public/assets/icon/ic_light.svg';
+import icDark from '/assets/icon/ic_dark.svg';
+import icLight from '/assets/icon/ic_light.svg';
 import { backgroundStyle, iconStyle, switchStyle } from './styles.css';
 
 interface SwitchProps extends ComponentPropsWithRef<'input'> {

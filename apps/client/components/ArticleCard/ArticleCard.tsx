@@ -11,7 +11,7 @@ const ArticleCard = ({ title, date, tagName }: ArticleCardProp) => {
   return (
     <article className={s.articleStyle}>
       <img
-        src="/images/thumbnail.png"
+        src="/assets/image/img_cemware.png"
         className={s.imgStyle}
         alt="아티클 썸네일"
       />
