@@ -1,9 +1,9 @@
+import nodepath from 'path';
 import type { ActionFunction } from '@remix-run/server-runtime';
 import { json } from '@remix-run/server-runtime';
-import nodepath from 'path';
+import { setContentSHA } from '~/model/content-state.server';
 import { refreshAllContent, setRequiresUpdate } from '~/model/content.server';
 import { getMdxListItems } from '~/utils/mdx.server';
-import { setContentSHA } from '~/model/content-state.server';
 import { getRequiredEnvVar } from '~/utils/misc';
 
 type Body = {

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useLoaderData } from '@remix-run/react';
 import type {
   HeadersFunction,
   LinksFunction,
@@ -6,11 +6,11 @@ import type {
   MetaFunction,
 } from '@remix-run/server-runtime';
 import { json } from '@remix-run/server-runtime';
-import { useLoaderData } from '@remix-run/react';
 import { getMDXComponent } from 'mdx-bundler/client';
+import * as React from 'react';
 import invariant from 'tiny-invariant';
-import { getMdxPage } from '~/utils/mdx.server';
 import type { MdxComponent } from '~/types';
+import { getMdxPage } from '~/utils/mdx.server';
 
 import styles from 'highlight.js/styles/night-owl.css';
 import { getSeoMeta } from '~/utils/seo';

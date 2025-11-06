@@ -6,7 +6,7 @@ export function getRequiredEnvVar(key: string, env = process.env): string {
   throw new Error(`Environment variable ${key} is not defined`);
 }
 
-export function getDomainUrl(request: Request) {
+export function getDomainUrl(request: any) {
   const host =
     request.headers.get('X-Forwarded-Host') ?? request.headers.get('host');
   if (!host) {

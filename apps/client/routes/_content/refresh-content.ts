@@ -1,6 +1,6 @@
+import * as dns from 'dns';
 import type { ActionFunction } from '@remix-run/server-runtime';
 import { json } from '@remix-run/server-runtime';
-import * as dns from 'dns';
 import { getRequiredEnvVar } from '~/utils/misc';
 
 export const action: ActionFunction = async ({ request }) => {

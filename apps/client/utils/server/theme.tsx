@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { useFetcher } from '@remix-run/react';
+import * as React from 'react';
 
 export enum Theme {
   light = 'light',

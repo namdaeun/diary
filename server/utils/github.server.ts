@@ -1,8 +1,9 @@
-import nodepath from 'path';
+import nodepath from 'node:path';
 import { throttling } from '@octokit/plugin-throttling';
 import { Octokit as createOctokit } from '@octokit/rest';
+// @ts-ignore - lru-cache type issues
 import Lrucache from 'lru-cache';
-import type { GitHubFile } from '~/types';
+import type { GitHubFile } from '../types';
 import { getRequiredEnvVar } from './misc';
 
 type ThrottleOptions = {
@@ -13,7 +14,7 @@ type ThrottleOptions = {
 
 const cache = new Lrucache({
   maxAge: 1000 * 60,
-  length: (value) => Buffer.byteLength(JSON.stringify(value)),
+  length: (value: unknown) => Buffer.byteLength(JSON.stringify(value)),
 });
 
 const Octokit = createOctokit.plugin(throttling);
@@ -26,23 +27,19 @@ function getGHRepository() {
   return getRequiredEnvVar('GITHUB_REPOSITORY').split('/')[1];
 }
 
+// @ts-ignore - Octokit throttling type issues
 const octokit = new Octokit({
   auth: getRequiredEnvVar('GITHUB_TOKEN'),
   throttle: {
     onRateLimit: (retryAfter: number, options: ThrottleOptions) => {
       console.warn(
-        `Request quota exhausted for request ${options.method} ${options.url}. Retrying after ${retryAfter} seconds.`,
+        `Request quota exhausted for request ${options.method} ${options.url}. Retrying after ${retryAfter} seconds.`
       );
 
       return true;
     },
-    onAbuseLimit: (_: number, options: ThrottleOptions) => {
-      octokit.log.warn(
-        `Abuse detected for request ${options.method} ${options.url}`,
-      );
-    },
   },
-});
+} as unknown as typeof Octokit);
 
 function cachify<TArgs, TReturn>(fn: (args: TArgs) => Promise<TReturn>) {
   return async (args: TArgs): Promise<TReturn> => {
@@ -64,7 +61,7 @@ async function downloadDirectoryListImpl(path: string) {
 
   if (!Array.isArray(data)) {
     throw new Error(
-      `GitHub should always return an array, not sure what happened for the path ${path}`,
+      `GitHub should always return an array, not sure what happened for the path ${path}`
     );
   }
 
@@ -78,7 +75,7 @@ async function downloadFileByShaImpl(sha: string) {
       owner: getGHOwner(),
       repo: getGHRepository(),
       file_sha: sha,
-    },
+    }
   );
 
   const encoding = data.encoding as Parameters<typeof Buffer.from>['1'];
@@ -88,7 +85,7 @@ async function downloadFileByShaImpl(sha: string) {
 export const downloadFileBySha = cachify(downloadFileByShaImpl);
 
 async function downloadFirstMdxFileImpl(
-  list: Array<{ name: string; sha: string; type: string }>,
+  list: Array<{ name: string; sha: string; type: string }>
 ) {
   const filesOnly = list.filter(({ type }) => type === 'file');
 
@@ -105,10 +102,10 @@ async function downloadFirstMdxFileImpl(
 const downloadFirstMdxFile = cachify(downloadFirstMdxFileImpl);
 export const downloadDirectoryList = cachify(downloadDirectoryListImpl);
 
-async function downloadDirectoryImpl(path: string): Promise<Array<GitHubFile>> {
+async function downloadDirectoryImpl(path: string): Promise<GitHubFile[]> {
   const fileOrDirectoryList = await downloadDirectoryList(path);
 
-  const results: Array<GitHubFile> = [];
+  const results: GitHubFile[] = [];
 
   for (const fileOrDirectory of fileOrDirectoryList) {
     switch (fileOrDirectory.type) {
@@ -124,7 +121,7 @@ async function downloadDirectoryImpl(path: string): Promise<Array<GitHubFile>> {
       }
       default:
         throw new Error(
-          `Unknown file type returned for the file ${fileOrDirectory.path}`,
+          `Unknown file type returned for the file ${fileOrDirectory.path}`
         );
     }
   }
@@ -144,19 +141,19 @@ export async function downloadMdxOrDirectory(relativePath: string) {
   const directoryList = await downloadDirectoryList(directory);
 
   const potentials = directoryList.filter(({ name }) =>
-    name.startsWith(basename),
+    name.startsWith(basename)
   );
   const potentialDirectory = potentials.find(({ type }) => type === 'dir');
   const exactMatch = potentials.find(
-    ({ name }) => nodepath.parse(name).name === nameWithoutExt,
+    ({ name }) => nodepath.parse(name).name === nameWithoutExt
   );
 
   const content = await downloadFirstMdxFile(
-    exactMatch ? [exactMatch] : potentials,
+    exactMatch ? [exactMatch] : potentials
   );
 
   let entry = path;
-  let files: Array<GitHubFile> = [];
+  let files: GitHubFile[] = [];
 
   if (content) {
     entry =

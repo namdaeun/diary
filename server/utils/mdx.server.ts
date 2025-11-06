@@ -6,10 +6,13 @@ import {
   getMdxCount,
   requiresUpdate,
   upsertContent as upsertContentImpl,
-} from '../model/content.server.js';
-import type { MdxPage } from '../types.js';
+} from '../model/content.server';
+import type { MdxPage } from '../types';
 import { compileMdx } from './compile-mdx.server';
 import { downloadDirectoryList, downloadMdxOrDirectory } from './github.server';
+
+// Move regex to top level for performance
+const MDX_EXTENSION_REGEX = /.mdx?$/;
 
 async function dirList(dir: string) {
   const basePath = `content/${dir}`;
@@ -18,15 +21,12 @@ async function dirList(dir: string) {
   return dirList.map(({ name, path }) => {
     return {
       name,
-      slug: path.replace(`${basePath}/`, '').replace(/.mdx?$/, ''),
+      slug: path.replace(`${basePath}/`, '').replace(MDX_EXTENSION_REGEX, ''),
     };
   });
 }
 
-async function downloadMdx(
-  filesList: Array<{ slug: string }>,
-  contentDir: string
-) {
+async function downloadMdx(filesList: { slug: string }[], contentDir: string) {
   return Promise.all(
     filesList.map(async ({ slug }) => {
       const path = `${contentDir}/${slug}`;
