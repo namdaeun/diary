@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Blog API endpoints
-app.get('/api/blog', async (req, res) => {
+app.get('/api/blog', async (_req, res) => {
   try {
     // Simple file-based blog list for now
     const blogDir = path.join(process.cwd(), 'content', 'blog');
@@ -30,7 +30,6 @@ app.get('/api/blog', async (req, res) => {
 
     res.json(blogList);
   } catch (error) {
-    // biome-ignore lint/suspicious/noConsole: Error logging is necessary for API debugging
     console.error('Error fetching blog list:', error);
     res.status(500).json({ error: 'Failed to fetch blog list' });
   }
@@ -54,18 +53,16 @@ app.get('/api/blog/:slug', async (req, res) => {
       timestamp: new Date().toISOString(),
     });
   } catch (error) {
-    // biome-ignore lint/suspicious/noConsole: Error logging is necessary for API debugging
     console.error('Error fetching blog post:', error);
     res.status(500).json({ error: 'Failed to fetch blog post' });
   }
 });
 
 // Health check
-app.get('/health', (req, res) => {
+app.get('/health', (_req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
 app.listen(port, () => {
-  // biome-ignore lint/suspicious/noConsole: Server startup logging is necessary
   console.log(`🚀 API Server running on http://localhost:${port}`);
 });

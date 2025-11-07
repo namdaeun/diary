@@ -1,4 +1,4 @@
-import nodepath from 'path';
+import nodepath from 'node:path';
 import type { ActionFunction } from '@remix-run/server-runtime';
 import { json } from '@remix-run/server-runtime';
 import { setContentSHA } from '~/model/content-state.server';
@@ -8,7 +8,7 @@ import { getRequiredEnvVar } from '~/utils/misc';
 
 type Body = {
   refreshAll?: boolean;
-  paths?: Array<string>;
+  paths?: string[];
   sha: string;
 };
 
@@ -21,7 +21,7 @@ export const action: ActionFunction = async ({ request }) => {
 
   if ('refreshAll' in body && body.refreshAll === true) {
     await refreshAllContent();
-    void getMdxListItems({ contentDirectory: 'blog' });
+    getMdxListItems({ contentDirectory: 'blog' });
 
     console.log(`🌀 Refreshing all contents. SHA: ${body.sha}`);
 
@@ -29,10 +29,10 @@ export const action: ActionFunction = async ({ request }) => {
   }
 
   if ('paths' in body && Array.isArray(body.paths)) {
-    const refreshPaths = [];
+    const refreshPaths: string[] = [];
     for (const path of body.paths) {
       const [contentDirectory, dirOrFile] = path.split('/');
-      if (!contentDirectory || !dirOrFile) {
+      if (!(contentDirectory && dirOrFile)) {
         continue;
       }
       const slug = nodepath.parse(dirOrFile).name;
@@ -41,10 +41,10 @@ export const action: ActionFunction = async ({ request }) => {
       refreshPaths.push(path);
     }
     if (refreshPaths.some((p) => p.startsWith('blog'))) {
-      void getMdxListItems({ contentDirectory: 'blog' });
+      getMdxListItems({ contentDirectory: 'blog' });
     }
     if ('sha' in body) {
-      void setContentSHA(body.sha);
+      setContentSHA(body.sha);
     }
 
     console.log('💿 Updating content', {

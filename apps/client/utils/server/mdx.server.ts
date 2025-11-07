@@ -11,6 +11,8 @@ import type { MdxPage } from '~/types';
 import { compileMdx } from './compile-mdx.server';
 import { downloadDirectoryList, downloadMdxOrDirectory } from './github.server';
 
+const MDX_EXTENSION_PATTERN = /.mdx?$/;
+
 async function dirList(dir: string) {
   const basePath = `content/${dir}`;
   const dirList = await downloadDirectoryList(basePath);
@@ -18,7 +20,7 @@ async function dirList(dir: string) {
   return dirList.map(({ name, path }) => {
     return {
       name,
-      slug: path.replace(`${basePath}/`, '').replace(/.mdx?$/, ''),
+      slug: path.replace(`${basePath}/`, '').replace(MDX_EXTENSION_PATTERN, ''),
     };
   });
 }

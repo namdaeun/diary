@@ -45,8 +45,10 @@ async function compileMdxImpl<FrontmatterType extends Record<string, unknown>>({
       source: indexFile.content,
       files: filesObject,
       xdmOptions: (options: {
-        remarkPlugins: RemarkPlugin[];
-        rehypePlugins: RehypePlugin[];
+        // biome-ignore lint/suspicious/noExplicitAny: MDX bundler requires flexible plugin types
+        remarkPlugins?: any[];
+        // biome-ignore lint/suspicious/noExplicitAny: MDX bundler requires flexible plugin types
+        rehypePlugins?: any[];
       }) => ({
         remarkPlugins: [
           ...(options.remarkPlugins ?? []),

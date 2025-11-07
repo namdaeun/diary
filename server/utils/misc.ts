@@ -6,6 +6,7 @@ export function getRequiredEnvVar(key: string, env = process.env): string {
   throw new Error(`Environment variable ${key} is not defined`);
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: Request type from different environments may vary
 export function getDomainUrl(request: any) {
   const host =
     request.headers.get('X-Forwarded-Host') ?? request.headers.get('host');

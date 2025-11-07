@@ -8,7 +8,7 @@ export enum Theme {
 
 type ThemeContextType = [
   Theme | null,
-  React.Dispatch<React.SetStateAction<Theme | null>>,
+  React.Dispatch<React.SetStateAction<Theme | null>>
 ];
 
 const themes = Object.values(Theme);
@@ -32,9 +32,8 @@ export function ThemeProvider({
     if (ssrTheme) {
       if (themes.includes(ssrTheme)) {
         return ssrTheme;
-      } else {
-        return null;
       }
+      return null;
     }
 
     if (typeof window === 'undefined') {
@@ -59,7 +58,7 @@ export function ThemeProvider({
 
     themeFetcherRef.current.submit(
       { theme },
-      { method: 'post', action: '_action/set-theme' },
+      { method: 'post', action: '_action/set-theme' }
     );
   }, [theme]);
 
@@ -114,6 +113,7 @@ export function SsrTheme({ serverTheme }: { serverTheme?: boolean }) {
     <>
       {serverTheme ? null : (
         <script
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Remix requires this
           dangerouslySetInnerHTML={{
             __html: `
               const theme = window.matchMedia('${themeMediaQuery}').matches ? 'dark' : 'light'

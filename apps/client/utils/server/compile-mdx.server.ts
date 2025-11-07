@@ -2,12 +2,14 @@ import { bundleMDX } from 'mdx-bundler';
 import type { GitHubFile } from '~/types';
 import { getQueue } from './p-queue.server';
 
+const INDEX_PATTERN = /index.mdx?$/;
+
 async function compileMdxImpl<FrontmatterType extends Record<string, unknown>>({
   slug,
   files,
 }: {
   slug: string;
-  files: Array<GitHubFile>;
+  files: GitHubFile[];
 }) {
   // prettier-ignore
   const { default: remarkAutolinkHeader } = await import(
@@ -17,13 +19,12 @@ async function compileMdxImpl<FrontmatterType extends Record<string, unknown>>({
   const { default: remarkSlug } = await import('remark-slug');
   const { default: rehypeHighlight } = await import('rehype-highlight');
 
-  const indexPattern = /index.mdx?$/;
-  const indexFile = files.find(({ path }) => path.match(indexPattern));
+  const indexFile = files.find(({ path }) => path.match(INDEX_PATTERN));
   if (!indexFile) {
     return null;
   }
 
-  const rootDir = indexFile.path.replace(indexPattern, '');
+  const rootDir = indexFile.path.replace(INDEX_PATTERN, '');
   const relativeFiles = files.map(({ path, content }) => ({
     path: path.replace(rootDir, './'),
     content,
@@ -50,13 +51,13 @@ async function compileMdxImpl<FrontmatterType extends Record<string, unknown>>({
     });
 
     return { code, frontmatter: frontmatter as FrontmatterType };
-  } catch (e) {
+  } catch (_e) {
     throw new Error(`MDX Compilation failed for ${slug}`);
   }
 }
 
 function arrayToObject<Item extends Record<string, unknown>>(
-  array: Array<Item>,
+  array: Item[],
   { keyname, valuename }: { keyname: keyof Item; valuename: keyof Item },
 ) {
   const obj: Record<string, Item[keyof Item]> = {};

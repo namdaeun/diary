@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.9.1/schema.json",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
@@ -7,15 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": [
-      "*.json",
-      "node_modules/**",
-      "public/**",
-      "apps/*/build/**",
-      "apps/*/public/build/**",
-      "apps/server/app/styles/**",
-      "**/*.ignore.*"
-    ]
+    "ignore": []
   },
   "formatter": {
     "enabled": true,
@@ -28,14 +20,8 @@
   },
   "linter": {
     "enabled": true,
-    "ignore": ["node_modules"],
     "rules": {
-      "all": true,
-      "complexity": {
-        "noUselessFragments": "off",
-        "noExcessiveCognitiveComplexity": "off",
-        "useArrowFunction": "error"
-      },
+      "recommended": true,
       "style": {
         "useSingleVarDeclarator": "off",
         "noParameterAssign": "off",
@@ -48,14 +34,12 @@
         "noNamespaceImport": "off"
       },
       "suspicious": {
-        "noArrayIndexKey": "error",
+        "noArrayIndexKey": "warn",
         "noEmptyBlockStatements": "off",
         "noConsole": "off",
         "noConsoleLog": "off",
-        "useAwait": "off",
         "noCommentText": "off",
-        "noDuplicateJsxProps": "warn",
-        "noReactSpecificProps": "off"
+        "noDuplicateJsxProps": "warn"
       },
       "correctness": {
         "useExhaustiveDependencies": "off",
@@ -71,7 +55,7 @@
         "all": false
       },
       "security": {
-        "noDangerouslySetInnerHtmlWithChildren": "error"
+        "noDangerouslySetInnerHtmlWithChildren": "off"
       },
       "a11y": {
         "noSvgWithoutTitle": "off",

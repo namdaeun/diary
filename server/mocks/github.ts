@@ -25,9 +25,11 @@ type GHContentsDescription = {
   type: 'dir' | 'file';
 };
 
+// biome-ignore lint/suspicious/noExplicitAny: Mock handlers require flexible typing
 export const GitHubMocks: any[] = [
   rest.get(
     'https://api.github.com/repos/:owner/:repo/contents/:path',
+    // biome-ignore lint/suspicious/noExplicitAny: Mock handlers require flexible typing
     async (req: any, res: any, ctx: any) => {
       const { owner, repo } = req.params;
 
@@ -41,7 +43,7 @@ export const GitHubMocks: any[] = [
         !path.startsWith('content')
       ) {
         throw new Error(
-          `Trying to fetch resource for unmockable resource: ${owner}/${repo}/${path}`,
+          `Trying to fetch resource for unmockable resource: ${owner}/${repo}/${path}`
         );
       }
 
@@ -49,11 +51,11 @@ export const GitHubMocks: any[] = [
       const isLocalDir = await isDirectory(localPath);
       const isLocalFile = await isFile(localPath);
 
-      if (!isLocalDir && !isLocalFile) {
+      if (!(isLocalDir || isLocalFile)) {
         return res(
           ctx.status(200),
           // return an empty array when there are no blogs inside content/blogs
-          ctx.json([]),
+          ctx.json([])
         );
       }
 
@@ -66,13 +68,14 @@ export const GitHubMocks: any[] = [
           ctx.json({
             content: Buffer.from(file, 'utf-8').toString(encoding),
             encoding,
-          }),
+          })
         );
       }
 
       const dirList = await fs.readdir(localPath);
 
       const dirContent = await Promise.all(
+        // biome-ignore lint/suspicious/noExplicitAny: Mock handlers require flexible typing
         dirList.map(async (name: any): Promise<GHContentsDescription> => {
           const relativePath = nodepath.join(path, name);
           const sha = relativePath;
@@ -85,14 +88,15 @@ export const GitHubMocks: any[] = [
             sha,
             type: isDir ? 'dir' : 'file',
           };
-        }),
+        })
       );
 
       return res(ctx.status(200), ctx.json(dirContent));
-    },
+    }
   ),
   rest.get(
     'https://api.github.com/repos/:owner/:repo/git/blobs/:sha',
+    // biome-ignore lint/suspicious/noExplicitAny: Mock handlers require flexible typing
     async (req: any, res: any, ctx: any) => {
       const { repo, owner } = req.params;
 
@@ -103,7 +107,7 @@ export const GitHubMocks: any[] = [
 
       if (`${owner}/${repo}` !== process.env.GITHUB_REPOSITORY) {
         throw new Error(
-          `Trying to fetch resource for unmockable resource: ${owner}/${repo}`,
+          `Trying to fetch resource for unmockable resource: ${owner}/${repo}`
         );
       }
 
@@ -121,12 +125,13 @@ export const GitHubMocks: any[] = [
           sha,
           content: Buffer.from(content, 'utf-8').toString(encoding),
           encoding,
-        }),
+        })
       );
-    },
+    }
   ),
   rest.get(
     'https://api.github.com/repos/:owner/:repo/contents/:path*',
+    // biome-ignore lint/suspicious/noExplicitAny: Mock handlers require flexible typing
     async (req: any, res: any, ctx: any) => {
       const { owner, repo } = req.params;
 
@@ -141,7 +146,7 @@ export const GitHubMocks: any[] = [
         !path.startsWith('content')
       ) {
         throw new Error(
-          `Trying to fetch resource for unmockable resource: ${owner}/${repo}/${path}`,
+          `Trying to fetch resource for unmockable resource: ${owner}/${repo}/${path}`
         );
       }
 
@@ -155,8 +160,8 @@ export const GitHubMocks: any[] = [
           sha: path,
           content: Buffer.from(content, 'utf-8').toString(encoding),
           encoding,
-        }),
+        })
       );
-    },
+    }
   ),
 ];

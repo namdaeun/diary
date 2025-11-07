@@ -11,7 +11,7 @@ type MdxPage = {
     title?: string;
     description?: string;
     meta?: Record<string, string | string[]> & {
-      keywords?: Array<string>;
+      keywords?: string[];
     };
     date?: string;
   };

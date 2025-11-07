@@ -1,4 +1,4 @@
-import * as dns from 'dns';
+import * as dns from 'node:dns';
 import type { ActionFunction } from '@remix-run/server-runtime';
 import { json } from '@remix-run/server-runtime';
 import { getRequiredEnvVar } from '~/utils/misc';

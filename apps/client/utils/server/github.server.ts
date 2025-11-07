@@ -1,4 +1,4 @@
-import nodepath from 'path';
+import nodepath from 'node:path';
 import { throttling } from '@octokit/plugin-throttling';
 import { Octokit as createOctokit } from '@octokit/rest';
 import Lrucache from 'lru-cache';
@@ -105,10 +105,10 @@ async function downloadFirstMdxFileImpl(
 const downloadFirstMdxFile = cachify(downloadFirstMdxFileImpl);
 export const downloadDirectoryList = cachify(downloadDirectoryListImpl);
 
-async function downloadDirectoryImpl(path: string): Promise<Array<GitHubFile>> {
+async function downloadDirectoryImpl(path: string): Promise<GitHubFile[]> {
   const fileOrDirectoryList = await downloadDirectoryList(path);
 
-  const results: Array<GitHubFile> = [];
+  const results: GitHubFile[] = [];
 
   for (const fileOrDirectory of fileOrDirectoryList) {
     switch (fileOrDirectory.type) {
@@ -156,7 +156,7 @@ export async function downloadMdxOrDirectory(relativePath: string) {
   );
 
   let entry = path;
-  let files: Array<GitHubFile> = [];
+  let files: GitHubFile[] = [];
 
   if (content) {
     entry =
