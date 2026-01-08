@@ -5,11 +5,6 @@ import svgr from 'vite-plugin-svgr';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  server: {
-    hmr: {
-      port: 8002,
-    },
-  },
   plugins: [
     svgr(),
     remix({
