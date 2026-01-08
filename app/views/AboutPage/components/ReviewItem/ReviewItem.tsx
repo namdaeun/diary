@@ -1,4 +1,5 @@
 import { type Variants, motion } from 'framer-motion';
+import { maskName } from '~/utils/maskName';
 import type { Review } from '~/views/AboutPage/types';
 import * as s from './styles.css';
 
@@ -18,7 +19,7 @@ const ReviewItem = ({ review }: ReviewItemProps) => {
     <motion.div key={name} className={s.wrapper} variants={reviewVariants}>
       <p className={s.description}>{description}</p>
       <div className={s.infoLayout}>
-        <h1 className={s.name}>{name}</h1>
+        <h1 className={s.name}>{maskName(name)}</h1>
         <span className={s.info}>{info}</span>
       </div>
     </motion.div>
