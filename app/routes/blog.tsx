@@ -1,7 +1,7 @@
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import ArticleCard from '~/components/ArticleCard/ArticleCard';
-import { ARTICLES, type Article } from '~/constants/articles';
+import { ARTICLES } from '~/constants/articles';
 import * as S from './blog.css';
 
 export const loader = async () => {
@@ -9,7 +9,7 @@ export const loader = async () => {
 };
 
 export default function Blog() {
-  const { articles } = useLoaderData<{ articles: Article[] }>();
+  const { articles } = useLoaderData<typeof loader>();
 
   return (
     <div className={S.container}>
@@ -19,9 +19,8 @@ export default function Blog() {
           {articles.map((article) => (
             <li key={article.id} className={S.articleItem}>
               <ArticleCard
-                key={article.id}
                 title={article.title}
-                date={new Date(article.date)}
+                date={article.date}
                 tagName={article.tagName}
               />
             </li>

@@ -1,9 +1,10 @@
+import { formatDate } from '~/utils/format';
 import Tag from '../Tag/Tag';
 import * as s from './styles.css';
 
 interface ArticleCardProp {
   title: string;
-  date: Date;
+  date: string;
   tagName: string;
 }
 
@@ -19,7 +20,7 @@ const ArticleCard = ({ title, date, tagName }: ArticleCardProp) => {
         <h1 className={s.titleStyle}>{title}</h1>
         <Tag size="sm">{tagName}</Tag>
       </div>
-      <span className={s.dateStyle}>{date.getDate()}</span>
+      <span className={s.dateStyle}>{formatDate(date)}</span>
     </article>
   );
 };
