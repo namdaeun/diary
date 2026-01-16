@@ -16,13 +16,13 @@ const ReviewItem = ({ review }: ReviewItemProps) => {
   const { name, info, description } = review;
 
   return (
-    <motion.div key={name} className={s.wrapper} variants={reviewVariants}>
+    <motion.article className={s.wrapper} variants={reviewVariants}>
       <p className={s.description}>{description}</p>
       <div className={s.infoLayout}>
         <h1 className={s.name}>{maskName(name)}</h1>
         <span className={s.info}>{info}</span>
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 

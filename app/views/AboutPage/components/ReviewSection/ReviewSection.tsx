@@ -8,7 +8,8 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
     },
   },
 };
@@ -21,7 +22,7 @@ const ReviewSection = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '-200px 0px' }}
       >
         {REVIEWS.map((review) => (
           <ReviewItem key={review.id} review={review} />
