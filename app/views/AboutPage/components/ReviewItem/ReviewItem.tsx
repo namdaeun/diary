@@ -8,8 +8,8 @@ interface ReviewItemProps {
 }
 
 const reviewVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  hidden: { y: 30 },
+  visible: { y: 0 },
 };
 
 const ReviewItem = ({ review }: ReviewItemProps) => {
