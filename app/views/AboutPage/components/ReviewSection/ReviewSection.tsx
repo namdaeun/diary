@@ -4,9 +4,7 @@ import ReviewItem from '../ReviewItem/ReviewItem';
 import * as s from './styles.css';
 
 const containerVariants = {
-  hidden: { opacity: 0 },
   visible: {
-    opacity: 1,
     transition: {
       staggerChildren: 0.15,
       delayChildren: 0.1,
