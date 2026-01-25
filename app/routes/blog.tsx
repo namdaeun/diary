@@ -1,32 +1,33 @@
 import { json } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import { Link, useLoaderData } from '@remix-run/react';
 import ArticleCard from '~/components/ArticleCard/ArticleCard';
-import { ARTICLES } from '~/constants/articles';
+import { getAllPosts } from '~/utils/markdown.server';
 import * as S from './blog.css';
 
 export const loader = async () => {
-  return json({ articles: ARTICLES });
+  const posts = getAllPosts();
+  return json({ posts });
 };
 
 export default function Blog() {
-  const { articles } = useLoaderData<typeof loader>();
+  const { posts } = useLoaderData<typeof loader>();
 
   return (
-    <div className={S.container}>
-      <h1 className={S.title}>Blog</h1>
-      <div className={S.articleListContainer}>
+    <div className={S.wrapper}>
         <ul className={S.articleList}>
-          {articles.map((article) => (
-            <li key={article.id} className={S.articleItem}>
-              <ArticleCard
-                title={article.title}
-                date={article.date}
-                tagName={article.tagName}
-              />
+          {posts.map((post) => (
+            <li key={post.slug} className={S.articleItem}>
+              <Link to={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+                <ArticleCard
+                  title={post.title}
+                  image={post.image || ''}
+                  date={post.date}
+                  tagName={post.tagName}
+                />
+              </Link>
             </li>
           ))}
         </ul>
-      </div>
     </div>
   );
 }

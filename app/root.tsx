@@ -33,6 +33,10 @@ export const links: LinksFunction = () => [
     href: 'https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css',
     rel: 'stylesheet',
   },
+  {
+    rel: 'stylesheet',
+    href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css',
+  },
 ];
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {

@@ -45,7 +45,9 @@ const Header = () => {
 
       <div className={s.navigationContainer}>
         <Navigation activeSection={activeSection} />
-        {/* <Navigation activeSection="blog" /> */}
+        <Link to="/blog" className={s.blogLink}>
+          Blog
+        </Link>
       </div>
 
       <Switch

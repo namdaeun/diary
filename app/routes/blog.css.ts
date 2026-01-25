@@ -1,10 +1,10 @@
 import { style } from '@vanilla-extract/css';
 
-export const container = style({
+export const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '2rem',
-  padding: '2rem 10rem',
+  padding: '10rem 4rem',
 });
 
 export const title = style({
@@ -21,10 +21,9 @@ export const articleListContainer = style({
 });
 
 export const articleList = style({
-  display: 'flex',
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(30rem, 1fr))',
   width: '100%',
-  margin: '0 auto',
-  flexWrap: 'wrap',
   gap: '2rem',
 });
 
