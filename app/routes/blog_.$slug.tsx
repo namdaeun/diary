@@ -40,11 +40,15 @@ export default function BlogPost() {
   return (
     <article className={styles.container}>
       <header className={styles.header}>
-        <img
-          src={post.image || ''}
-          alt={post.title}
-          className={styles.thumbnail}
-        />
+        {
+          post.image && (
+            <img
+              src={post.image}
+              alt={post.title}
+              className={styles.thumbnail}
+            />
+          )
+        }
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.meta}>
           <Tag size="sm">{post.tagName}</Tag>

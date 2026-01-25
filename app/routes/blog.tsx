@@ -20,7 +20,7 @@ export default function Blog() {
               <Link to={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
                 <ArticleCard
                   title={post.title}
-                  image={post.image || ''}
+                  image={post.image ?? '/assets/image/blog/default_thumbnail.png'}
                   tagName={post.tagName}
                 />
               </Link>
