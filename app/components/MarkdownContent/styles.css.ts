@@ -77,27 +77,45 @@ globalStyle(`${markdownContent} blockquote`, {
   color: vars.themeColor.color.description,
 });
 
-globalStyle(`${markdownContent} code`, {
-  fontFamily: 'monospace',
-  backgroundColor: vars.themeColor.color.article_bg,
-  padding: '0.2rem 0.6rem',
+globalStyle(`${markdownContent} code *`, {
+  fontFamily: "'Fira Code', 'Consolas', 'Monaco', monospace",
+  padding: '0.3rem 0.6rem',
   borderRadius: '4px',
   fontSize: '1.4rem',
 });
 
 globalStyle(`${markdownContent} pre`, {
-  backgroundColor: vars.themeColor.color.article_bg,
-  padding: '1.6rem',
+  backgroundColor: '#1e1e1e',
+  padding: '1.2rem',
   borderRadius: '8px',
   overflowX: 'auto',
   marginBottom: '1.6rem',
+  border: `1px solid ${vars.themeColor.color.border}`,
 });
 
 globalStyle(`${markdownContent} pre code`, {
   backgroundColor: 'transparent',
   padding: 0,
   fontSize: '1.4rem',
-  lineHeight: '1.6',
+  lineHeight: '1.5',
+  color: '#d4d4d4',
+  border: 'none',
+});
+
+globalStyle(`${markdownContent} pre code span:not([class])`, {
+  color: '#d4d4d4',
+});
+
+globalStyle(`${markdownContent} pre code .hljs-function`, {
+  color: '#dcdcaa',
+});
+
+globalStyle(`${markdownContent} pre code .hljs-property`, {
+  color: '#d4d4d4',
+});
+
+globalStyle(`${markdownContent} pre code .hljs-params`, {
+  color: '#9cdcfe',
 });
 
 globalStyle(`${markdownContent} table`, {

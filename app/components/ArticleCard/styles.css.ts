@@ -4,8 +4,9 @@ import { vars } from '~/styles/global.css';
 export const articleStyle = style({
   display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'space-between',
   width: '35rem',
-  height: '33rem',
+  height: '35rem',
   padding: '2rem',
   gap: '2.4rem',
   border: `1px solid ${vars.themeColor.color.neutral_4}`,
@@ -29,6 +30,7 @@ export const imgStyle = style({
 export const contentStyle = style({
   display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'space-between',
   gap: '1.6rem',
 });
 
@@ -37,6 +39,9 @@ export const titleStyle = style({
   fontWeight: 500,
   lineHeight: '120%',
   wordBreak: 'keep-all',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 });
 
 export const dateStyle = style({
