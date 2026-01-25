@@ -84,6 +84,15 @@ globalStyle(`${markdownContent} code *`, {
   fontSize: '1.4rem',
 });
 
+globalStyle(`${markdownContent} code`, {
+  fontFamily: "'Fira Code', 'Consolas', 'Monaco', monospace",
+  padding: '0.3rem 0.6rem',
+  borderRadius: '4px',
+  fontSize: '1.4rem',
+  color: colors.blue,
+  backgroundColor: vars.themeColor.color.article_bg,
+});
+
 globalStyle(`${markdownContent} pre`, {
   backgroundColor: '#1e1e1e',
   padding: '1.2rem',
