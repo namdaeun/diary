@@ -45,6 +45,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     slug,
     title: data.title,
     date: data.date,
+    image: data.image,
     tagName: data.tagName,
     description: data.description,
     content: String(processedContent),

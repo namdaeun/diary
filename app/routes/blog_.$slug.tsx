@@ -1,6 +1,6 @@
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
-import { Link, useLoaderData } from '@remix-run/react';
+import { useLoaderData } from '@remix-run/react';
 import MarkdownContent from '~/components/MarkdownContent/MarkdownContent';
 import Tag from '~/components/Tag/Tag';
 import { formatDate } from '~/utils/format';
@@ -40,10 +40,11 @@ export default function BlogPost() {
   return (
     <article className={styles.container}>
       <header className={styles.header}>
-        <Link to="/blog" className={styles.backLink}>
-          <i className="ri-arrow-left-line" />
-          Back to Blog
-        </Link>
+        <img
+          src={post.image || ''}
+          alt={post.title}
+          className={styles.thumbnail}
+        />
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.meta}>
           <Tag size="sm">{post.tagName}</Tag>

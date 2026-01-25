@@ -4,10 +4,9 @@ import { vars } from '~/styles/global.css';
 export const articleStyle = style({
   display: 'flex',
   flexDirection: 'column',
-  width: '44.5rem',
-  height: '44.2rem',
+  width: '35rem',
+  height: '33rem',
   padding: '2rem',
-  justifyContent: 'space-between',
   gap: '2.4rem',
   border: `1px solid ${vars.themeColor.color.neutral_4}`,
   borderRadius: '2rem',
@@ -21,8 +20,9 @@ export const articleStyle = style({
 });
 
 export const imgStyle = style({
-  width: '25rem',
-  height: '16.7rem',
+  width: '100%',
+  height: '20rem',
+  borderRadius: '1rem',
   objectFit: 'cover',
 });
 
@@ -33,15 +33,18 @@ export const contentStyle = style({
 });
 
 export const titleStyle = style({
-  fontSize: '2.4rem',
+  fontSize: '2rem',
   fontWeight: 500,
   lineHeight: '120%',
   wordBreak: 'keep-all',
 });
 
 export const dateStyle = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
   color: `${vars.themeColor.color.neutral_2}`,
-  fontSize: '2rem',
+  fontSize: '1.4rem',
   fontWeight: 400,
   lineHeight: '140%',
 });
