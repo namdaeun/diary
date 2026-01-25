@@ -6,19 +6,14 @@ import Navigation from '../Navigation/Navigation';
 import Switch from '../Switch/Switch';
 import * as s from './styles.css';
 
-const Header = () => {
-  const [theme, setTheme] = useTheme();
+const getSystemTheme = (): 'light' | 'dark' =>
+  typeof window !== 'undefined' &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
+
+const useActiveSection = () => {
   const [activeSection, setActiveSection] = useState('about');
-
-  const handleToggle = () => {
-    const nextState = {
-      light: 'dark',
-      dark: 'light',
-    };
-
-    const nextTheme = nextState[theme as keyof typeof nextState] ?? 'light';
-    setTheme(nextTheme as Theme);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +32,19 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  return activeSection;
+};
+
+const Header = () => {
+  const [theme, setTheme] = useTheme();
+  const activeSection = useActiveSection();
+
+  const currentTheme = theme ?? getSystemTheme();
+
+  const handleToggle = () => {
+    setTheme((currentTheme === 'light' ? 'dark' : 'light') as Theme);
+  };
+
   return (
     <header className={s.headerStyle}>
       <Link to="/" className={s.logoStyle}>
@@ -50,10 +58,7 @@ const Header = () => {
         </Link>
       </div>
 
-      <Switch
-        mode={theme === 'light' ? 'light' : 'dark'}
-        onChange={handleToggle}
-      />
+      <Switch mode={currentTheme} onChange={handleToggle} />
     </header>
   );
 };

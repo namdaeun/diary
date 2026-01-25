@@ -22,11 +22,11 @@ export const articleListContainer = style({
 
 export const articleList = style({
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fill, minmax(30rem, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 30rem), 1fr))',
   width: '100%',
-  gap: '2rem',
+  gap: '3rem',
 });
 
 export const articleItem = style({
-  width: 'fit-content',
+  width: '100%',
 });
