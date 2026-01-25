@@ -123,7 +123,7 @@ globalStyle(`${markdownContent} pre code .hljs-property`, {
   color: '#d4d4d4',
 });
 
-globalStyle(`${markdownContent} pre code .hljs-params`, {
+globalStyle(`${markdownContent} pre code .hljs-params, .hljs-tag`, {
   color: '#9cdcfe',
 });
 
