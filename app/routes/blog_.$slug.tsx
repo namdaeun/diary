@@ -1,7 +1,6 @@
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import { useEffect } from 'react';
 import MarkdownContent from '~/components/MarkdownContent/MarkdownContent';
 import Tag from '~/components/Tag/Tag';
 import { formatDate } from '~/utils/format';
@@ -38,31 +37,19 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 export default function BlogPost() {
   const { post } = useLoaderData<typeof loader>();
 
-  useEffect(() => {
-    console.log('=== POST TAG NAME ===', post.tagName);
-    console.log('=== SPLIT RESULT ===', post.tagName.split(','));
-    console.log('=== TRIMMED TAGS ===', post.tagName.split(',').map((tag) => tag.trim()));
-  }, [post.tagName]);
-
   return (
     <article className={styles.container}>
       <header className={styles.header}>
-        {
-          post.image && (
-            <img
-              src={post.image}
-              alt={post.title}
-              className={styles.thumbnail}
-            />
-          )
-        }
+        {post.image && (
+          <img src={post.image} alt={post.title} className={styles.thumbnail} />
+        )}
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.meta}>
-          {
-            post.tagName.split(',').map((tagName) => (
-              <Tag size="sm" key={tagName}>{tagName.trim()}</Tag>
-            ))
-          }
+          {post.tagName.split(',').map((tagName) => (
+            <Tag size="sm" key={tagName}>
+              {tagName.trim()}
+            </Tag>
+          ))}
           <span className={styles.date}>{formatDate(post.date)}</span>
         </div>
       </header>
