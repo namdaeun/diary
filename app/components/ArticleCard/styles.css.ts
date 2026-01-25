@@ -44,6 +44,11 @@ export const titleStyle = style({
   textOverflow: 'ellipsis',
 });
 
+export const tagContainer = style({
+  display: 'flex',
+  gap: '0.8rem',
+});
+
 export const dateStyle = style({
   display: 'flex',
   alignItems: 'center',
