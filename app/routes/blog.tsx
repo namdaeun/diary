@@ -21,7 +21,6 @@ export default function Blog() {
                 <ArticleCard
                   title={post.title}
                   image={post.image || ''}
-                  date={post.date}
                   tagName={post.tagName}
                 />
               </Link>
