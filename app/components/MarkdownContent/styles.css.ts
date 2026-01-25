@@ -125,13 +125,15 @@ globalStyle(`${markdownContent} table`, {
 });
 
 globalStyle(`${markdownContent} th, ${markdownContent} td`, {
+  width: 'fit-content',
   border: `1px solid ${vars.themeColor.color.border}`,
   padding: '1rem',
   textAlign: 'left',
+  fontSize: '1.4rem',
 });
 
 globalStyle(`${markdownContent} th`, {
-  backgroundColor: vars.themeColor.color.article_bg,
+  backgroundColor: colors.blue_alpha,
   fontWeight: 'bold',
 });
 
