@@ -41,3 +41,18 @@ export const navigationContainer = style({
   left: '50%',
   transform: 'translateX(-50%)',
 });
+
+export const blogLink = style({
+  display: 'flex',
+  width: 'fit-content',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '1rem 1.8rem',
+  borderRadius: '9.9rem',
+  backgroundColor: vars.themeColor.color.neutral_5,
+  textDecoration: 'none',
+  color: vars.themeColor.color.neutral_1,
+  fontSize: '1.6rem',
+  fontWeight: 400,
+  lineHeight: '120%',
+});
