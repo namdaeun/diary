@@ -33,7 +33,7 @@ export const textStyle = recipe({
   variants: {
     size: {
       sm: {
-        fontSize: '1.6rem',
+        fontSize: '1.3rem',
       },
       lg: {
         fontSize: '2rem',
