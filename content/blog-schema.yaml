@@ -1,0 +1,89 @@
+schema:
+  frontmatter:
+    required:
+      - title
+      - date
+      - tagName
+    optional:
+      - description
+      - image
+
+  fields:
+    title:
+      type: string
+      description: 블로그 글 제목
+      example: "SSR 환경에서 OS 테마 대응하기"
+
+    date:
+      type: string
+      format: YYYY-MM-DD
+      description: 작성일
+      example: "2025-08-07"
+
+    tagName:
+      type: string
+      description: 태그 (쉼표로 구분)
+      example: "Remix, SSR, Theme"
+
+    description:
+      type: string
+      description: 글 미리보기 설명
+      example: "웹 페이지와 기기 테마 통일을 통해 UX 향상시키기"
+
+    image:
+      type: string
+      format: path
+      description: 썸네일 이미지 경로
+      example: "/assets/image/blog/ssr.jpg"
+
+# 파일 경로
+paths:
+  posts: content/blog/
+  images:
+    storage: public/assets/image/blog/
+    reference: /assets/image/blog/
+  default_thumbnail: /assets/image/blog/default_thumbnail.png
+
+naming:
+  post_file:
+    format: "{slug}.md"
+    rules:
+      - 영문 소문자 사용
+      - 단어 구분은 하이픈(-) 사용
+      - 한글 사용 지양
+    example: "ssr.md, context-api.md"
+
+  image_file:
+    format: "{slug}.{ext}"
+    extensions:
+      - jpg
+      - jpeg
+      - png
+      - webp
+    example: "ssr.jpg, context-api.jpg"
+
+# 기존 태그 목록
+tags:
+  - Remix
+  - SSR
+  - Theme
+  - Context API
+  - Design Pattern
+  - Timeline
+
+agent_rules:
+  on_new_post:
+    - content/blog/ 디렉토리에 .md 파일 생성
+    - frontmatter 필수 필드 포함 확인
+    - date 필드는 YYYY-MM-DD 형식 준수
+    - 파일명은 URL slug로 사용됨
+
+  on_add_thumbnail:
+    - 이미지를 public/assets/image/blog/에 저장
+    - frontmatter image 필드에 /assets/image/blog/파일명 형식으로 설정
+    - 파일명은 slug와 동일하게 권장
+
+  on_add_tag:
+    - 기존 태그 목록 참조
+    - 새 태그는 PascalCase 또는 단어 조합 사용
+    - 이 파일의 tags 목록에 추가
