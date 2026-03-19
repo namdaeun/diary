@@ -1,51 +1,53 @@
 ---
 name: write-blog
-description: This skill should be used when creating a new blog post for this diary project. Handles file creation in content/blog/ with correct frontmatter fields (title, date, tagName), slug-based naming, and thumbnail image setup following the project's blog-schema.yaml.
+description: 블로그 글 작성 — 사용자에게 단계별로 정보를 물어본 후 content/blog/에 .md 파일 생성
 ---
 
-# 블로그 글 작성 스킬
+# 블로그 글 작성
 
-## 스키마 참조
+사용자에게 아래 단계를 **하나씩 순서대로** 질문한다. 이전 답변을 받은 후 다음 질문으로 넘어간다. 모든 정보가 모이면 파일을 생성한다.
 
-상세 스키마는 `blog-schema.yaml` 파일을 참조합니다.
+## 단계별 질문 순서
 
-## 새 블로그 글 작성
+### 1단계 — 제목
+"블로그 글 제목이 무엇인가요?"
 
-1. `content/blog/`에 `.md` 파일 생성
-2. frontmatter 필수 필드 포함:
-   - `title`: 블로그 글 제목
-   - `date`: 작성일 (YYYY-MM-DD 형식)
-   - `tagName`: 태그 (쉼표로 구분)
-3. 파일명은 URL slug로 사용 (영문 소문자, 하이픈 사용)
+### 2단계 — 날짜
+"작성일을 입력해주세요. (기본값: 오늘 날짜 YYYY-MM-DD)"
+- 사용자가 입력하지 않으면 오늘 날짜를 사용한다.
 
-### frontmatter 예시
+### 3단계 — 태그
+기존 태그 목록을 보여주며 선택을 유도한다:
+"태그를 선택해주세요. (쉼표로 구분, 여러 개 가능)
+
+기존 태그: Remix, SSR, Theme, Context API, Design Pattern, Timeline
+
+새 태그를 추가해도 됩니다. (PascalCase 또는 단어 조합 사용)"
+
+### 4단계 — 설명 (선택)
+"글에 대한 짧은 설명을 입력해주세요. (선택 사항, 건너뛰려면 엔터)"
+
+### 5단계 — 썸네일 이미지 (선택)
+"썸네일 이미지 파일명을 입력해주세요. (선택 사항, 건너뛰려면 엔터)
+
+이미지는 public/assets/image/blog/ 에 저장되어 있어야 합니다."
+
+## 파일 생성
+
+모든 답변이 모이면:
+
+1. 파일명: 제목을 영문 소문자 + 하이픈으로 변환한 slug (예: `ssr-os-theme.md`)
+2. 경로: `content/blog/슬러그.md`
+3. frontmatter 구성:
 
 ```yaml
 ---
-title: "SSR 환경에서 OS 테마 대응하기"
-date: 2026-03-19
-tagName: "Remix, SSR, Theme"
-description: "웹 페이지와 기기 테마 통일을 통해 UX 향상시키기"
+title: '입력한 제목'
+date: YYYY-MM-DD
+tagName: '태그1, 태그2'
+description: '입력한 설명'   # 입력한 경우만 포함
+image: /assets/image/blog/파일명   # 입력한 경우만 포함
 ---
 ```
 
-## 썸네일 이미지 추가
-
-1. 이미지를 `public/assets/image/blog/`에 저장
-2. frontmatter `image` 필드에 `/assets/image/blog/파일명` 형식으로 설정
-3. 파일명은 slug와 동일하게 권장
-
-### 예시
-
-```yaml
-image: /assets/image/blog/ssr.jpg
-```
-
-## 태그 규칙
-
-기존 태그 목록 (`blog-schema.yaml`의 `tags` 참조):
-- Remix, SSR, Theme, Context API, Design Pattern, Timeline
-
-새 태그 추가 시:
-- PascalCase 또는 단어 조합 사용
-- `blog-schema.yaml`의 `tags` 목록에도 추가
+4. 본문은 빈 상태로 생성하거나 사용자가 내용을 제공한 경우 포함한다.
