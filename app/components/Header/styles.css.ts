@@ -30,16 +30,19 @@ export const logoStyle = style({
   fontWeight: 400,
   textDecoration: 'none',
   color: vars.themeColor.color.neutral_2,
+  cursor: 'pointer',
 });
 
 export const navigationContainer = style({
-  position: 'fixed',
+  position: 'absolute',
   display: 'flex',
+  width: 'fit-content',
   gap: '1rem',
   alignItems: 'center',
   justifyContent: 'center',
   left: '50%',
-  transform: 'translateX(-50%)',
+  top: '50%',
+  transform: 'translate(-50%, -50%)',
 });
 
 export const blogLink = style({
