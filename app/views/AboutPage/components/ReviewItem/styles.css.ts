@@ -10,6 +10,12 @@ export const wrapper = style({
   height: '53rem',
   alignItems: 'flex-start',
   justifyContent: 'center',
+
+  selectors: {
+    '&:last-child': {
+      justifyContent: 'flex-start',
+    },
+  },
   gap: '2rem',
   padding: '6rem 3.2rem 4.8rem 3.2rem',
   borderRadius: '1.6rem',

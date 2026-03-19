@@ -26,21 +26,17 @@ export const wrapper = style({
 });
 
 export const reviewListLayout = style({
-  display: 'flex',
-  width: '100%',
-  flexWrap: 'wrap',
-  justifyContent: 'flex-start',
-  alignItems: 'center',
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, 30rem)',
+  justifyContent: 'center',
   gap: '2rem',
-  maxWidth: 'fit-content',
-  margin: '0 auto',
 
   '@media': {
     [breakpoints.TABLET_MAX]: {
-      justifyContent: 'center',
+      gridTemplateColumns: 'repeat(2, 30rem)',
     },
     [breakpoints.MOBILE_MAX]: {
-      justifyContent: 'center',
+      gridTemplateColumns: 'repeat(1, 30rem)',
     },
   },
 });
