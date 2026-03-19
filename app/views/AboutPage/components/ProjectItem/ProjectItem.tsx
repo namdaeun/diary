@@ -6,6 +6,7 @@ import * as s from './styles.css';
 
 interface ProjectItemProps {
   project: Project;
+  leftSide?: boolean;
 }
 
 const Content = ({ project }: ProjectItemProps) => {
@@ -38,7 +39,7 @@ const Content = ({ project }: ProjectItemProps) => {
   );
 };
 
-const ProjectItem = ({ project }: ProjectItemProps) => {
+const ProjectItem = ({ project, leftSide = false }: ProjectItemProps) => {
   const { name, imageUrl, githubUrl } = project;
   const ref = useRef<HTMLElement>(null);
 
@@ -47,7 +48,11 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
     offset: ['start end', 'end start'],
   });
 
-  const x = useTransform(scrollYProgress, [0, 0.3, 1], [300, 0, 0]);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 0.3, 1],
+    [leftSide ? -300 : 300, 0, 0],
+  );
 
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 1]);
 

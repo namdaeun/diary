@@ -14,8 +14,12 @@ const ProjectSection = () => {
       variants={sectionVariants}
     >
       <div className={s.projectsContainer}>
-        {PROJECTS.map((project) => (
-          <ProjectItem key={project.id} project={project} />
+        {PROJECTS.map((project, index) => (
+          <ProjectItem
+            key={project.id}
+            project={project}
+            leftSide={Math.floor(index / 2) % 2 === 1}
+          />
         ))}
       </div>
     </motion.section>
